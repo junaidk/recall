@@ -32,6 +32,7 @@ func (s *Server) Register(mux *http.ServeMux) {
 	mux.Handle("POST /logout", s.Sessions.RequireUser(http.HandlerFunc(s.handleLogout)))
 	mux.Handle("GET /decks", s.Sessions.RequireUser(http.HandlerFunc(s.handleDecks)))
 	mux.Handle("GET /decks/{id}/study", s.Sessions.RequireUser(http.HandlerFunc(s.handleStudyPage)))
+	mux.Handle("GET /decks/{id}/stats", s.Sessions.RequireUser(http.HandlerFunc(s.handleDeckStats)))
 	mux.Handle("GET /review/{deckID}/next", s.Sessions.RequireUser(http.HandlerFunc(s.handleNextCard)))
 	mux.Handle("GET /review/{deckID}/card/{cardID}", s.Sessions.RequireUser(http.HandlerFunc(s.handleRevealCard)))
 	mux.Handle("POST /review/{cardID}/grade", s.Sessions.RequireUser(http.HandlerFunc(s.handleGrade)))

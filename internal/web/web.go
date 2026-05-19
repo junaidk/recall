@@ -25,7 +25,7 @@ func MustLoadTemplates() *Templates {
 
 	// Pages: parse base.html + the page file together so the page can
 	// override "title" and "body" blocks defined in base.
-	pages := []string{"login.html", "register.html", "decks.html", "review.html"}
+	pages := []string{"login.html", "register.html", "decks.html", "review.html", "stats.html"}
 	for _, name := range pages {
 		ts, err := template.ParseFS(templateFS, "templates/base.html", "templates/"+name)
 		if err != nil {

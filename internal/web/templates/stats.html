@@ -1,0 +1,48 @@
+{{define "title"}}{{.Deck.Name}} · Stats{{end}}
+{{define "body"}}
+<p><a href="/decks">← Back to decks</a></p>
+<h2>{{.Deck.Name}} · Stats</h2>
+
+<section class="stat-section">
+  <h3>Cards by state</h3>
+  {{range .StateCounts}}
+  <div class="stat-bar-row">
+    <div class="stat-label">{{.Label}}</div>
+    <div class="stat-bar"><div class="stat-bar-fill" style="width: {{.Pct}}%"></div></div>
+    <div class="stat-count">{{.Count}}</div>
+  </div>
+  {{end}}
+</section>
+
+<section class="stat-section">
+  <h3>Grade distribution</h3>
+  {{if .HasReviews}}
+    {{range .GradeCounts}}
+    <div class="stat-bar-row">
+      <div class="stat-label">{{.Label}}</div>
+      <div class="stat-bar"><div class="stat-bar-fill" style="width: {{.Pct}}%"></div></div>
+      <div class="stat-count">{{.Count}}</div>
+    </div>
+    {{end}}
+    <p class="stat-footer">Total reviews: {{.TotalReviews}} · Retention: {{.RetentionPct}}%</p>
+  {{else}}
+    <p class="stat-empty">No reviews yet — grade some cards to see this.</p>
+  {{end}}
+</section>
+
+<section class="stat-section">
+  <h3>Last 30 days</h3>
+  {{if .HasReviews}}
+    <div class="day-chart">
+      {{range .DailyReviews}}
+      <div class="day-bar-col" title="{{.Date}}: {{.Count}}">
+        <div class="day-bar-fill" style="height: {{.Pct}}%"></div>
+      </div>
+      {{end}}
+    </div>
+  {{else}}
+    <p class="stat-empty">No reviews in the last 30 days.</p>
+  {{end}}
+</section>
+{{end}}
+{{template "base" .}}

@@ -228,3 +228,63 @@ button.primary:hover { background: #244e92; }
 .done h2 { color: #3aa53a; }
 
 a { color: #2d62b8; }
+
+.deck-actions { display: flex; gap: 0.5rem; align-items: center; }
+.deck-list a.stats {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #2d62b8;
+  color: #2d62b8;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.deck-list a.stats:hover { background: #eef2fa; }
+
+.stat-section { margin: 1.5rem 0 2rem; }
+.stat-section h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+
+.stat-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+.stat-bar-row .stat-label { width: 6.5rem; color: #444; font-size: 0.9rem; }
+.stat-bar-row .stat-count { width: 3rem; text-align: right; color: #444; font-variant-numeric: tabular-nums; }
+.stat-bar {
+  flex: 1;
+  height: 14px;
+  background: #ececec;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.stat-bar-fill {
+  height: 100%;
+  background: #2d62b8;
+  border-radius: 7px;
+}
+
+.stat-footer { color: #555; font-size: 0.9rem; margin-top: 0.75rem; }
+.stat-empty { color: #888; font-style: italic; }
+
+.day-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 80px;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #ddd;
+}
+.day-bar-col {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  min-width: 4px;
+}
+.day-bar-fill {
+  width: 100%;
+  background: #2d62b8;
+  border-radius: 2px 2px 0 0;
+  min-height: 0;
+}
