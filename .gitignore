@@ -10,9 +10,11 @@ data/
 
 # Build output (anchored to repo root so cmd/seed-export/ source dir isn't matched)
 /recall
+/recall-server
 /seed-export
 /bin/
 /dist/
+/target/
 
 # Go
 *.exe

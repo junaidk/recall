@@ -1,0 +1,41 @@
+[Unit]
+Description=Recall — German vocab trainer
+Documentation=https://github.com/junaidk/recall
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=recall
+Group=recall
+WorkingDirectory=/opt/recall
+ExecStart=/opt/recall/recall-server -config /opt/recall/config.yaml
+Restart=on-failure
+RestartSec=5s
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=recall
+
+# Hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+# Allow writes only to the data/seed/log dirs the app owns
+ReadWritePaths=/opt/recall/data /opt/recall/seed
+# Allow binding the configured port (defaults to 8080 in config.example.yaml)
+AmbientCapabilities=
+CapabilityBoundingSet=
+
+[Install]
+WantedBy=multi-user.target
