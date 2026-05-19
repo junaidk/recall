@@ -1,6 +1,12 @@
 {{define "card_back"}}
 <div class="card" data-card-id="{{.Card.ID}}">
-  <div class="lemma">{{.Display}}</div>
+  <div class="lemma">
+    {{.Display}}
+    {{if .AudioURL}}
+    <button type="button" class="audio-play" title="Play pronunciation">▶</button>
+    <audio data-card-audio preload="none" src="{{.AudioURL}}"></audio>
+    {{end}}
+  </div>
   <div class="pos">{{.Pos}}</div>
   <div class="translation">{{if .Translation}}{{.Translation}}{{else}}<em style="opacity:.5">(no translation)</em>{{end}}</div>
   {{template "example_block" .}}

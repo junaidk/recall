@@ -31,6 +31,7 @@ type Word struct {
 	OnlyPlural    bool
 	TranslationEN sql.NullString
 	TranslatedAt  sql.NullTime
+	AudioURL      sql.NullString
 }
 
 type Card struct {

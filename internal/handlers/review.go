@@ -32,6 +32,7 @@ type cardView struct {
 	Pos         string
 	Translation string
 	URL         string
+	AudioURL    string
 	ExampleDE   string
 	ExampleEN   string
 }
@@ -186,6 +187,7 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 		articles sql.NullString
 		pos      sql.NullString
 		url      sql.NullString
+		audio    sql.NullString
 		trans    sql.NullString
 		exDE     sql.NullString
 		exEN     sql.NullString
@@ -194,7 +196,7 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 	err := s.DB.QueryRow(`
 		SELECT c.id, c.user_id, c.word_id, c.due, c.stability, c.difficulty,
 		       c.elapsed_days, c.scheduled_days, c.reps, c.lapses, c.state, c.last_review,
-		       w.deck_id, w.lemma, w.pos, w.articles, w.url, w.translation_en,
+		       w.deck_id, w.lemma, w.pos, w.articles, w.url, w.audio_url, w.translation_en,
 		       w.example_de, w.example_en
 		FROM cards c
 		JOIN words w ON w.id = c.word_id
@@ -204,7 +206,7 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 		&cv.Card.Stability, &cv.Card.Difficulty,
 		&cv.Card.ElapsedDays, &cv.Card.ScheduledDays,
 		&cv.Card.Reps, &cv.Card.Lapses, &cv.Card.State, &cv.Card.LastReview,
-		&cv.DeckID, &lemma, &pos, &articles, &url, &trans,
+		&cv.DeckID, &lemma, &pos, &articles, &url, &audio, &trans,
 		&exDE, &exEN,
 	)
 	if err != nil {
@@ -218,6 +220,9 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 	}
 	if url.Valid {
 		cv.URL = url.String
+	}
+	if audio.Valid {
+		cv.AudioURL = audio.String
 	}
 	if exDE.Valid {
 		cv.ExampleDE = exDE.String
@@ -234,6 +239,7 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 		articles sql.NullString
 		pos      sql.NullString
 		url      sql.NullString
+		audio    sql.NullString
 		trans    sql.NullString
 		exDE     sql.NullString
 		exEN     sql.NullString
@@ -243,7 +249,7 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 	err := s.DB.QueryRow(`
 		SELECT c.id, c.user_id, c.word_id, c.due, c.stability, c.difficulty,
 		       c.elapsed_days, c.scheduled_days, c.reps, c.lapses, c.state, c.last_review,
-		       w.lemma, w.pos, w.articles, w.url, w.translation_en,
+		       w.lemma, w.pos, w.articles, w.url, w.audio_url, w.translation_en,
 		       w.example_de, w.example_en
 		FROM cards c
 		JOIN words w ON w.id = c.word_id
@@ -255,7 +261,7 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 		&cv.Card.Stability, &cv.Card.Difficulty,
 		&cv.Card.ElapsedDays, &cv.Card.ScheduledDays,
 		&cv.Card.Reps, &cv.Card.Lapses, &cv.Card.State, &cv.Card.LastReview,
-		&lemma, &pos, &articles, &url, &trans,
+		&lemma, &pos, &articles, &url, &audio, &trans,
 		&exDE, &exEN,
 	)
 	if err != nil {
@@ -269,6 +275,9 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 	}
 	if url.Valid {
 		cv.URL = url.String
+	}
+	if audio.Valid {
+		cv.AudioURL = audio.String
 	}
 	if exDE.Valid {
 		cv.ExampleDE = exDE.String

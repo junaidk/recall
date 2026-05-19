@@ -31,7 +31,7 @@ type DeepLConfig struct {
 }
 
 type ImportConfig struct {
-	WordListDir string `yaml:"word_list_dir"`
+	SeedDir string `yaml:"seed_dir"`
 }
 
 func Load(path string) (*Config, error) {
@@ -58,8 +58,8 @@ func Load(path string) (*Config, error) {
 	if c.DeepL.TargetLang == "" {
 		c.DeepL.TargetLang = "EN-US"
 	}
-	if c.Import.WordListDir == "" {
-		c.Import.WordListDir = "word-list"
+	if c.Import.SeedDir == "" {
+		c.Import.SeedDir = "seed"
 	}
 	if c.Server.SessionSecret == "" {
 		return nil, fmt.Errorf("server.session_secret must be set")

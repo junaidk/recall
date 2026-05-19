@@ -12,4 +12,4 @@ deepl:
   target_lang: "EN-US"
 
 import:
-  word_list_dir: "word-list"
+  seed_dir: "seed"

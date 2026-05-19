@@ -16,7 +16,7 @@ import (
 //go:embed schema.sql
 var schemaSQL string
 
-const currentSchemaVersion = 2
+const currentSchemaVersion = 3
 
 func Open(path string) (*sql.DB, error) {
 	if dir := filepath.Dir(path); dir != "" && dir != "." {
@@ -81,6 +81,12 @@ func migrate(db *sql.DB) error {
 			return fmt.Errorf("v2 null stale examples: %w", err)
 		}
 		log.Printf("migrate v2: nulled %d stale examples (case filter)", nulled)
+	}
+
+	if version < 3 {
+		if _, err := db.Exec(`ALTER TABLE words ADD COLUMN audio_url TEXT`); err != nil && !strings.Contains(err.Error(), "duplicate column") {
+			return fmt.Errorf("v3 add audio_url: %w", err)
+		}
 	}
 
 	if _, err := db.Exec(fmt.Sprintf(`PRAGMA user_version = %d`, currentSchemaVersion)); err != nil {

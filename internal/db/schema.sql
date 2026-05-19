@@ -30,7 +30,8 @@ CREATE TABLE IF NOT EXISTS words (
   example_de TEXT,
   example_en TEXT,
   example_source TEXT,
-  examples_at DATETIME
+  examples_at DATETIME,
+  audio_url TEXT
 );
 CREATE UNIQUE INDEX IF NOT EXISTS idx_words_unique
   ON words(deck_id, lemma, COALESCE(hidx, 0));

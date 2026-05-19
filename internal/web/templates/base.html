@@ -25,6 +25,30 @@
   <main>
     {{block "body" .}}{{end}}
   </main>
+  <script>
+    (function () {
+      const KEY = 'recall.audio.autoplay';
+      const cb = document.getElementById('audio-autoplay-toggle');
+      if (cb) {
+        cb.checked = localStorage.getItem(KEY) !== '0';
+        cb.addEventListener('change', () => {
+          localStorage.setItem(KEY, cb.checked ? '1' : '0');
+        });
+      }
+      function play(audio) { audio.play().catch(() => {}); }
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.audio-play');
+        if (!btn) return;
+        const audio = btn.parentElement.querySelector('audio[data-card-audio]');
+        if (audio) play(audio);
+      });
+      document.body.addEventListener('htmx:afterSwap', (e) => {
+        if (localStorage.getItem(KEY) === '0') return;
+        const audio = e.target.querySelector('audio[data-card-audio]');
+        if (audio) play(audio);
+      });
+    })();
+  </script>
 </body>
 </html>
 {{end}}

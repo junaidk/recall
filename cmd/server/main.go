@@ -5,11 +5,13 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/junaidk/recall/internal/audio"
 	"github.com/junaidk/recall/internal/auth"
 	"github.com/junaidk/recall/internal/config"
 	"github.com/junaidk/recall/internal/db"
 	"github.com/junaidk/recall/internal/handlers"
 	"github.com/junaidk/recall/internal/importer"
+	"github.com/junaidk/recall/internal/seed"
 	"github.com/junaidk/recall/internal/sentences"
 	"github.com/junaidk/recall/internal/translator"
 	"github.com/junaidk/recall/internal/web"
@@ -31,8 +33,14 @@ func main() {
 	defer dbConn.Close()
 	log.Printf("db: opened %s", cfg.DB.Path)
 
-	if err := importer.ScanAndImport(dbConn, cfg.Import.WordListDir); err != nil {
+	if err := importer.ScanAndImport(dbConn, cfg.Import.SeedDir); err != nil {
 		log.Fatalf("import: %v", err)
+	}
+
+	if n, err := seed.LoadEnrichment(dbConn, cfg.Import.SeedDir); err != nil {
+		log.Printf("seed: load failed: %v", err)
+	} else if n > 0 {
+		log.Printf("seed: applied enrichment to %d words", n)
 	}
 
 	deeplClient := translator.NewClient(cfg.DeepL.APIKey, cfg.DeepL.APIURL, cfg.DeepL.SourceLang, cfg.DeepL.TargetLang)
@@ -47,6 +55,12 @@ func main() {
 	} else if _, _, err := sentences.Backfill(dbConn); err != nil {
 		log.Printf("sentences: backfill failed: %v", err)
 	}
+
+	go func() {
+		if _, _, err := audio.Backfill(dbConn); err != nil {
+			log.Printf("audio: backfill failed: %v", err)
+		}
+	}()
 
 	templates := web.MustLoadTemplates()
 	sessions := auth.NewStore(dbConn)

@@ -1,0 +1,4842 @@
+[
+  {
+    "url": "https://www.dwds.de/wb/%C3%9Cbersetzung",
+    "translation_en": "Translation",
+    "audio_url": "https://www.dwds.de/audio/004/die_Uebersetzung.mp3",
+    "example_de": "Hier ist die Übersetzung.",
+    "example_en": "Here's the translation.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/%C3%A4ndern",
+    "translation_en": "Change",
+    "audio_url": "https://www.dwds.de/audio/001/aendern.mp3",
+    "example_de": "Wozu es ändern?",
+    "example_en": "Why change it?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/%C3%A4rgern",
+    "translation_en": "annoy",
+    "audio_url": "https://www.dwds.de/audio/007/aergern.mp3",
+    "example_de": "Ärgern Sie sich nicht!",
+    "example_en": "Don't be upset.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/%C3%BCben",
+    "translation_en": "practise",
+    "audio_url": "https://www.dwds.de/audio/004/ueben.mp3",
+    "example_de": "Lasst uns üben.",
+    "example_en": "Let's practice.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/%C3%BCberall",
+    "translation_en": "everywhere",
+    "audio_url": "https://www.dwds.de/audio/001/ueberall.mp3",
+    "example_de": "Wir sind überall.",
+    "example_en": "We're everywhere.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/%C3%BCbermorgen",
+    "translation_en": "the day after tomorrow",
+    "audio_url": "https://www.dwds.de/audio/010/uebermorgen.mp3",
+    "example_de": "Bis übermorgen!",
+    "example_en": "See you in two days.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/%C3%BCbersetzen#1",
+    "translation_en": "translate",
+    "audio_url": "https://www.dwds.de/audio/006/uebersetzen_2.mp3",
+    "example_de": "Ich werde übersetzen.",
+    "example_en": "I will translate.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ahnung",
+    "translation_en": "Hunch",
+    "audio_url": "https://www.dwds.de/audio/004/die_Ahnung.mp3",
+    "example_de": "Du hast keine Ahnung.",
+    "example_en": "You have no idea.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ampel",
+    "translation_en": "Traffic light",
+    "audio_url": "https://www.dwds.de/audio/005/die_Ampel.mp3",
+    "example_de": "Die Ampel ist grün.",
+    "example_en": "The light's green.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Angst",
+    "translation_en": "Fear",
+    "audio_url": "https://www.dwds.de/audio/014/die_Angst.mp3",
+    "example_de": "Tom hat Angst.",
+    "example_en": "Tom's afraid.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Anzug",
+    "translation_en": "Suit",
+    "audio_url": "https://www.dwds.de/audio/005/der_Anzug.mp3",
+    "example_de": "Passt dieser Anzug?",
+    "example_en": "Does this suit fit?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Apotheke",
+    "translation_en": "Pharmacy",
+    "audio_url": "https://www.dwds.de/audio/005/die_Apotheke.mp3",
+    "example_de": "Wo ist die Apotheke?",
+    "example_en": "Where's the pharmacy?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Apparat",
+    "translation_en": "Apparatus",
+    "audio_url": "https://www.dwds.de/audio/003/der_Apparat.mp3",
+    "example_de": "Wer ist am Apparat?",
+    "example_en": "Who's calling?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Artikel",
+    "translation_en": "Article",
+    "audio_url": "https://www.dwds.de/audio/001/der_Artikel.mp3",
+    "example_de": "Lies den Artikel!",
+    "example_en": "Read the article.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ausbildung",
+    "translation_en": "Education",
+    "audio_url": "https://www.dwds.de/audio/001/die_Ausbildung.mp3",
+    "example_de": "Ihre Ausbildung ist wichtig.",
+    "example_en": "Your education is important.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ausstellung",
+    "translation_en": "Exhibition",
+    "audio_url": "https://www.dwds.de/audio/001/die_Ausstellung.mp3",
+    "example_de": "Hat dir die Ausstellung gefallen?",
+    "example_en": "Did you enjoy the exhibition?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/B%C3%BCro",
+    "translation_en": "Office",
+    "audio_url": "https://www.dwds.de/audio/002/das_Buero.mp3",
+    "example_de": "Er ist im Büro.",
+    "example_en": "He is at the office.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Babysitter",
+    "translation_en": "Babysitter",
+    "audio_url": "https://www.dwds.de/audio/021/der_Babysitter.mp3",
+    "example_de": "Tom ist gerne Babysitter.",
+    "example_en": "Tom likes being a babysitter.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ball#1",
+    "translation_en": "Ball",
+    "audio_url": "https://www.dwds.de/audio/002/der_Ball.mp3",
+    "example_de": "Fang den Ball.",
+    "example_en": "Catch the ball.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Band#3",
+    "translation_en": "Ribbon",
+    "audio_url": "https://www.dwds.de/audio/001/das_Band.mp3",
+    "example_de": "Wir haben eine Band.",
+    "example_en": "We have a band.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Basketball",
+    "translation_en": "Basketball",
+    "audio_url": "https://www.dwds.de/audio/005/der_Basketball_1.mp3",
+    "example_de": "Tom mag Basketball.",
+    "example_en": "Tom likes basketball.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Baustelle",
+    "translation_en": "Building site",
+    "audio_url": "https://www.dwds.de/audio/003/die_Baustelle.mp3",
+    "example_de": "Ich bin auf dem Weg hierher an der Baustelle vorbeigegangen.",
+    "example_en": "I walked past the construction site on my way here.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Berg",
+    "translation_en": "Mountain",
+    "audio_url": "https://www.dwds.de/audio/002/der_Berg.mp3",
+    "example_de": "Der Berg ist grün.",
+    "example_en": "The mountain is green.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Bescheid",
+    "translation_en": "Notification",
+    "audio_url": "https://www.dwds.de/audio/003/der_Bescheid.mp3",
+    "example_de": "Gib Tom Bescheid.",
+    "example_en": "Let Tom know.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Besuch",
+    "translation_en": "Visit",
+    "audio_url": "https://www.dwds.de/audio/001/der_Besuch.mp3",
+    "example_de": "Tom hat Besuch.",
+    "example_en": "Tom has visitors.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Bewerbung",
+    "translation_en": "Application",
+    "audio_url": "https://www.dwds.de/audio/003/die_Bewerbung.mp3",
+    "example_de": "Die Firma nahm seine Bewerbung an.",
+    "example_en": "The company accepted his application.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Bibliothek",
+    "translation_en": "Library",
+    "audio_url": "https://www.dwds.de/audio/004/die_Bibliothek.mp3",
+    "example_de": "Wo ist die Bibliothek?",
+    "example_en": "Where's the library?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Blatt",
+    "translation_en": "Leaf",
+    "audio_url": "",
+    "example_de": "Ein Blatt fällt.",
+    "example_en": "A leaf is falling.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Blog",
+    "translation_en": "Blog",
+    "audio_url": "https://www.dwds.de/audio/108/das_Blog.mp3",
+    "example_de": "Tom hat einen Blog.",
+    "example_en": "Tom has a blog.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Bluse",
+    "translation_en": "Blouse",
+    "audio_url": "https://www.dwds.de/audio/011/die_Bluse.mp3",
+    "example_de": "Die Bluse ist sauber.",
+    "example_en": "The blouse is clean.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Bohne",
+    "translation_en": "Bean",
+    "audio_url": "https://www.dwds.de/audio/018/die_Bohne.mp3",
+    "example_de": "Es ist interessiert mich nicht die Bohne, wer das ist.",
+    "example_en": "I don't mind in the slightest who he is.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Br%C3%BCcke",
+    "translation_en": "Bridge",
+    "audio_url": "https://www.dwds.de/audio/002/die_Bruecke.mp3",
+    "example_de": "Überquere die Brücke.",
+    "example_en": "Cross the bridge.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Brille",
+    "translation_en": "Glasses",
+    "audio_url": "https://www.dwds.de/audio/005/die_Brille.mp3",
+    "example_de": "Er trug eine Brille.",
+    "example_en": "He wore glasses.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Cafeteria",
+    "translation_en": "Cafeteria",
+    "audio_url": "https://www.dwds.de/audio/102/die_Cafeteria.mp3",
+    "example_de": "Tom aß in der Cafeteria zu Mittag.",
+    "example_en": "Tom had lunch at the cafeteria.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Chefin",
+    "translation_en": "Boss",
+    "audio_url": "https://www.dwds.de/audio/006/die_Chefin.mp3",
+    "example_de": "Sie war meine Chefin.",
+    "example_en": "She was my boss.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Comic",
+    "translation_en": "Comic",
+    "audio_url": "https://www.dwds.de/audio/119/der_Comic.mp3",
+    "example_de": "Tom las einen Comic.",
+    "example_en": "Tom was reading a comic book.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Creme",
+    "translation_en": "Cream",
+    "audio_url": "https://www.dwds.de/audio/120/die_Creme_1.mp3",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Dame",
+    "translation_en": "Checkers",
+    "audio_url": "https://www.dwds.de/audio/002/die_Dame.mp3",
+    "example_de": "Wer ist diese Dame?",
+    "example_en": "Who is this lady?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Datei",
+    "translation_en": "File",
+    "audio_url": "https://www.dwds.de/audio/099/die_Datei.mp3",
+    "example_de": "Gib mir die Datei.",
+    "example_en": "Give me the file.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ding#1",
+    "translation_en": "Thing",
+    "audio_url": "https://www.dwds.de/audio/004/das_Ding.mp3",
+    "example_de": "Gib mir das Ding.",
+    "example_en": "Give me that thing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Disco#1",
+    "translation_en": "Disco",
+    "audio_url": "https://www.dwds.de/audio/100/die_Disco.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/E-Book",
+    "translation_en": "E-Book",
+    "audio_url": "https://www.dwds.de/audio/103/das_E-Book.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ehepartner",
+    "translation_en": "Spouse",
+    "audio_url": "https://www.dwds.de/audio/010/der_Ehepartner.mp3",
+    "example_de": "Hast du einen Ehepartner?",
+    "example_en": "Do you have a wife?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Einkaufszentrum",
+    "translation_en": "Shopping center",
+    "audio_url": "https://www.dwds.de/audio/007/das_Einkaufszentrum.mp3",
+    "example_de": "Tom ist im Einkaufszentrum.",
+    "example_en": "Tom is at the mall.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Eis#1",
+    "translation_en": "Ice",
+    "audio_url": "https://www.dwds.de/audio/002/das_Eis.mp3",
+    "example_de": "Das ist Eis.",
+    "example_en": "This is ice.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Erdgeschoss",
+    "translation_en": "First floor",
+    "audio_url": "https://www.dwds.de/audio/006/das_Erdgeschoss.mp3",
+    "example_de": "Es ist im Erdgeschoss.",
+    "example_en": "It's on the first floor.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Erfahrung",
+    "translation_en": "Experience",
+    "audio_url": "https://www.dwds.de/audio/001/die_Erfahrung.mp3",
+    "example_de": "Hast du Erfahrung?",
+    "example_en": "Are you experienced?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Erlaubnis",
+    "translation_en": "Permission",
+    "audio_url": "https://www.dwds.de/audio/003/die_Erlaubnis.mp3",
+    "example_de": "Er fehlte ohne Erlaubnis.",
+    "example_en": "He was absent without leave.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Erm%C3%A4%C3%9Figung",
+    "translation_en": "Reduction",
+    "audio_url": "https://www.dwds.de/audio/013/die_Ermaessigung.mp3",
+    "example_de": "Tom bat um eine Ermäßigung.",
+    "example_en": "Tom asked for a discount.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/F%C3%BChrerschein",
+    "translation_en": "Driver's license",
+    "audio_url": "https://www.dwds.de/audio/006/der_Fuehrerschein.mp3",
+    "example_de": "Hat Tom einen Führerschein?",
+    "example_en": "Does Tom have a license?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Fach#2",
+    "translation_en": "Subject",
+    "audio_url": "https://www.dwds.de/audio/004/das_Fach.mp3",
+    "example_de": "Ich bin vom Fach.",
+    "example_en": "I'm the expert.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Fahrplan",
+    "translation_en": "Timetable",
+    "audio_url": "https://www.dwds.de/audio/007/der_Fahrplan.mp3",
+    "example_de": "Wo ist der Fahrplan?",
+    "example_en": "Where is the schedule?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Fan",
+    "translation_en": "Fan",
+    "audio_url": "https://www.dwds.de/audio/006/der_Fan.mp3",
+    "example_de": "Bist du ein Fan?",
+    "example_en": "Are you a fan?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Feier",
+    "translation_en": "Celebration",
+    "audio_url": "https://www.dwds.de/audio/004/die_Feier.mp3",
+    "example_de": "Feier schön!",
+    "example_en": "Have fun.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Fenster",
+    "translation_en": "Windows",
+    "audio_url": "https://www.dwds.de/audio/002/das_Fenster.mp3",
+    "example_de": "Öffne das Fenster!",
+    "example_en": "Open the window.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ferien",
+    "translation_en": "Vacation",
+    "audio_url": "https://www.dwds.de/audio/003/die_Ferien.mp3",
+    "example_de": "Schöne Ferien!",
+    "example_en": "Enjoy your holidays.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Fest",
+    "translation_en": "Firm",
+    "audio_url": "https://www.dwds.de/audio/002/das_Fest.mp3",
+    "example_de": "Das Fest ist zu Ende.",
+    "example_en": "The party's over.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Festival",
+    "translation_en": "Festival",
+    "audio_url": "https://www.dwds.de/audio/111/das_Festival_2.mp3",
+    "example_de": "Er machte keine Fotos von dem Festival.",
+    "example_en": "He took no photos of the festival.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Flohmarkt",
+    "translation_en": "Flea market",
+    "audio_url": "https://www.dwds.de/audio/119/der_Flohmarkt.mp3",
+    "example_de": "Wo wird der Flohmarkt sein?",
+    "example_en": "Where will the flea market be?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Flug",
+    "translation_en": "Flight",
+    "audio_url": "https://www.dwds.de/audio/004/der_Flug.mp3",
+    "example_de": "Guten Flug!",
+    "example_en": "Have a good flight.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Fluss",
+    "translation_en": "River",
+    "audio_url": "https://www.dwds.de/audio/004/der_Fluss.mp3",
+    "example_de": "Er saß am Fluss.",
+    "example_en": "He sat next to the stream.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Fotoapparat",
+    "translation_en": "Camera",
+    "audio_url": "https://www.dwds.de/audio/120/der_Fotoapparat.mp3",
+    "example_de": "Hast du einen Fotoapparat?",
+    "example_en": "Do you have a camera?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Fundsache",
+    "translation_en": "Lost property",
+    "audio_url": ""
+  },
+  {
+    "url": "https://www.dwds.de/wb/Gabel",
+    "translation_en": "Fork",
+    "audio_url": "https://www.dwds.de/audio/009/die_Gabel.mp3",
+    "example_de": "Eine Gabel fehlt.",
+    "example_en": "A fork is missing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Garage",
+    "translation_en": "Garage",
+    "audio_url": "https://www.dwds.de/audio/120/die_Garage.mp3",
+    "example_de": "Eure Garage brennt.",
+    "example_en": "Your garage is on fire.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Gegenteil",
+    "translation_en": "Opposite",
+    "audio_url": "https://www.dwds.de/audio/001/das_Gegenteil.mp3",
+    "example_de": "Er tat das Gegenteil.",
+    "example_en": "He did the opposite.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Gehalt#2",
+    "translation_en": "Salary",
+    "audio_url": "https://www.dwds.de/audio/004/der_Gehalt.mp3",
+    "example_de": "Wer zahlt dir dein Gehalt?",
+    "example_en": "Who pays your salary?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Geldb%C3%B6rse",
+    "translation_en": "Purse",
+    "audio_url": "https://www.dwds.de/audio/012/die_Geldboerse.mp3",
+    "example_de": "Wer fand meine Geldbörse ?",
+    "example_en": "Who found my wallet?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ger%C3%A4t",
+    "translation_en": "Device",
+    "audio_url": "https://www.dwds.de/audio/004/das_Geraet.mp3",
+    "example_de": "Wozu dient dieses Gerät?",
+    "example_en": "What is this device for?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Gericht#1",
+    "translation_en": "Court of law",
+    "audio_url": "https://www.dwds.de/audio/001/das_Gericht.mp3",
+    "example_de": "Das Gericht riecht gut.",
+    "example_en": "The dish smells good.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Geschichte",
+    "translation_en": "History",
+    "audio_url": "https://www.dwds.de/audio/001/die_Geschichte.mp3",
+    "example_de": "Tom ist Geschichte.",
+    "example_en": "Tom is history.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Geschirr#1",
+    "translation_en": "Tableware",
+    "audio_url": "https://www.dwds.de/audio/008/das_Geschirr.mp3",
+    "example_de": "Spül alles Geschirr.",
+    "example_en": "Wash all the dishes.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Gesundheit",
+    "translation_en": "Health",
+    "audio_url": "https://www.dwds.de/audio/002/die_Gesundheit.mp3",
+    "example_de": "Gesundheit.",
+    "example_en": "Bless you.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Gewitter",
+    "translation_en": "Thunderstorm",
+    "audio_url": "https://www.dwds.de/audio/005/das_Gewitter.mp3",
+    "example_de": "Ein Gewitter zieht auf.",
+    "example_en": "A storm is brewing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Gitarre",
+    "translation_en": "Guitar",
+    "audio_url": "https://www.dwds.de/audio/120/die_Gitarre.mp3",
+    "example_de": "Ich spiele Gitarre.",
+    "example_en": "I play the guitar.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Grippe",
+    "translation_en": "Flu",
+    "audio_url": "https://www.dwds.de/audio/008/die_Grippe.mp3",
+    "example_de": "Er hat Grippe.",
+    "example_en": "He's got the flu.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/H%C3%A4ndetuch",
+    "translation_en": "Hand towel",
+    "audio_url": "https://www.dwds.de/audio/008/das_Handtuch.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Hals#1",
+    "translation_en": "Neck",
+    "audio_url": "https://www.dwds.de/audio/004/der_Hals.mp3",
+    "example_de": "Wasch dir den Hals!",
+    "example_en": "Wash your neck.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Hamburger#3",
+    "translation_en": "Hamburg",
+    "audio_url": "https://www.dwds.de/audio/099/der_Hamburger_2.mp3",
+    "example_de": "Ich liebe Hamburger.",
+    "example_en": "I love hamburgers.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Handtuch",
+    "translation_en": "Towel",
+    "audio_url": "https://www.dwds.de/audio/008/das_Handtuch.mp3",
+    "example_de": "Wo ist Ihr Handtuch?",
+    "example_en": "Where's your towel?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Hauptstadt",
+    "translation_en": "Capital city",
+    "audio_url": "https://www.dwds.de/audio/001/die_Hauptstadt.mp3",
+    "example_de": "Die Hauptstadt Italiens ist Rom.",
+    "example_en": "The capital of Italy is Rome.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Haushalt",
+    "translation_en": "Household",
+    "audio_url": "https://www.dwds.de/audio/002/der_Haushalt.mp3",
+    "example_de": "Ich musste im Haushalt helfen.",
+    "example_en": "I had to help with the housework.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Heft#1",
+    "translation_en": "Booklet",
+    "audio_url": "https://www.dwds.de/audio/004/das_Heft.mp3",
+    "example_de": "Ich habe schon wieder mein Heft vergessen.",
+    "example_en": "I forgot my notebook again.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Heizung",
+    "translation_en": "Heating",
+    "audio_url": "https://www.dwds.de/audio/006/die_Heizung.mp3",
+    "example_de": "Dreh die Heizung auf.",
+    "example_en": "Turn up the heat.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Hemd",
+    "translation_en": "Shirt",
+    "audio_url": "https://www.dwds.de/audio/005/das_Hemd.mp3",
+    "example_de": "Hemd ausziehen!",
+    "example_en": "Take off your shirt.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Himmel",
+    "translation_en": "Sky",
+    "audio_url": "https://www.dwds.de/audio/001/der_Himmel.mp3",
+    "example_de": "Der Himmel ist blau.",
+    "example_en": "The sky is blue.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Homepage",
+    "translation_en": "Homepage",
+    "audio_url": "https://www.dwds.de/audio/102/die_Homepage.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Hose",
+    "translation_en": "Trousers",
+    "audio_url": "https://www.dwds.de/audio/005/die_Hose.mp3",
+    "example_de": "Das ist meine Hose.",
+    "example_en": "Those are my pants.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Idee",
+    "translation_en": "Idea",
+    "audio_url": "https://www.dwds.de/audio/001/die_Idee.mp3",
+    "example_de": "Es ist Toms Idee.",
+    "example_en": "It's Tom's idea.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Insel",
+    "translation_en": "Island",
+    "audio_url": "https://www.dwds.de/audio/001/die_Insel.mp3",
+    "example_de": "Zypern ist eine Insel.",
+    "example_en": "Cyprus is an island.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Instrument",
+    "translation_en": "Instrument",
+    "audio_url": "https://www.dwds.de/audio/002/das_Instrument.mp3",
+    "example_de": "Spielst du ein Instrument?",
+    "example_en": "Do you play any instruments?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Interesse",
+    "translation_en": "Interest",
+    "audio_url": "https://www.dwds.de/audio/001/das_Interesse.mp3",
+    "example_de": "Wir haben Interesse.",
+    "example_en": "We're interested.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Interview",
+    "translation_en": "Interview",
+    "audio_url": "https://www.dwds.de/audio/002/das_Interview.mp3",
+    "example_de": "Wie war Ihr Interview?",
+    "example_en": "How was your interview?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Jeans",
+    "translation_en": "Jeans",
+    "audio_url": "https://www.dwds.de/audio/108/die_Jeans.mp3",
+    "example_de": "Er hatte Jeans an.",
+    "example_en": "He had jeans on.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Jugendherberge",
+    "translation_en": "Youth hostel",
+    "audio_url": "https://www.dwds.de/audio/017/die_Jugendherberge.mp3",
+    "example_de": "Gibt es hier in der Nähe eine Jugendherberge?",
+    "example_en": "Is there a youth hostel near here?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/K%C3%A4se",
+    "translation_en": "Cheese",
+    "audio_url": "https://www.dwds.de/audio/005/der_Kaese.mp3",
+    "example_de": "Tom mag Käse.",
+    "example_en": "Tom likes cheese.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/K%C3%B6rper",
+    "translation_en": "Body",
+    "audio_url": "https://www.dwds.de/audio/001/der_Koerper.mp3",
+    "example_de": "Verbrenne den Körper.",
+    "example_en": "Burn the body.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kalender",
+    "translation_en": "Calendar",
+    "audio_url": "https://www.dwds.de/audio/006/der_Kalender.mp3",
+    "example_de": "Ich brauche einen Kalender.",
+    "example_en": "I need a calendar.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kamera",
+    "translation_en": "Camera",
+    "audio_url": "https://www.dwds.de/audio/002/die_Kamera.mp3",
+    "example_de": "Coole Kamera!",
+    "example_en": "What a cool camera!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Katze",
+    "translation_en": "Cat",
+    "audio_url": "https://www.dwds.de/audio/005/die_Katze.mp3",
+    "example_de": "Wo ist die Katze?",
+    "example_en": "Where's the cat?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kaufhaus",
+    "translation_en": "Department store",
+    "audio_url": "https://www.dwds.de/audio/006/das_Kaufhaus.mp3",
+    "example_de": "Er ging im Kaufhaus einkaufen.",
+    "example_en": "He went shopping at a department store.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Keller",
+    "translation_en": "Cellar",
+    "audio_url": "https://www.dwds.de/audio/002/der_Keller.mp3",
+    "example_de": "Es ist im Keller.",
+    "example_en": "It's in the basement.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kenntnis",
+    "translation_en": "Knowledge",
+    "audio_url": "https://www.dwds.de/audio/002/die_Kenntnis.mp3",
+    "example_de": "Wen sollte ich in Kenntnis setzen?",
+    "example_en": "Who should I inform?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kette",
+    "translation_en": "Chain",
+    "audio_url": "https://www.dwds.de/audio/003/die_Kette.mp3",
+    "example_de": "Danke für die Kette!",
+    "example_en": "Thank you for the necklace.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kirche",
+    "translation_en": "Church",
+    "audio_url": "https://www.dwds.de/audio/001/die_Kirche.mp3",
+    "example_de": "Wo ist die Kirche?",
+    "example_en": "Where's the church?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Klavier",
+    "translation_en": "Piano",
+    "audio_url": "https://www.dwds.de/audio/004/das_Klavier.mp3",
+    "example_de": "Er spielt Klavier.",
+    "example_en": "He plays the piano.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kleid",
+    "translation_en": "Dress",
+    "audio_url": "https://www.dwds.de/audio/005/das_Kleid.mp3",
+    "example_de": "Das ist mein Kleid!",
+    "example_en": "That's my dress.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Klub",
+    "translation_en": "Club",
+    "audio_url": "https://www.dwds.de/audio/119/der_Club_1.mp3",
+    "example_de": "Willkommen im Klub!",
+    "example_en": "Welcome to the club.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kollegin",
+    "translation_en": "Colleague",
+    "audio_url": "https://www.dwds.de/audio/005/die_Kollegin.mp3",
+    "example_de": "Sie war meine Kollegin, bevor sie entlassen wurde.",
+    "example_en": "She was my colleague before they fired her.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kontakt",
+    "translation_en": "Contact us",
+    "audio_url": "https://www.dwds.de/audio/002/der_Kontakt.mp3",
+    "example_de": "Wir bleiben in Kontakt.",
+    "example_en": "We keep in touch.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Konzert",
+    "translation_en": "Concert",
+    "audio_url": "https://www.dwds.de/audio/002/das_Konzert.mp3",
+    "example_de": "Wo ist das Konzert?",
+    "example_en": "Where is the concert?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kosmetik",
+    "translation_en": "Cosmetics",
+    "audio_url": "https://www.dwds.de/audio/010/die_Kosmetik.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Krankenhaus",
+    "translation_en": "Hospital",
+    "audio_url": "https://www.dwds.de/audio/002/das_Krankenhaus.mp3",
+    "example_de": "Geh zum Krankenhaus.",
+    "example_en": "Go to the hospital.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Krankenkasse",
+    "translation_en": "Health insurance",
+    "audio_url": "https://www.dwds.de/audio/006/die_Krankenkasse.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Krankheit",
+    "translation_en": "Illness",
+    "audio_url": "https://www.dwds.de/audio/002/die_Krankheit.mp3",
+    "example_de": "Er fehlt wegen Krankheit.",
+    "example_en": "He is absent because of illness.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kredit#1",
+    "translation_en": "Credit",
+    "audio_url": "https://www.dwds.de/audio/004/der_Kredit_1.mp3",
+    "example_de": "Es ist kein Kredit.",
+    "example_en": "It isn't a loan.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kreuzung",
+    "translation_en": "Crossing",
+    "audio_url": "https://www.dwds.de/audio/003/die_Kreuzung.mp3",
+    "example_de": "Wie heißt diese Kreuzung?",
+    "example_en": "What's the name of this intersection?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Krimi",
+    "translation_en": "Thriller",
+    "audio_url": "https://www.dwds.de/audio/007/der_Krimi_1.mp3",
+    "example_de": "Ich bin mit diesem Krimi halb durch.",
+    "example_en": "I'm halfway through this crime novel.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kultur",
+    "translation_en": "Culture",
+    "audio_url": "https://www.dwds.de/audio/001/die_Kultur.mp3",
+    "example_de": "Kultur zerstört Sprache.",
+    "example_en": "Culture destroys language.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Kunst",
+    "translation_en": "Art",
+    "audio_url": "https://www.dwds.de/audio/001/die_Kunst.mp3",
+    "example_de": "Ich mag Kunst.",
+    "example_en": "I like art.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/L%C3%B6ffel",
+    "translation_en": "Spoon",
+    "audio_url": "https://www.dwds.de/audio/008/der_Loeffel.mp3",
+    "example_de": "Ich mag Löffel.",
+    "example_en": "I like spoons.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/L%C3%BCge",
+    "translation_en": "Lie",
+    "audio_url": "https://www.dwds.de/audio/003/die_Luege.mp3",
+    "example_de": "Lüge nicht!",
+    "example_en": "Don't lie.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Lampe#1",
+    "translation_en": "Lamp",
+    "audio_url": "https://www.dwds.de/audio/006/die_Lampe.mp3",
+    "example_de": "Die Lampe ging aus.",
+    "example_en": "The lamp went out.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Landschaft",
+    "translation_en": "Landscape",
+    "audio_url": "https://www.dwds.de/audio/002/die_Landschaft.mp3",
+    "example_de": "Die Landschaft ist herrlich.",
+    "example_en": "The countryside is magnificent.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Laptop",
+    "translation_en": "Laptop",
+    "audio_url": "https://www.dwds.de/audio/100/der_Laptop.mp3",
+    "example_de": "Wo ist mein Laptop?",
+    "example_en": "Where's my laptop?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Liebe",
+    "translation_en": "Love",
+    "audio_url": "https://www.dwds.de/audio/001/die_Liebe.mp3",
+    "example_de": "Ist das Liebe?",
+    "example_en": "Is it love?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Link",
+    "translation_en": "Link",
+    "audio_url": "https://www.dwds.de/audio/119/der_Link.mp3",
+    "example_de": "Klicke auf den Link!",
+    "example_en": "Click on the link.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Lust",
+    "translation_en": "Desire",
+    "audio_url": "https://www.dwds.de/audio/002/die_Lust.mp3",
+    "example_de": "Lust auf ’nen Tee?",
+    "example_en": "How about some tea?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/M%C3%BCll",
+    "translation_en": "Garbage",
+    "audio_url": "https://www.dwds.de/audio/004/der_Muell.mp3",
+    "example_de": "Das ist Müll.",
+    "example_en": "That's trash.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/M%C3%BCtze",
+    "translation_en": "Cap",
+    "audio_url": "https://www.dwds.de/audio/007/die_Muetze.mp3",
+    "example_de": "Wo ist eure Mütze?",
+    "example_en": "Where is your cap?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Magen",
+    "translation_en": "Stomach",
+    "audio_url": "https://www.dwds.de/audio/005/der_Magen.mp3",
+    "example_de": "Mein Magen knurrt.",
+    "example_en": "My stomach is grumbling.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Mail",
+    "translation_en": "Mail",
+    "audio_url": "https://www.dwds.de/audio/099/die_Mail.mp3",
+    "example_de": "Danke für Ihre E-Mail!",
+    "example_en": "Thank you for your email.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Mailbox",
+    "translation_en": "Mailbox",
+    "audio_url": "https://www.dwds.de/audio/102/die_Mailbox.mp3",
+    "example_de": "Meine Mailbox ist voll.",
+    "example_en": "My mailbox is full.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Mannschaft",
+    "translation_en": "Team",
+    "audio_url": "https://www.dwds.de/audio/001/die_Mannschaft.mp3",
+    "example_de": "Er ist in der Mannschaft.",
+    "example_en": "He is on the team.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Mantel",
+    "translation_en": "Coat",
+    "audio_url": "https://www.dwds.de/audio/003/der_Mantel.mp3",
+    "example_de": "Nimm meinen Mantel.",
+    "example_en": "Take my coat.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Markt",
+    "translation_en": "Market",
+    "audio_url": "https://www.dwds.de/audio/001/der_Markt.mp3",
+    "example_de": "Der Markt ist groß.",
+    "example_en": "The market is big.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Medikament",
+    "translation_en": "Drug",
+    "audio_url": "https://www.dwds.de/audio/007/das_Medikament.mp3",
+    "example_de": "Dieses Medikament hilft nicht.",
+    "example_en": "This medicine isn't helping.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Meinung",
+    "translation_en": "Opinion",
+    "audio_url": "https://www.dwds.de/audio/001/die_Meinung.mp3",
+    "example_de": "Ganz meine Meinung!",
+    "example_en": "I couldn't agree more.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Menge",
+    "translation_en": "Quantity",
+    "audio_url": "https://www.dwds.de/audio/001/die_Menge.mp3",
+    "example_de": "Die Menge jubelte.",
+    "example_en": "The crowd cheered.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Messe#1",
+    "translation_en": "Trade fair",
+    "audio_url": "https://www.dwds.de/audio/002/die_Messe.mp3",
+    "example_de": "Tom ist in der Messe.",
+    "example_en": "Tom is in the mess hall.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Messer#1",
+    "translation_en": "Knives",
+    "audio_url": "https://www.dwds.de/audio/004/das_Messer.mp3",
+    "example_de": "Ein Messer fehlt.",
+    "example_en": "One knife is missing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Mineralwasser",
+    "translation_en": "Mineral water",
+    "audio_url": "https://www.dwds.de/audio/009/das_Mineralwasser.mp3",
+    "example_de": "Verkaufen Sie Mineralwasser?",
+    "example_en": "Do you sell mineral water?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Mitarbeiter",
+    "translation_en": "Employees",
+    "audio_url": "https://www.dwds.de/audio/001/der_Mitarbeiter.mp3",
+    "example_de": "Sind Sie ein Mitarbeiter hier?",
+    "example_en": "Are you an employee here?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Mittagessen",
+    "translation_en": "Lunch",
+    "audio_url": "https://www.dwds.de/audio/006/das_Mittagessen.mp3",
+    "example_de": "Mittagessen ist fertig.",
+    "example_en": "Lunch is on.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Mittel",
+    "translation_en": "Medium",
+    "audio_url": "https://www.dwds.de/audio/001/das_Mittel.mp3",
+    "example_de": "Nehmen Sie dieses Mittel.",
+    "example_en": "Take this medicine.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Mobiltelefon",
+    "translation_en": "Cell phone",
+    "audio_url": "https://www.dwds.de/audio/103/das_Mobiltelefon.mp3",
+    "example_de": "Tom hat ein Mobiltelefon.",
+    "example_en": "Tom has a mobile.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Mode",
+    "translation_en": "Fashion",
+    "audio_url": "https://www.dwds.de/audio/004/die_Mode.mp3",
+    "example_de": "Es ist aus der Mode.",
+    "example_en": "It's out of fashion.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Motor",
+    "translation_en": "Motor",
+    "audio_url": "https://www.dwds.de/audio/002/der_Motor_1.mp3",
+    "example_de": "Starte den Motor!",
+    "example_en": "Start the engine.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Motorroller",
+    "translation_en": "Scooter",
+    "audio_url": "https://www.dwds.de/audio/019/der_Motorroller.mp3",
+    "example_de": "Tom fährt Motorroller.",
+    "example_en": "Tom rides a scooter.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Museum",
+    "translation_en": "Museum",
+    "audio_url": "https://www.dwds.de/audio/001/das_Museum.mp3",
+    "example_de": "Wo ist das Museum?",
+    "example_en": "Where's the museum?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Musik",
+    "translation_en": "Music",
+    "audio_url": "https://www.dwds.de/audio/001/die_Musik.mp3",
+    "example_de": "Ich mag Musik.",
+    "example_en": "I like music.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/N%C3%A4chste",
+    "translation_en": "Next",
+    "audio_url": "https://www.dwds.de/audio/108/der_Naechste.mp3",
+    "example_de": "Der Nächste, bitte.",
+    "example_en": "Next person, please.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/N%C3%A4he",
+    "translation_en": "Proximity",
+    "audio_url": "https://www.dwds.de/audio/001/die_Naehe.mp3",
+    "example_de": "Bleib in der Nähe.",
+    "example_en": "Stay close.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Nachbar",
+    "translation_en": "Neighbor",
+    "audio_url": "https://www.dwds.de/audio/005/der_Nachbar.mp3",
+    "example_de": "Ich bin Ihr Nachbar.",
+    "example_en": "I'm your neighbor.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Nachbarin",
+    "translation_en": "Neighbor",
+    "audio_url": "https://www.dwds.de/audio/007/die_Nachbarin.mp3",
+    "example_de": "Ich bin Toms Nachbarin.",
+    "example_en": "I'm Tom's neighbor.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Nachricht",
+    "translation_en": "Message",
+    "audio_url": "https://www.dwds.de/audio/002/die_Nachricht.mp3",
+    "example_de": "Gibt es eine Nachricht?",
+    "example_en": "Is there a message?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Natur",
+    "translation_en": "Nature",
+    "audio_url": "https://www.dwds.de/audio/001/die_Natur.mp3",
+    "example_de": "Ich liebe die Natur.",
+    "example_en": "I love nature.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Note",
+    "translation_en": "Grade",
+    "audio_url": "https://www.dwds.de/audio/004/die_Note.mp3",
+    "example_de": "Welche Note hast du im Test?",
+    "example_en": "What grade did you get on the test?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Notiz",
+    "translation_en": "Note",
+    "audio_url": "https://www.dwds.de/audio/006/die_Notiz.mp3",
+    "example_de": "Was stand auf der Notiz?",
+    "example_en": "What did the note say?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Nudel",
+    "translation_en": "Noodle",
+    "audio_url": "https://www.dwds.de/audio/029/die_Nudel.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ohr",
+    "translation_en": "Ear",
+    "audio_url": "https://www.dwds.de/audio/004/das_Ohr.mp3",
+    "example_de": "Ich bin ganz Ohr.",
+    "example_en": "I'm all ears.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Orange#1",
+    "translation_en": "Orange",
+    "audio_url": "https://www.dwds.de/audio/007/die_Orange_1.mp3",
+    "example_de": "Schäl die Orange!",
+    "example_en": "Peel the orange.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Paar",
+    "translation_en": "Pair",
+    "audio_url": "https://www.dwds.de/audio/004/das_Paar.mp3",
+    "example_de": "Wir sind ein Paar.",
+    "example_en": "We're a couple.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Paket",
+    "translation_en": "Package",
+    "audio_url": "https://www.dwds.de/audio/003/das_Paket.mp3",
+    "example_de": "Ich öffne das Paket.",
+    "example_en": "I'm going to unwrap the package.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Parf%C3%BCm",
+    "translation_en": "Perfume",
+    "audio_url": "https://www.dwds.de/audio/121/das_Parfuem.mp3",
+    "example_de": "Ich verkaufe Parfüm.",
+    "example_en": "I sell perfume.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Park",
+    "translation_en": "Park",
+    "audio_url": "https://www.dwds.de/audio/002/der_Park.mp3",
+    "example_de": "Geh in den Park.",
+    "example_en": "Go to the park.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Passwort",
+    "translation_en": "password",
+    "audio_url": "https://www.dwds.de/audio/119/das_Passwort.mp3",
+    "example_de": "Kennst du das Passwort?",
+    "example_en": "Do you know the password?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Person",
+    "translation_en": "Person",
+    "audio_url": "https://www.dwds.de/audio/001/die_Person.mp3",
+    "example_de": "Wähle eine Person.",
+    "example_en": "Choose one person.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Pferd",
+    "translation_en": "Horse",
+    "audio_url": "https://www.dwds.de/audio/004/das_Pferd.mp3",
+    "example_de": "Nimm mein Pferd.",
+    "example_en": "Take my horse.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Pflanze",
+    "translation_en": "Plant",
+    "audio_url": "https://www.dwds.de/audio/006/die_Pflanze.mp3",
+    "example_de": "Das ist eine Pflanze.",
+    "example_en": "It's a plant.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Pizza",
+    "translation_en": "Pizza",
+    "audio_url": "https://www.dwds.de/audio/102/die_Pizza.mp3",
+    "example_de": "Ich mag Pizza.",
+    "example_en": "I like pizza.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Plakat",
+    "translation_en": "Poster",
+    "audio_url": "https://www.dwds.de/audio/005/das_Plakat.mp3",
+    "example_de": "Er hielt an, um das Plakat anzusehen.",
+    "example_en": "He paused to look at the poster.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Portion",
+    "translation_en": "Portion",
+    "audio_url": "https://www.dwds.de/audio/006/die_Portion.mp3",
+    "example_de": "Möchtest du noch eine Portion?",
+    "example_en": "Would you like another helping?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Poster#1",
+    "translation_en": "Poster",
+    "audio_url": "https://www.dwds.de/audio/103/das_Poster_1.mp3",
+    "example_de": "Tom riß die Poster von den Wänden.",
+    "example_en": "Tom tore the posters off the wall.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Postkarte",
+    "translation_en": "Postcard",
+    "audio_url": "https://www.dwds.de/audio/010/die_Postkarte.mp3",
+    "example_de": "Hier ist eine Postkarte.",
+    "example_en": "There's a postcard here.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Produkt",
+    "translation_en": "Product",
+    "audio_url": "https://www.dwds.de/audio/002/das_Produkt.mp3",
+    "example_de": "Das Produkt ist hochpreisig.",
+    "example_en": "The product carries a high price tag.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Programm",
+    "translation_en": "Program",
+    "audio_url": "https://www.dwds.de/audio/001/das_Programm.mp3",
+    "example_de": "Starte das Programm.",
+    "example_en": "Begin the program.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Projekt",
+    "translation_en": "Project",
+    "audio_url": "https://www.dwds.de/audio/001/das_Projekt.mp3",
+    "example_de": "Das ist mein Projekt.",
+    "example_en": "That's my plan.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Pullover",
+    "translation_en": "Sweater",
+    "audio_url": "https://www.dwds.de/audio/008/der_Pullover.mp3",
+    "example_de": "Ich mag den Pullover.",
+    "example_en": "I like that sweater.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Qualit%C3%A4t",
+    "translation_en": "Quality",
+    "audio_url": "https://www.dwds.de/audio/001/die_Qualitaet.mp3",
+    "example_de": "Mir geht Qualität vor Quantität.",
+    "example_en": "I prefer quality to quantity.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Quiz",
+    "translation_en": "Quiz",
+    "audio_url": "https://www.dwds.de/audio/017/das_Quiz.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/R%C3%A4tsel",
+    "translation_en": "Riddle",
+    "audio_url": "https://www.dwds.de/audio/003/das_Raetsel.mp3",
+    "example_de": "Ich mag Rätsel.",
+    "example_en": "I like puzzles.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/R%C3%BCcken#1",
+    "translation_en": "Back",
+    "audio_url": "https://www.dwds.de/audio/003/der_Ruecken.mp3",
+    "example_de": "Mein Rücken tut weh.",
+    "example_en": "My back hurts.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Rad",
+    "translation_en": "Wheel",
+    "audio_url": "https://www.dwds.de/audio/004/das_Rad.mp3",
+    "example_de": "Sie hat ein Rad.",
+    "example_en": "She has a bike.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Radio",
+    "translation_en": "Radio",
+    "audio_url": "https://www.dwds.de/audio/111/das_Radio.mp3",
+    "example_de": "Tom hört Radio.",
+    "example_en": "Tom is listening to the radio.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Rathaus",
+    "translation_en": "Town hall",
+    "audio_url": "https://www.dwds.de/audio/002/das_Rathaus.mp3",
+    "example_de": "Wo ist das Rathaus?",
+    "example_en": "Where is the city hall?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Reifen",
+    "translation_en": "Tires",
+    "audio_url": "https://www.dwds.de/audio/007/der_Reifen.mp3",
+    "example_de": "Ich kaufe Reifen.",
+    "example_en": "I'm buying tires.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Reihe",
+    "translation_en": "Series",
+    "audio_url": "https://www.dwds.de/audio/001/die_Reihe.mp3",
+    "example_de": "Bin ich an der Reihe?",
+    "example_en": "Is it my turn?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Reinigung",
+    "translation_en": "Cleaning",
+    "audio_url": "https://www.dwds.de/audio/006/die_Reinigung.mp3",
+    "example_de": "Ich nahm meine Kleidung zur Reinigung.",
+    "example_en": "I took my clothes to be cleaned.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Rentner",
+    "translation_en": "Pensioner",
+    "audio_url": "https://www.dwds.de/audio/004/der_Rentner.mp3",
+    "example_de": "Sind Sie Rentner?",
+    "example_en": "Are you retired?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Rentnerin",
+    "translation_en": "Pensioner",
+    "audio_url": "https://www.dwds.de/audio/120/die_Rentnerin.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Rest",
+    "translation_en": "Rest",
+    "audio_url": "https://www.dwds.de/audio/001/der_Rest.mp3",
+    "example_de": "Wo ist der Rest?",
+    "example_en": "Where's the rest?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Rezept",
+    "translation_en": "Recipe",
+    "audio_url": "https://www.dwds.de/audio/005/das_Rezept.mp3",
+    "example_de": "Tom braucht ein Rezept.",
+    "example_en": "Tom needs a prescription.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Rind",
+    "translation_en": "Beef",
+    "audio_url": "https://www.dwds.de/audio/011/das_Rind.mp3",
+    "example_de": "Lass uns Rind essen.",
+    "example_en": "Let's eat beef.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ring",
+    "translation_en": "Ring",
+    "audio_url": "https://www.dwds.de/audio/002/der_Ring.mp3",
+    "example_de": "Ist das ein Ring?",
+    "example_en": "Is that a ring?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Rock#1",
+    "translation_en": "Rock",
+    "audio_url": "https://www.dwds.de/audio/004/der_Rock.mp3",
+    "example_de": "Ich mag Rock.",
+    "example_en": "I love rock.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Rose",
+    "translation_en": "Rose",
+    "audio_url": "https://www.dwds.de/audio/003/die_Rose.mp3",
+    "example_de": "Siehst du eine Rose?",
+    "example_en": "Do you see a rose?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Rucksack",
+    "translation_en": "Backpack",
+    "audio_url": "https://www.dwds.de/audio/008/der_Rucksack.mp3",
+    "example_de": "Gib mir den Rucksack!",
+    "example_en": "Give me the backpack.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ruhe",
+    "translation_en": "Rest",
+    "audio_url": "https://www.dwds.de/audio/001/die_Ruhe.mp3",
+    "example_de": "Ruhe bitte.",
+    "example_en": "Silence, please.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Rundgang",
+    "translation_en": "Tour",
+    "audio_url": "https://www.dwds.de/audio/006/der_Rundgang.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/S%C3%BC%C3%9Figkeit",
+    "translation_en": "Candy",
+    "audio_url": "https://www.dwds.de/audio/114/die_Suessigkeit.mp3",
+    "example_de": "Probiere diese Süßigkeit.",
+    "example_en": "Try this candy.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Sache",
+    "translation_en": "thing",
+    "audio_url": "https://www.dwds.de/audio/001/die_Sache.mp3",
+    "example_de": "Zur Sache!",
+    "example_en": "Get to the point!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Sch%C3%BClerin",
+    "translation_en": "Pupil",
+    "audio_url": "https://www.dwds.de/audio/031/die_Schuelerin.mp3",
+    "example_de": "Ich bin Schülerin.",
+    "example_en": "I'm a student.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Schere",
+    "translation_en": "Scissors",
+    "audio_url": "https://www.dwds.de/audio/008/die_Schere.mp3",
+    "example_de": "Gib mir die Schere.",
+    "example_en": "Hand me those scissors.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Schiff",
+    "translation_en": "Ship",
+    "audio_url": "https://www.dwds.de/audio/002/das_Schiff.mp3",
+    "example_de": "Das Schiff sinkt.",
+    "example_en": "The ship is sinking.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Schirm",
+    "translation_en": "Shield",
+    "audio_url": "https://www.dwds.de/audio/008/der_Schirm.mp3",
+    "example_de": "Es ist mein Schirm.",
+    "example_en": "It's my umbrella.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Schlafzimmer",
+    "translation_en": "Bedroom",
+    "audio_url": "https://www.dwds.de/audio/006/das_Schlafzimmer.mp3",
+    "example_de": "Ist das dein Schlafzimmer?",
+    "example_en": "Is that your bedroom?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Schloss#1",
+    "translation_en": "Castle",
+    "audio_url": "https://www.dwds.de/audio/111/das_Schloss.mp3",
+    "example_de": "Das Schloss ist schön.",
+    "example_en": "The lock is beautiful.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Schloss#2",
+    "translation_en": "Castle",
+    "audio_url": "https://www.dwds.de/audio/111/das_Schloss.mp3",
+    "example_de": "Das Schloss klemmt.",
+    "example_en": "The lock is jammed.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Schmerz",
+    "translation_en": "Pain",
+    "audio_url": "https://www.dwds.de/audio/004/der_Schmerz.mp3",
+    "example_de": "Der Schmerz ist weg.",
+    "example_en": "The pain has gone.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Schnee",
+    "translation_en": "Snow",
+    "audio_url": "https://www.dwds.de/audio/002/der_Schnee.mp3",
+    "example_de": "Ich mag Schnee.",
+    "example_en": "I like snow.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Schokolade",
+    "translation_en": "Chocolate",
+    "audio_url": "https://www.dwds.de/audio/006/die_Schokolade.mp3",
+    "example_de": "Ich mag Schokolade.",
+    "example_en": "I like chocolate.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Schwein",
+    "translation_en": "Pig",
+    "audio_url": "https://www.dwds.de/audio/006/das_Schwein.mp3",
+    "example_de": "Ich will Schwein.",
+    "example_en": "I want pork.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Seife#1",
+    "translation_en": "Soap",
+    "audio_url": "https://www.dwds.de/audio/009/die_Seife.mp3",
+    "example_de": "Ich will Seife.",
+    "example_en": "I want soap.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Seite",
+    "translation_en": "Page",
+    "audio_url": "https://www.dwds.de/audio/001/die_Seite.mp3",
+    "example_de": "Zur Seite.",
+    "example_en": "Step aside.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Sendung",
+    "translation_en": "Broadcast",
+    "audio_url": "https://www.dwds.de/audio/002/die_Sendung.mp3",
+    "example_de": "Ich mag diese Sendung.",
+    "example_en": "I like this show.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Service#2",
+    "translation_en": "Service",
+    "audio_url": "https://www.dwds.de/audio/119/das_Service.mp3",
+    "example_de": "Er organisierte einen Boykott des Bus-Service.",
+    "example_en": "He organized a boycott of the bus service.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Situation",
+    "translation_en": "Situation",
+    "audio_url": "https://www.dwds.de/audio/001/die_Situation.mp3",
+    "example_de": "Jede Situation ist anders.",
+    "example_en": "Every situation is different.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Spa%C3%9F",
+    "translation_en": "Fun",
+    "audio_url": "https://www.dwds.de/audio/002/der_Spass.mp3",
+    "example_de": "Viel Spaß!",
+    "example_en": "Have fun.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Spass",
+    "translation_en": "Fun",
+    "audio_url": "https://www.dwds.de/audio/002/der_Spass.mp3",
+    "example_de": "Fernsehen macht Spass.",
+    "example_en": "Watching TV is fun.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Spaziergang",
+    "translation_en": "Walk",
+    "audio_url": "https://www.dwds.de/audio/006/der_Spaziergang.mp3",
+    "example_de": "Wie war dein Spaziergang?",
+    "example_en": "How was your walk?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Spiel",
+    "translation_en": "Game",
+    "audio_url": "https://www.dwds.de/audio/001/das_Spiel.mp3",
+    "example_de": "Spiel nicht tot.",
+    "example_en": "Don't play dead.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Sportplatz",
+    "translation_en": "Sports field",
+    "audio_url": "https://www.dwds.de/audio/009/der_Sportplatz.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Sprechstunde",
+    "translation_en": "Consultation hour",
+    "audio_url": "https://www.dwds.de/audio/012/die_Sprechstunde.mp3",
+    "example_de": "Wann hat der Doktor Sprechstunde?",
+    "example_en": "What are the doctor's office hours?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/St%C3%BCck",
+    "translation_en": "Piece",
+    "audio_url": "https://www.dwds.de/audio/001/das_Stueck.mp3",
+    "example_de": "Willst du ein Stück?",
+    "example_en": "Do you want a bit?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Stadtplan",
+    "translation_en": "City map",
+    "audio_url": "https://www.dwds.de/audio/012/der_Stadtplan.mp3",
+    "example_de": "Habt ihr einen Stadtplan?",
+    "example_en": "Do you have a map of the city?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Star#3",
+    "translation_en": "Star",
+    "audio_url": "https://www.dwds.de/audio/112/der_Star_1.mp3",
+    "example_de": "Haben Sie grauen Star?",
+    "example_en": "Do you have cataracts?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Stiefel",
+    "translation_en": "Boots",
+    "audio_url": "https://www.dwds.de/audio/007/der_Stiefel.mp3",
+    "example_de": "Trägt Tom Stiefel?",
+    "example_en": "Does Tom wear boots?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Stift#1",
+    "translation_en": "Pen",
+    "audio_url": "https://www.dwds.de/audio/008/der_Stift.mp3",
+    "example_de": "Gib mir den Stift.",
+    "example_en": "Pass me the pen.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Stipendium",
+    "translation_en": "Scholarship",
+    "audio_url": "https://www.dwds.de/audio/009/das_Stipendium.mp3",
+    "example_de": "Tom hat ein Stipendium erhalten.",
+    "example_en": "Tom won a scholarship.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Stockwerk",
+    "translation_en": "Floor",
+    "audio_url": "https://www.dwds.de/audio/007/das_Stockwerk.mp3",
+    "example_de": "Ich bin im achten Stockwerk.",
+    "example_en": "I'm on the eighth floor.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Strand",
+    "translation_en": "Beach",
+    "audio_url": "https://www.dwds.de/audio/003/der_Strand.mp3",
+    "example_de": "Wo ist der Strand?",
+    "example_en": "Where's the beach?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Stress",
+    "translation_en": "Stress",
+    "audio_url": "https://www.dwds.de/audio/005/der_Stress.mp3",
+    "example_de": "Tom ist im Stress.",
+    "example_en": "Tom is stressed.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Studentin",
+    "translation_en": "Student",
+    "audio_url": "https://www.dwds.de/audio/006/die_Studentin.mp3",
+    "example_de": "Ich bin Studentin.",
+    "example_en": "I'm a student.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Stuhl",
+    "translation_en": "Chair",
+    "audio_url": "https://www.dwds.de/audio/004/der_Stuhl.mp3",
+    "example_de": "Ich fiel vom Stuhl.",
+    "example_en": "I fell off my chair.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Supermarkt",
+    "translation_en": "Supermarket",
+    "audio_url": "https://www.dwds.de/audio/005/der_Supermarkt.mp3",
+    "example_de": "Ich traf Tom im Supermarkt.",
+    "example_en": "I met Tom at the supermarket.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Suppe",
+    "translation_en": "Soup",
+    "audio_url": "https://www.dwds.de/audio/006/die_Suppe.mp3",
+    "example_de": "Ich liebe Suppe.",
+    "example_en": "I love soup.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/T%C3%BCr",
+    "translation_en": "Door",
+    "audio_url": "https://www.dwds.de/audio/001/die_Tuer.mp3",
+    "example_de": "Halte die Tür!",
+    "example_en": "Hold the door.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/T-Shirt",
+    "translation_en": "T-shirt",
+    "audio_url": "https://www.dwds.de/audio/103/das_T-Shirt.mp3",
+    "example_de": "Tom zog sein T-Shirt aus.",
+    "example_en": "Tom took his T-shirt off.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Tablet",
+    "translation_en": "Tablet",
+    "audio_url": "https://www.dwds.de/audio/119/das_Tablet.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Tablette",
+    "translation_en": "Tablet",
+    "audio_url": "https://www.dwds.de/audio/024/die_Tablette.mp3",
+    "example_de": "Lösen Sie die Tablette in einem Glas mit Wasser auf.",
+    "example_en": "Dissolve the tablet in a glass of water.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Tafel",
+    "translation_en": "Blackboard",
+    "audio_url": "https://www.dwds.de/audio/003/die_Tafel.mp3",
+    "example_de": "Schau an die Tafel.",
+    "example_en": "Look at the blackboard.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Taschengeld",
+    "translation_en": "Pocket money",
+    "audio_url": "https://www.dwds.de/audio/009/das_Taschengeld.mp3",
+    "example_de": "Vergiß nicht dein Taschengeld!",
+    "example_en": "Don't forget your spending money.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Tasse",
+    "translation_en": "Cup",
+    "audio_url": "https://www.dwds.de/audio/007/die_Tasse.mp3",
+    "example_de": "Die Tasse zerbrach.",
+    "example_en": "The cup broke.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Team",
+    "translation_en": "Team",
+    "audio_url": "https://www.dwds.de/audio/001/das_Team.mp3",
+    "example_de": "Was für ein Team!",
+    "example_en": "What a team!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Teller",
+    "translation_en": "Plate",
+    "audio_url": "https://www.dwds.de/audio/005/der_Teller.mp3",
+    "example_de": "Wo ist mein Teller?",
+    "example_en": "Where's my plate?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Tennis",
+    "translation_en": "Tennis",
+    "audio_url": "https://www.dwds.de/audio/004/das_Tennis.mp3",
+    "example_de": "Ich mag Tennis.",
+    "example_en": "I like tennis.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Theater",
+    "translation_en": "Theater",
+    "audio_url": "https://www.dwds.de/audio/001/das_Theater.mp3",
+    "example_de": "Ich war im Theater.",
+    "example_en": "I was at the theater.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Tier",
+    "translation_en": "Animal",
+    "audio_url": "https://www.dwds.de/audio/002/das_Tier.mp3",
+    "example_de": "Er ist ein Tier.",
+    "example_en": "He's an animal.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Tipp#1",
+    "translation_en": "Tip",
+    "audio_url": "https://www.dwds.de/audio/119/der_Tipp.mp3",
+    "example_de": "Danke für den Tipp!",
+    "example_en": "Thanks for the hint.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Titel",
+    "translation_en": "Title",
+    "audio_url": "https://www.dwds.de/audio/001/der_Titel_1.mp3",
+    "example_de": "Der Titel ist irreführend.",
+    "example_en": "The title is misleading.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Topf",
+    "translation_en": "Pot",
+    "audio_url": "https://www.dwds.de/audio/005/der_Topf.mp3",
+    "example_de": "Decke den Topf zu.",
+    "example_en": "Cover the pot.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Torte",
+    "translation_en": "Cake",
+    "audio_url": "https://www.dwds.de/audio/015/die_Torte.mp3",
+    "example_de": "Maria garnierte die Torte.",
+    "example_en": "Mary decorated the cake.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Tour",
+    "translation_en": "Tour",
+    "audio_url": "https://www.dwds.de/audio/002/die_Tour.mp3",
+    "example_de": "Wie viel kostet die Tour für eine Person?",
+    "example_en": "How much is the tour per person?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Tourist",
+    "translation_en": "Tourist",
+    "audio_url": "https://www.dwds.de/audio/007/der_Tourist.mp3",
+    "example_de": "Ich bin Tourist.",
+    "example_en": "I'm a tourist.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Touristin",
+    "translation_en": "Tourist",
+    "audio_url": "",
+    "example_de": "Ich will nicht wie eine Touristin aussehen.",
+    "example_en": "I don't want to look like a tourist.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Training",
+    "translation_en": "Training",
+    "audio_url": "https://www.dwds.de/audio/002/das_Training_1.mp3",
+    "example_de": "Tom braucht Training.",
+    "example_en": "Tom needs training.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Traum",
+    "translation_en": "Dream",
+    "audio_url": "https://www.dwds.de/audio/002/der_Traum.mp3",
+    "example_de": "Es war ein Traum.",
+    "example_en": "It was a dream.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Umzug",
+    "translation_en": "Relocation",
+    "audio_url": "https://www.dwds.de/audio/004/der_Umzug.mp3",
+    "example_de": "Kannst du mir beim Umzug helfen?",
+    "example_en": "Can you help me when I move?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Unfall",
+    "translation_en": "Accident",
+    "audio_url": "https://www.dwds.de/audio/002/der_Unfall.mp3",
+    "example_de": "Es war ein Unfall.",
+    "example_en": "It was an accident.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Universit%C3%A4t",
+    "translation_en": "University",
+    "audio_url": "https://www.dwds.de/audio/149/die_Universitaet.mp3",
+    "example_de": "Wo ist eure Universität?",
+    "example_en": "Where's your university?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Unterkunft",
+    "translation_en": "Accommodation",
+    "audio_url": "https://www.dwds.de/audio/005/die_Unterkunft.mp3",
+    "example_de": "Wir suchen nach einer Unterkunft.",
+    "example_en": "We're looking for a place to stay.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Unterschied",
+    "translation_en": "Difference",
+    "audio_url": "https://www.dwds.de/audio/001/der_Unterschied.mp3",
+    "example_de": "Wo ist der Unterschied?",
+    "example_en": "Where is the difference?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Veranstaltung",
+    "translation_en": "Event",
+    "audio_url": "https://www.dwds.de/audio/002/die_Veranstaltung.mp3",
+    "example_de": "Ich verschob die Veranstaltung.",
+    "example_en": "I postponed the event.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Verkehr",
+    "translation_en": "Traffic",
+    "audio_url": "https://www.dwds.de/audio/001/der_Verkehr.mp3",
+    "example_de": "Gab es viel Verkehr?",
+    "example_en": "Was there a lot of traffic?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Verkehrsmittel",
+    "translation_en": "Means of transportation",
+    "audio_url": "https://www.dwds.de/audio/006/das_Verkehrsmittel.mp3",
+    "example_de": "Wir benutzen öffentliche Verkehrsmittel.",
+    "example_en": "We use public transportation.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Vermieterin",
+    "translation_en": "Landlady",
+    "audio_url": "https://www.dwds.de/audio/017/die_Vermieterin.mp3",
+    "example_de": "Bist du Vermieterin?",
+    "example_en": "Are you a landlord?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Versp%C3%A4tung",
+    "translation_en": "Delay",
+    "audio_url": "https://www.dwds.de/audio/005/die_Verspaetung.mp3",
+    "example_de": "Der Bus hat Verspätung.",
+    "example_en": "The bus is behind time.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Vertrag",
+    "translation_en": "Contract",
+    "audio_url": "https://www.dwds.de/audio/001/der_Vertrag.mp3",
+    "example_de": "Tom las den Vertrag.",
+    "example_en": "Tom read the contract.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Vogel",
+    "translation_en": "Bird",
+    "audio_url": "https://www.dwds.de/audio/002/der_Vogel.mp3",
+    "example_de": "Füttere den Vogel!",
+    "example_en": "Feed the bird.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Volleyball",
+    "translation_en": "Volleyball",
+    "audio_url": "https://www.dwds.de/audio/008/der_Volleyball.mp3",
+    "example_de": "Spielt Tom Volleyball?",
+    "example_en": "Does Tom play volleyball?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Vorschlag",
+    "translation_en": "Proposal",
+    "audio_url": "https://www.dwds.de/audio/001/der_Vorschlag.mp3",
+    "example_de": "Was ist dein Vorschlag?",
+    "example_en": "What do you suggest?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/W%C3%A4sche",
+    "translation_en": "Laundry",
+    "audio_url": "https://www.dwds.de/audio/005/die_Waesche.mp3",
+    "example_de": "Wo ist die Wäsche?",
+    "example_en": "Where is the laundry?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Wald",
+    "translation_en": "Forest",
+    "audio_url": "https://www.dwds.de/audio/002/der_Wald.mp3",
+    "example_de": "Tom ist im Wald.",
+    "example_en": "Tom is in the forest.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Webseite",
+    "translation_en": "Website",
+    "audio_url": "https://www.dwds.de/audio/100/die_Webseite.mp3",
+    "example_de": "Tom hat eine Webseite.",
+    "example_en": "Tom has a website.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Weg",
+    "translation_en": "Path",
+    "audio_url": "https://www.dwds.de/audio/112/der_Weg.mp3",
+    "example_de": "Aus dem Weg!",
+    "example_en": "Out of my way!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Werkstatt",
+    "translation_en": "Workshop",
+    "audio_url": "https://www.dwds.de/audio/004/die_Werkstatt.mp3",
+    "example_de": "Ich arbeite in der Werkstatt.",
+    "example_en": "I am working at the workshop.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Wettbewerb",
+    "translation_en": "Competition",
+    "audio_url": "https://www.dwds.de/audio/001/der_Wettbewerb.mp3",
+    "example_de": "Wettbewerb ist gut.",
+    "example_en": "Competition is good.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Witz",
+    "translation_en": "Joke",
+    "audio_url": "https://www.dwds.de/audio/004/der_Witz.mp3",
+    "example_de": "Kein Witz?",
+    "example_en": "No kidding?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Wohnzimmer",
+    "translation_en": "Living room",
+    "audio_url": "https://www.dwds.de/audio/003/das_Wohnzimmer.mp3",
+    "example_de": "Geh ins Wohnzimmer.",
+    "example_en": "Go to the living room.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Wolke",
+    "translation_en": "Cloud",
+    "audio_url": "https://www.dwds.de/audio/006/die_Wolke.mp3",
+    "example_de": "Eine Wolke zog vor den Mond.",
+    "example_en": "A cloud drifted over the moon.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Workshop",
+    "translation_en": "Workshop",
+    "audio_url": "https://www.dwds.de/audio/103/der_Workshop.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Wunsch",
+    "translation_en": "Wish",
+    "audio_url": "https://www.dwds.de/audio/001/der_Wunsch.mp3",
+    "example_de": "Was ist dein Wunsch?",
+    "example_en": "What's your wish?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Wurst",
+    "translation_en": "Sausage",
+    "audio_url": "https://www.dwds.de/audio/006/die_Wurst.mp3",
+    "example_de": "Tom mag Wurst.",
+    "example_en": "Tom likes sausage.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Zahl",
+    "translation_en": "Number",
+    "audio_url": "https://www.dwds.de/audio/001/die_Zahl.mp3",
+    "example_de": "Es ist eine runde Zahl.",
+    "example_en": "It's a round number.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Zahn",
+    "translation_en": "Tooth",
+    "audio_url": "https://www.dwds.de/audio/006/der_Zahn.mp3",
+    "example_de": "Leg mal ’n Zahn zu!",
+    "example_en": "Speed up.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Zeitschrift",
+    "translation_en": "Magazine",
+    "audio_url": "https://www.dwds.de/audio/002/die_Zeitschrift.mp3",
+    "example_de": "Tom nahm sich eine Zeitschrift.",
+    "example_en": "Tom picked up a magazine.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Zelt",
+    "translation_en": "Tent",
+    "audio_url": "https://www.dwds.de/audio/005/das_Zelt.mp3",
+    "example_de": "Es war heiß im Zelt.",
+    "example_en": "It was hot inside the tent.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Zentrum",
+    "translation_en": "Center",
+    "audio_url": "https://www.dwds.de/audio/001/das_Zentrum.mp3",
+    "example_de": "Er wohnte im Zentrum von London.",
+    "example_en": "He lived in the center of London.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Zettel#1",
+    "translation_en": "Slip of paper",
+    "audio_url": "https://www.dwds.de/audio/005/der_Zettel.mp3",
+    "example_de": "Zettel raus!",
+    "example_en": "Grab a piece of paper.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Zeugnis",
+    "translation_en": "Certificate",
+    "audio_url": "https://www.dwds.de/audio/111/das_Zeugnis.mp3",
+    "example_de": "Morgen kriegen wir unser Zeugnis.",
+    "example_en": "Tomorrow we'll get our proof.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Ziel",
+    "translation_en": "Goal",
+    "audio_url": "https://www.dwds.de/audio/001/das_Ziel.mp3",
+    "example_de": "Ziel höher!",
+    "example_en": "Aim higher.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Zirkus",
+    "translation_en": "Circus",
+    "audio_url": "",
+    "example_de": "Was für ein Zirkus!",
+    "example_en": "What a hassle!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Zitrone",
+    "translation_en": "Lemon",
+    "audio_url": "https://www.dwds.de/audio/013/die_Zitrone.mp3",
+    "example_de": "Die Zitrone ist sauer.",
+    "example_en": "The lemon is sour.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Zoo",
+    "translation_en": "Zoo",
+    "audio_url": "https://www.dwds.de/audio/005/der_Zoo.mp3",
+    "example_de": "Wo ist der Zoo?",
+    "example_en": "Where's the zoo?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/Zucker",
+    "translation_en": "Sugar",
+    "audio_url": "https://www.dwds.de/audio/003/der_Zucker.mp3",
+    "example_de": "Ist Zucker da?",
+    "example_en": "Is there any sugar?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/abschlie%C3%9Fen",
+    "translation_en": "finalize",
+    "audio_url": "https://www.dwds.de/audio/005/abschliessen.mp3",
+    "example_de": "Soll ich die Tür abschließen?",
+    "example_en": "Do you want me to lock the door?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/aktiv",
+    "translation_en": "active",
+    "audio_url": "https://www.dwds.de/audio/119/aktiv.mp3",
+    "example_de": "Sie ist aktiv.",
+    "example_en": "She is active.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/aktuell",
+    "translation_en": "current",
+    "audio_url": "https://www.dwds.de/audio/003/aktuell.mp3",
+    "example_de": "Ist dieses Photo aktuell?",
+    "example_en": "Is this a current photograph?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/als",
+    "translation_en": "as",
+    "audio_url": "https://www.dwds.de/audio/111/als.mp3",
+    "example_de": "Er tut so als ob.",
+    "example_en": "He's faking.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/anders",
+    "translation_en": "different",
+    "audio_url": "https://www.dwds.de/audio/001/anders.mp3",
+    "example_de": "Sag es anders.",
+    "example_en": "Say it in another way.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/ansehen",
+    "translation_en": "View",
+    "audio_url": "https://www.dwds.de/audio/003/ansehen.mp3",
+    "example_de": "Darf ich es mal ansehen?",
+    "example_en": "May I have a look at it?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/arm",
+    "translation_en": "poor",
+    "audio_url": "https://www.dwds.de/audio/002/arm.mp3",
+    "example_de": "Er ist arm.",
+    "example_en": "He is poor.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/au%C3%9Fer#1",
+    "translation_en": "except",
+    "audio_url": "https://www.dwds.de/audio/131/ausser.mp3",
+    "example_de": "Er war außer sich.",
+    "example_en": "He was outraged.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/au%C3%9Ferdem",
+    "translation_en": "also",
+    "audio_url": "https://www.dwds.de/audio/111/ausserdem_1.mp3",
+    "example_de": "Was wisst ihr außerdem?",
+    "example_en": "What else do you know?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/au%C3%9Ferhalb#2",
+    "translation_en": "outside",
+    "audio_url": "https://www.dwds.de/audio/001/ausserhalb.mp3",
+    "example_de": "Tom wird außerhalb sein.",
+    "example_en": "Tom must be out.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/auf%20jeden%20Fall",
+    "translation_en": "in any case",
+    "audio_url": "https://www.dwds.de/audio/126/auf_jeden_Fall.mp3",
+    "example_de": "Auf jeden Fall!",
+    "example_en": "Of course!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/auf%20keinen%20Fall",
+    "translation_en": "under no circumstances",
+    "audio_url": "https://www.dwds.de/audio/115/auf_keinen_Fall.mp3",
+    "example_de": "Auf keinen Fall lächeln!",
+    "example_en": "Make sure you don't smile.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/aufmachen",
+    "translation_en": "open",
+    "audio_url": "https://www.dwds.de/audio/009/aufmachen.mp3",
+    "example_de": "Kannst du es aufmachen?",
+    "example_en": "Can you open it?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/aufpassen",
+    "translation_en": "watch out",
+    "audio_url": "https://www.dwds.de/audio/006/aufpassen.mp3",
+    "example_de": "Bitte aufpassen!",
+    "example_en": "Attention please!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/aufr%C3%A4umen",
+    "translation_en": "tidy up",
+    "audio_url": "https://www.dwds.de/audio/014/aufraeumen.mp3",
+    "example_de": "Alles aufräumen!",
+    "example_en": "Clean everything up.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/aufregen",
+    "translation_en": "upset",
+    "audio_url": "https://www.dwds.de/audio/014/aufregen.mp3",
+    "example_de": "Ich wusste, dass du dich aufregen würdest!",
+    "example_en": "I knew you'd be mad.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/ausgeben",
+    "translation_en": "spend",
+    "audio_url": "https://www.dwds.de/audio/003/ausgeben.mp3",
+    "example_de": "Lass mich dir einen Drink ausgeben.",
+    "example_en": "Let me buy you a drink.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/ausgehen",
+    "translation_en": "go out",
+    "audio_url": "https://www.dwds.de/audio/004/ausgehen.mp3",
+    "example_de": "Lass uns ausgehen!",
+    "example_en": "Let's go out.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/auspacken",
+    "translation_en": "unpack",
+    "audio_url": "https://www.dwds.de/audio/019/auspacken.mp3",
+    "example_de": "Ich möchte auspacken.",
+    "example_en": "I'd like to unpack.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/ausruhen",
+    "translation_en": "rest",
+    "audio_url": "https://www.dwds.de/audio/012/ausruhen.mp3",
+    "example_de": "Du kannst ausruhen.",
+    "example_en": "You can rest.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/aussprechen",
+    "translation_en": "pronounce",
+    "audio_url": "https://www.dwds.de/audio/005/aussprechen.mp3",
+    "example_de": "Könnt ihr diese Wörter aussprechen?",
+    "example_en": "Can you pronounce these words?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/austauschen",
+    "translation_en": "exchange",
+    "audio_url": "https://www.dwds.de/audio/008/austauschen.mp3",
+    "example_de": "Möchten Sie Links austauschen?",
+    "example_en": "Would you like to exchange links?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/austragen",
+    "translation_en": "deliver",
+    "audio_url": "https://www.dwds.de/audio/009/austragen.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/backen#1",
+    "translation_en": "bake",
+    "audio_url": "https://www.dwds.de/audio/111/backen.mp3",
+    "example_de": "Was backen Sie?",
+    "example_en": "What are you baking?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/basteln",
+    "translation_en": "tinker",
+    "audio_url": "https://www.dwds.de/audio/008/basteln.mp3",
+    "example_de": "Mit einem Schuhkarton kann man eine Lochkamera basteln.",
+    "example_en": "You can build a pinhole camera with a shoe box.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/bauen#1",
+    "translation_en": "Build",
+    "audio_url": "https://www.dwds.de/audio/002/bauen.mp3",
+    "example_de": "Was bauen sie?",
+    "example_en": "What are they building?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/beantworten",
+    "translation_en": "answer",
+    "audio_url": "https://www.dwds.de/audio/004/beantworten.mp3",
+    "example_de": "Tom kann das beantworten.",
+    "example_en": "Tom can answer that.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/bedanken",
+    "translation_en": "thank you",
+    "audio_url": "https://www.dwds.de/audio/010/bedanken.mp3",
+    "example_de": "Ich möchte mich bedanken.",
+    "example_en": "I want to say thank you.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/beeilen",
+    "translation_en": "hurry",
+    "audio_url": "https://www.dwds.de/audio/014/beeilen.mp3",
+    "example_de": "Wir beeilen uns.",
+    "example_en": "We'll hurry.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/beenden",
+    "translation_en": "finish",
+    "audio_url": "https://www.dwds.de/audio/111/beenden.mp3",
+    "example_de": "Wir können es beenden.",
+    "example_en": "We can end it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/begr%C3%BCnden",
+    "translation_en": "justify",
+    "audio_url": "https://www.dwds.de/audio/003/begruenden.mp3",
+    "example_de": "Würdest du das begründen?",
+    "example_en": "Would you explain why?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/beliebt",
+    "translation_en": "popular",
+    "audio_url": "https://www.dwds.de/audio/003/beliebt.mp3",
+    "example_de": "Ist es beliebt?",
+    "example_en": "Is it popular?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/bequem",
+    "translation_en": "convenient",
+    "audio_url": "https://www.dwds.de/audio/003/bequem.mp3",
+    "example_de": "Es ist bequem.",
+    "example_en": "It's comfortable.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/ber%C3%BChmt",
+    "translation_en": "famous",
+    "audio_url": "https://www.dwds.de/audio/003/beruehmt.mp3",
+    "example_de": "Ich bin berühmt.",
+    "example_en": "I'm famous.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/beraten",
+    "translation_en": "advise",
+    "audio_url": "https://www.dwds.de/audio/002/beraten.mp3",
+    "example_de": "Tom hat mich beraten.",
+    "example_en": "Tom gave me advice.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/berichten",
+    "translation_en": "report",
+    "audio_url": "",
+    "example_de": "Es gibt nichts zu berichten.",
+    "example_en": "There's nothing to report.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/beschreiben",
+    "translation_en": "describe",
+    "audio_url": "https://www.dwds.de/audio/111/beschreiben.mp3",
+    "example_de": "Können Sie es beschreiben?",
+    "example_en": "Can you describe it?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/beschweren#2",
+    "translation_en": "complain",
+    "audio_url": "https://www.dwds.de/audio/007/beschweren.mp3",
+    "example_de": "Tom wird sich beschweren.",
+    "example_en": "Tom will complain.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/besonders",
+    "translation_en": "especially",
+    "audio_url": "https://www.dwds.de/audio/001/besonders.mp3",
+    "example_de": "Wir sind besonders.",
+    "example_en": "We're special.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/best%C3%A4tigen",
+    "translation_en": "confirm",
+    "audio_url": "https://www.dwds.de/audio/002/bestaetigen.mp3",
+    "example_de": "Ich kann das bestätigen.",
+    "example_en": "I can confirm that.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/bestehen",
+    "translation_en": "exist",
+    "audio_url": "https://www.dwds.de/audio/001/bestehen.mp3",
+    "example_de": "Es bestehen Bedingungen.",
+    "example_en": "There are conditions.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/besucht",
+    "translation_en": "visited",
+    "audio_url": "https://www.dwds.de/audio/002/besucht.mp3",
+    "example_de": "Wen besucht Tom?",
+    "example_en": "Who's Tom visiting?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/bew%C3%B6lkt",
+    "translation_en": "Cloudy",
+    "audio_url": "https://www.dwds.de/audio/124/bewoelkt.mp3",
+    "example_de": "Es ist bewölkt.",
+    "example_en": "It's cloudy.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/bewerben",
+    "translation_en": "apply",
+    "audio_url": "https://www.dwds.de/audio/004/bewerben.mp3",
+    "example_de": "Nur Frauen können sich bewerben.",
+    "example_en": "Only women may apply.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/bl%C3%B6d",
+    "translation_en": "stupid",
+    "audio_url": "https://www.dwds.de/audio/119/bloed.mp3",
+    "example_de": "Ich bin blöd.",
+    "example_en": "I'm stupid.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/bl%C3%B6de",
+    "translation_en": "stupid",
+    "audio_url": "https://www.dwds.de/audio/119/bloed.mp3",
+    "example_de": "Das ist eine blöde Idee.",
+    "example_en": "It's a stupid idea.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/blond",
+    "translation_en": "blond",
+    "audio_url": "https://www.dwds.de/audio/011/blond.mp3",
+    "example_de": "Er ist blond.",
+    "example_en": "He has blond hair.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/braten",
+    "translation_en": "fry",
+    "audio_url": "https://www.dwds.de/audio/012/braten.mp3",
+    "example_de": "Braten Sie mir ein Ei.",
+    "example_en": "Fry an egg for me.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/buchen",
+    "translation_en": "book",
+    "audio_url": "https://www.dwds.de/audio/007/buchen.mp3",
+    "example_de": "Ich muss ein Hotelzimmer buchen.",
+    "example_en": "I have to book a hotel room.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/bunt",
+    "translation_en": "colorful",
+    "audio_url": "https://www.dwds.de/audio/005/bunt.mp3",
+    "example_de": "Es wird mir zu bunt.",
+    "example_en": "I can't stand it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/chatten",
+    "translation_en": "chat",
+    "audio_url": "https://www.dwds.de/audio/101/chatten.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/d%C3%BCnn",
+    "translation_en": "thin",
+    "audio_url": "https://www.dwds.de/audio/005/duenn.mp3",
+    "example_de": "Bleib dünn.",
+    "example_en": "Stay thin.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/dabei",
+    "translation_en": "thereby",
+    "audio_url": "https://www.dwds.de/audio/001/dabei_1.mp3",
+    "example_de": "Bleib dabei!",
+    "example_en": "Stick to it!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/daf%C3%BCr",
+    "translation_en": "for this",
+    "audio_url": "https://www.dwds.de/audio/001/dafuer_1.mp3",
+    "example_de": "Danke dafür!",
+    "example_en": "Thanks for that.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/dagegen",
+    "translation_en": "on the other hand",
+    "audio_url": "https://www.dwds.de/audio/001/dagegen_1.mp3",
+    "example_de": "Was dagegen?",
+    "example_en": "Are there any objections?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/damals",
+    "translation_en": "then",
+    "audio_url": "https://www.dwds.de/audio/111/damals.mp3",
+    "example_de": "So war es damals.",
+    "example_en": "That's the way things were back then.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/dar%C3%BCber",
+    "translation_en": "about it",
+    "audio_url": "https://www.dwds.de/audio/001/darueber_1.mp3",
+    "example_de": "Frag Tom darüber.",
+    "example_en": "Ask Tom about it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/darauf",
+    "translation_en": "on it",
+    "audio_url": "https://www.dwds.de/audio/001/darauf_2.mp3",
+    "example_de": "Darauf zähle ich.",
+    "example_en": "I'm counting on it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/dass",
+    "translation_en": "that",
+    "audio_url": "https://www.dwds.de/audio/131/dass.mp3",
+    "example_de": "Gut, dass es schneit!",
+    "example_en": "It's good that it's snowing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/denken",
+    "translation_en": "think",
+    "audio_url": "https://www.dwds.de/audio/111/denken.mp3",
+    "example_de": "Wir denken ja.",
+    "example_en": "We think so.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/deshalb",
+    "translation_en": "therefore",
+    "audio_url": "https://www.dwds.de/audio/001/deshalb.mp3",
+    "example_de": "Deshalb kam Tom.",
+    "example_en": "That's why Tom came.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/deutlich",
+    "translation_en": "clear",
+    "audio_url": "https://www.dwds.de/audio/001/deutlich.mp3",
+    "example_de": "Sprich deutlich!",
+    "example_en": "Speak clearly.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/dick",
+    "translation_en": "thick",
+    "audio_url": "https://www.dwds.de/audio/005/dick.mp3",
+    "example_de": "Ich bin dick.",
+    "example_en": "I'm fat.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/direkt",
+    "translation_en": "direct",
+    "audio_url": "https://www.dwds.de/audio/001/direkt.mp3",
+    "example_de": "Ich bin direkt.",
+    "example_en": "I'm direct.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/diskutieren",
+    "translation_en": "discuss",
+    "audio_url": "https://www.dwds.de/audio/002/diskutieren.mp3",
+    "example_de": "Diskutieren wir’s aus!",
+    "example_en": "Let's hash it all out.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/doch#2",
+    "translation_en": "but",
+    "audio_url": "https://www.dwds.de/audio/001/doch.mp3",
+    "example_de": "Mach es doch!",
+    "example_en": "Just do it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/dorther",
+    "translation_en": "there",
+    "audio_url": "https://www.dwds.de/audio/028/dorther_1.mp3"
+  },
+  {
+    "url": "https://www.dwds.de/wb/dorthin",
+    "translation_en": "there",
+    "audio_url": "https://www.dwds.de/audio/004/dorthin_1.mp3",
+    "example_de": "Wirf es dorthin!",
+    "example_en": "Throw it there.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/dr%C3%BCben",
+    "translation_en": "over there",
+    "audio_url": "https://www.dwds.de/audio/003/drueben.mp3",
+    "example_de": "Es ist da drüben.",
+    "example_en": "It's just over there.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/dringend",
+    "translation_en": "urgent",
+    "audio_url": "https://www.dwds.de/audio/002/dringend.mp3",
+    "example_de": "Es ist dringend.",
+    "example_en": "It's urgent.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/drinnen",
+    "translation_en": "inside",
+    "audio_url": "https://www.dwds.de/audio/006/drinnen.mp3",
+    "example_de": "Ich bin drinnen.",
+    "example_en": "I'm inside.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/dumm",
+    "translation_en": "stupid",
+    "audio_url": "https://www.dwds.de/audio/003/dumm.mp3",
+    "example_de": "Er ist dumm.",
+    "example_en": "He is foolish.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/dunkel",
+    "translation_en": "dark",
+    "audio_url": "https://www.dwds.de/audio/005/dunkel.mp3",
+    "example_de": "Es ist dunkel.",
+    "example_en": "It's dark.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/echt",
+    "translation_en": "genuine",
+    "audio_url": "https://www.dwds.de/audio/003/echt.mp3",
+    "example_de": "Echt?",
+    "example_en": "Really?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/egal#1",
+    "translation_en": "no matter",
+    "audio_url": "https://www.dwds.de/audio/002/egal.mp3",
+    "example_de": "Egal.",
+    "example_en": "I don't care.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/eigen",
+    "translation_en": "own",
+    "audio_url": "https://www.dwds.de/audio/003/eigen.mp3",
+    "example_de": "Sie ist sehr eigen mit ihrem Essen.",
+    "example_en": "She is very particular about her food.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/eigentlich",
+    "translation_en": "actually",
+    "audio_url": "https://www.dwds.de/audio/001/eigentlich.mp3",
+    "example_de": "Wer bist du eigentlich?",
+    "example_en": "Who are you anyway?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/ein%20Mal",
+    "translation_en": "one time",
+    "audio_url": "https://www.dwds.de/audio/131/ein_Mal.mp3",
+    "example_de": "Ich war ein Mal verheiratet.",
+    "example_en": "I was married once.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/einige",
+    "translation_en": "some",
+    "audio_url": "https://www.dwds.de/audio/001/einige.mp3",
+    "example_de": "Einige tanzten.",
+    "example_en": "Some of them were dancing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/einpacken",
+    "translation_en": "pack",
+    "audio_url": "https://www.dwds.de/audio/016/einpacken.mp3",
+    "example_de": "Bitte einpacken.",
+    "example_en": "Please wrap it up.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/eintragen",
+    "translation_en": "enter",
+    "audio_url": "https://www.dwds.de/audio/009/eintragen.mp3",
+    "example_de": "Wollen Sie bitte Ihren Namen hier eintragen.",
+    "example_en": "Please write down your name here.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/einverstanden",
+    "translation_en": "agree",
+    "audio_url": "https://www.dwds.de/audio/004/einverstanden.mp3",
+    "example_de": "Einverstanden?",
+    "example_en": "Got it?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/einzeln",
+    "translation_en": "single",
+    "audio_url": "https://www.dwds.de/audio/003/einzeln.mp3",
+    "example_de": "Maria nahm die Eier einzeln heraus.",
+    "example_en": "Mary took out the eggs one by one.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/einziehen",
+    "translation_en": "move in",
+    "audio_url": "https://www.dwds.de/audio/005/einziehen.mp3",
+    "example_de": "Wir werden einziehen.",
+    "example_en": "We'll move in.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/endlich",
+    "translation_en": "finally",
+    "audio_url": "https://www.dwds.de/audio/001/endlich.mp3",
+    "example_de": "Endlich kam er.",
+    "example_en": "At last, he came.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/eng",
+    "translation_en": "narrow",
+    "audio_url": "https://www.dwds.de/audio/002/eng.mp3",
+    "example_de": "Es is zu eng.",
+    "example_en": "It's too narrow.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/erinnern",
+    "translation_en": "remember",
+    "audio_url": "https://www.dwds.de/audio/002/erinnern.mp3",
+    "example_de": "Wir erinnern uns.",
+    "example_en": "We remember.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/erreichen",
+    "translation_en": "reach",
+    "audio_url": "https://www.dwds.de/audio/001/erreichen.mp3",
+    "example_de": "Ich muss Tom erreichen.",
+    "example_en": "I have to get to Tom.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/erst",
+    "translation_en": "first",
+    "audio_url": "https://www.dwds.de/audio/001/erst.mp3",
+    "example_de": "Tom war erst 13.",
+    "example_en": "Tom was only thirteen.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/etwas",
+    "translation_en": "something",
+    "audio_url": "https://www.dwds.de/audio/004/etwas.mp3",
+    "example_de": "Etwas brennt.",
+    "example_en": "Something's burning.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/f%C3%BChlen",
+    "translation_en": "feel",
+    "audio_url": "https://www.dwds.de/audio/002/fuehlen.mp3",
+    "example_de": "Ich kann es fühlen.",
+    "example_en": "I can sense it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/fallen",
+    "translation_en": "fall",
+    "audio_url": "https://www.dwds.de/audio/001/fallen.mp3",
+    "example_de": "Fallen lassen!",
+    "example_en": "Drop it!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/fantastisch",
+    "translation_en": "fantastic",
+    "audio_url": "https://www.dwds.de/audio/139/fantastisch.mp3",
+    "example_de": "Fantastisch!",
+    "example_en": "Awesome!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/fast",
+    "translation_en": "almost",
+    "audio_url": "https://www.dwds.de/audio/001/fast.mp3",
+    "example_de": "Es ist fast neu.",
+    "example_en": "It's almost new.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/faul",
+    "translation_en": "lazy",
+    "audio_url": "https://www.dwds.de/audio/008/foul.mp3",
+    "example_de": "Tom ist faul.",
+    "example_en": "Tom is lazy.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/fett",
+    "translation_en": "bold",
+    "audio_url": "",
+    "example_de": "Ich bin fett.",
+    "example_en": "I'm fat.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/fit",
+    "translation_en": "fit",
+    "audio_url": "https://www.dwds.de/audio/005/fit.mp3",
+    "example_de": "Du bist nicht fit.",
+    "example_en": "You're not fit.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/flei%C3%9Fig",
+    "translation_en": "diligent",
+    "audio_url": "https://www.dwds.de/audio/006/fleissig.mp3",
+    "example_de": "Tom ist fleißig.",
+    "example_en": "Tom is diligent.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/fotografieren",
+    "translation_en": "photograph",
+    "audio_url": "https://www.dwds.de/audio/120/fotografieren.mp3",
+    "example_de": "Darf man fotografieren?",
+    "example_en": "May I take photos?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/fr%C3%BCh",
+    "translation_en": "early",
+    "audio_url": "https://www.dwds.de/audio/001/frueh.mp3",
+    "example_de": "Es ist früh.",
+    "example_en": "It's early.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/freiwillig",
+    "translation_en": "voluntary",
+    "audio_url": "https://www.dwds.de/audio/112/freiwillig.mp3",
+    "example_de": "Das ist freiwillig.",
+    "example_en": "It's optional.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/freundlich",
+    "translation_en": "friendly",
+    "audio_url": "https://www.dwds.de/audio/004/freundlich.mp3",
+    "example_de": "Frag freundlich.",
+    "example_en": "Ask nicely.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/frisch",
+    "translation_en": "fresh",
+    "audio_url": "https://www.dwds.de/audio/004/frisch.mp3",
+    "example_de": "Alles ist frisch.",
+    "example_en": "Everything is fresh.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/froh",
+    "translation_en": "happy",
+    "audio_url": "https://www.dwds.de/audio/002/froh.mp3",
+    "example_de": "Sei froh.",
+    "example_en": "Consider yourself lucky.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/furchtbar",
+    "translation_en": "terrible",
+    "audio_url": "https://www.dwds.de/audio/113/furchtbar.mp3",
+    "example_de": "Es ist furchtbar.",
+    "example_en": "It's awful.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/ganz",
+    "translation_en": "whole",
+    "audio_url": "https://www.dwds.de/audio/001/ganz.mp3",
+    "example_de": "Ganz toll!",
+    "example_en": "Fantastic!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/gef%C3%A4hrlich",
+    "translation_en": "dangerous",
+    "audio_url": "https://www.dwds.de/audio/002/gefaehrlich.mp3",
+    "example_de": "Ist es gefährlich?",
+    "example_en": "Is it dangerous?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/gegen%C3%BCber#1",
+    "translation_en": "opposite",
+    "audio_url": "https://www.dwds.de/audio/004/gegenueber.mp3",
+    "example_de": "Er wohnt gegenüber.",
+    "example_en": "He lives across the street.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/gegen%C3%BCber#2",
+    "translation_en": "opposite",
+    "audio_url": "https://www.dwds.de/audio/004/gegenueber.mp3",
+    "example_de": "Er wohnt gegenüber.",
+    "example_en": "He lives across the street.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/genau",
+    "translation_en": "exactly",
+    "audio_url": "https://www.dwds.de/audio/001/genau.mp3",
+    "example_de": "Ganz genau!",
+    "example_en": "You said it!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/genug",
+    "translation_en": "enough",
+    "audio_url": "https://www.dwds.de/audio/001/genug.mp3",
+    "example_de": "Schlaf genug.",
+    "example_en": "Get enough sleep.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/gesund",
+    "translation_en": "healthy",
+    "audio_url": "https://www.dwds.de/audio/003/gesund.mp3",
+    "example_de": "Esst gesund!",
+    "example_en": "Eat healthily.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/h%C3%A4ngen#1",
+    "translation_en": "hang",
+    "audio_url": "https://www.dwds.de/audio/002/haengen.mp3",
+    "example_de": "Wir hängen nur so rum.",
+    "example_en": "We're just hanging out.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/h%C3%A4ngen#2",
+    "translation_en": "hang",
+    "audio_url": "https://www.dwds.de/audio/002/haengen.mp3",
+    "example_de": "Wir hängen nur so rum.",
+    "example_en": "We're just hanging out.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/h%C3%A4sslich",
+    "translation_en": "ugly",
+    "audio_url": "https://www.dwds.de/audio/009/haesslich.mp3",
+    "example_de": "Ich bin hässlich.",
+    "example_en": "I'm ugly.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/hart#1",
+    "translation_en": "hard",
+    "audio_url": "https://www.dwds.de/audio/002/hart.mp3",
+    "example_de": "Das ist hart.",
+    "example_en": "It's hard.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/hei%C3%9F",
+    "translation_en": "hot",
+    "audio_url": "https://www.dwds.de/audio/003/heiss.mp3",
+    "example_de": "Es ist heiß.",
+    "example_en": "It's hot.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/her",
+    "translation_en": "here",
+    "audio_url": "https://www.dwds.de/audio/001/her.mp3",
+    "example_de": "Zeig her.",
+    "example_en": "Show me.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/her-",
+    "translation_en": "her-",
+    "audio_url": "",
+    "example_de": "Zeig her.",
+    "example_en": "Show me.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/heraus",
+    "translation_en": "out",
+    "audio_url": "https://www.dwds.de/audio/120/heraus.mp3",
+    "example_de": "Lass uns heraus!",
+    "example_en": "Let us out.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/herein",
+    "translation_en": "in",
+    "audio_url": "https://www.dwds.de/audio/120/herein.mp3",
+    "example_de": "Herein!",
+    "example_en": "Come in.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/herstellen#2",
+    "translation_en": "produce",
+    "audio_url": "https://www.dwds.de/audio/003/herstellen.mp3",
+    "example_de": "Man kann keine Ziegelsteine ohne Stroh herstellen.",
+    "example_en": "Bricks can't be made without straw.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/herunterladen",
+    "translation_en": "download",
+    "audio_url": "https://www.dwds.de/audio/120/herunterladen.mp3",
+    "example_de": "Wie kann ich die Datei herunterladen?",
+    "example_en": "How do I download the file?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/hin",
+    "translation_en": "towards",
+    "audio_url": "https://www.dwds.de/audio/001/hin.mp3",
+    "example_de": "Mach hin!",
+    "example_en": "Hurry up.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/hin-",
+    "translation_en": "there-",
+    "audio_url": "https://www.dwds.de/audio/001/hin.mp3",
+    "example_de": "Mach hin!",
+    "example_en": "Hurry up.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/hinter#1",
+    "translation_en": "behind",
+    "audio_url": "https://www.dwds.de/audio/001/hinter.mp3",
+    "example_de": "Schau hinter dich.",
+    "example_en": "Look back.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/hoffen",
+    "translation_en": "hope",
+    "audio_url": "https://www.dwds.de/audio/002/hoffen.mp3",
+    "example_de": "Das will ich hoffen!",
+    "example_en": "I really hope so.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/hoffentlich",
+    "translation_en": "hopefully",
+    "audio_url": "https://www.dwds.de/audio/005/hoffentlich.mp3",
+    "example_de": "Hoffentlich singt Tom nicht.",
+    "example_en": "I hope Tom doesn't sing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/husten",
+    "translation_en": "cough",
+    "audio_url": "https://www.dwds.de/audio/012/husten.mp3",
+    "example_de": "Tom hat Husten.",
+    "example_en": "Tom has a cough.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/informieren",
+    "translation_en": "inform",
+    "audio_url": "https://www.dwds.de/audio/002/informieren.mp3",
+    "example_de": "Ich werde Tom informieren.",
+    "example_en": "I'll inform Tom.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/intelligent",
+    "translation_en": "intelligent",
+    "audio_url": "https://www.dwds.de/audio/008/intelligent.mp3",
+    "example_de": "Er ist intelligent.",
+    "example_en": "He's intelligent.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/interessieren",
+    "translation_en": "interest",
+    "audio_url": "https://www.dwds.de/audio/004/interessieren.mp3",
+    "example_de": "Wen würde das interessieren?",
+    "example_en": "Who would care?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/jemand",
+    "translation_en": "someone",
+    "audio_url": "https://www.dwds.de/audio/001/jemand.mp3",
+    "example_de": "Kam jemand?",
+    "example_en": "Did anyone come?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/joggen",
+    "translation_en": "jog",
+    "audio_url": "https://www.dwds.de/audio/102/joggen.mp3",
+    "example_de": "Ich gehe joggen.",
+    "example_en": "I go jogging.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/k%C3%BChl",
+    "translation_en": "cool",
+    "audio_url": "https://www.dwds.de/audio/005/kuehl.mp3",
+    "example_de": "Es ist kühl.",
+    "example_en": "It's cool.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/k%C3%BCndigen",
+    "translation_en": "cancel",
+    "audio_url": "https://www.dwds.de/audio/006/kuendigen.mp3",
+    "example_de": "Ich will kündigen.",
+    "example_en": "I want to quit.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/kalt",
+    "translation_en": "cold",
+    "audio_url": "https://www.dwds.de/audio/004/kalt.mp3",
+    "example_de": "Es ist kalt.",
+    "example_en": "It's cold.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/klappen",
+    "translation_en": "fold",
+    "audio_url": "https://www.dwds.de/audio/009/klappen.mp3",
+    "example_de": "Dies wird klappen.",
+    "example_en": "This'll work.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/klug",
+    "translation_en": "smart",
+    "audio_url": "https://www.dwds.de/audio/005/klug.mp3",
+    "example_de": "Wie klug!",
+    "example_en": "How clever!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/komisch",
+    "translation_en": "funny",
+    "audio_url": "https://www.dwds.de/audio/003/komisch.mp3",
+    "example_de": "Komisch, oder?",
+    "example_en": "That's weird, isn't it?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/kontrollieren",
+    "translation_en": "control",
+    "audio_url": "https://www.dwds.de/audio/004/kontrollieren.mp3",
+    "example_de": "Kontrollieren Sie's einfach.",
+    "example_en": "Just check it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/kostenlos",
+    "translation_en": "free of charge",
+    "audio_url": "https://www.dwds.de/audio/004/kostenlos.mp3",
+    "example_de": "Ist es kostenlos?",
+    "example_en": "Is it free?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/l%C3%BCgen",
+    "translation_en": "lie",
+    "audio_url": "https://www.dwds.de/audio/009/luegen.mp3",
+    "example_de": "Sie lügen!",
+    "example_en": "You're lying!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/langweilig",
+    "translation_en": "boring",
+    "audio_url": "https://www.dwds.de/audio/003/langweilig.mp3",
+    "example_de": "Wie langweilig!",
+    "example_en": "How boring!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/lassen",
+    "translation_en": "leave",
+    "audio_url": "https://www.dwds.de/audio/112/lassen.mp3",
+    "example_de": "Fallen lassen!",
+    "example_en": "Drop it!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/leer",
+    "translation_en": "Empty",
+    "audio_url": "https://www.dwds.de/audio/002/leer.mp3",
+    "example_de": "Es war leer.",
+    "example_en": "It was empty.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/leidtun",
+    "translation_en": "feel sorry for",
+    "audio_url": "https://www.dwds.de/audio/110/leidtun.mp3",
+    "example_de": "Das wird dir leidtun!",
+    "example_en": "You'll be sorry!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/leihen",
+    "translation_en": "borrow",
+    "audio_url": "https://www.dwds.de/audio/011/leihen.mp3",
+    "example_de": "Kannst du mir das leihen?",
+    "example_en": "Can you lend me that?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/liefern",
+    "translation_en": "deliver",
+    "audio_url": "https://www.dwds.de/audio/112/liefern.mp3",
+    "example_de": "Kannst du das liefern?",
+    "example_en": "Can you deliver that?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/mal",
+    "translation_en": "times",
+    "audio_url": "https://www.dwds.de/audio/131/mal.mp3",
+    "example_de": "Fühl mal.",
+    "example_en": "Feel this.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/malen",
+    "translation_en": "paint",
+    "audio_url": "https://www.dwds.de/audio/019/mahlen.mp3",
+    "example_de": "Ich muss es malen.",
+    "example_en": "I have to paint it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/manch",
+    "translation_en": "some",
+    "audio_url": "https://www.dwds.de/audio/003/manch.mp3",
+    "example_de": "Warum raucht manch einer noch immer?",
+    "example_en": "Why do people still smoke?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/manchmal",
+    "translation_en": "sometimes",
+    "audio_url": "https://www.dwds.de/audio/001/manchmal.mp3",
+    "example_de": "Ich skate manchmal.",
+    "example_en": "I sometimes skate.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/meinen",
+    "translation_en": "mine",
+    "audio_url": "https://www.dwds.de/audio/001/meinen.mp3",
+    "example_de": "Nimm meinen.",
+    "example_en": "Take mine.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/meistens",
+    "translation_en": "mostly",
+    "audio_url": "https://www.dwds.de/audio/004/meistens.mp3",
+    "example_de": "Tom ist meistens hier.",
+    "example_en": "Tom is here most of the time.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/merken",
+    "translation_en": "memorize",
+    "audio_url": "https://www.dwds.de/audio/003/merken.mp3",
+    "example_de": "Sie werden es merken.",
+    "example_en": "They'll know.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/mindestens",
+    "translation_en": "at least",
+    "audio_url": "https://www.dwds.de/audio/112/mindestens.mp3",
+    "example_de": "Schreib mindestens 250 Wörter.",
+    "example_en": "Write at least 250 words.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/modern#1",
+    "translation_en": "modern",
+    "audio_url": "https://www.dwds.de/audio/005/modern_1.mp3",
+    "example_de": "Diese Stadt ist modern.",
+    "example_en": "This city is modern.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/n%C3%BCtzlich",
+    "translation_en": "useful",
+    "audio_url": "https://www.dwds.de/audio/003/nuetzlich.mp3",
+    "example_de": "War es nützlich?",
+    "example_en": "Was it useful?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/nass",
+    "translation_en": "wet",
+    "audio_url": "https://www.dwds.de/audio/009/nass.mp3",
+    "example_de": "Ich bin nass.",
+    "example_en": "I'm wet.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/nat%C3%BCrlich",
+    "translation_en": "natural",
+    "audio_url": "https://www.dwds.de/audio/001/natuerlich.mp3",
+    "example_de": "Natürlich!",
+    "example_en": "Of course!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/nebelig",
+    "translation_en": "foggy",
+    "audio_url": "https://www.dwds.de/audio/105/neblig.mp3",
+    "example_de": "Es war sehr nebelig.",
+    "example_en": "It was very misty.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/neben",
+    "translation_en": "next to",
+    "audio_url": "https://www.dwds.de/audio/001/neben.mp3",
+    "example_de": "Er saß neben mir.",
+    "example_en": "He sat next to me.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/nebenan",
+    "translation_en": "next door",
+    "audio_url": "https://www.dwds.de/audio/005/nebenan.mp3",
+    "example_de": "Er wohnt nebenan.",
+    "example_en": "He lives next door to us.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/neblig",
+    "translation_en": "foggy",
+    "audio_url": "https://www.dwds.de/audio/105/neblig.mp3",
+    "example_de": "Es ist neblig.",
+    "example_en": "It's foggy.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/nennen",
+    "translation_en": "name",
+    "audio_url": "https://www.dwds.de/audio/001/nennen.mp3",
+    "example_de": "Wir nennen ihn Tom.",
+    "example_en": "We call him Tom.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/nerv%C3%B6s",
+    "translation_en": "nervous",
+    "audio_url": "https://www.dwds.de/audio/005/nervoes.mp3",
+    "example_de": "Ich bin nervös.",
+    "example_en": "I'm nervous.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/nett",
+    "translation_en": "nice",
+    "audio_url": "https://www.dwds.de/audio/005/nett.mp3",
+    "example_de": "Sei nett!",
+    "example_en": "Be kind.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/niemand",
+    "translation_en": "nobody",
+    "audio_url": "https://www.dwds.de/audio/001/niemand.mp3",
+    "example_de": "Niemand kam.",
+    "example_en": "No one came.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/nirgends",
+    "translation_en": "nowhere",
+    "audio_url": "https://www.dwds.de/audio/131/nirgends.mp3",
+    "example_de": "Ich kann nirgends hin.",
+    "example_en": "I've got nowhere to go.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/notieren",
+    "translation_en": "note",
+    "audio_url": "https://www.dwds.de/audio/009/notieren.mp3",
+    "example_de": "Ich hätte alle Namen notieren sollen.",
+    "example_en": "I should've written down everybody's names.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/notwendig",
+    "translation_en": "necessary",
+    "audio_url": "https://www.dwds.de/audio/001/notwendig.mp3",
+    "example_de": "Es ist notwendig.",
+    "example_en": "It is necessary.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/offen",
+    "translation_en": "open",
+    "audio_url": "https://www.dwds.de/audio/001/offen.mp3",
+    "example_de": "Sag es mir offen!",
+    "example_en": "Tell me frankly.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/online",
+    "translation_en": "online",
+    "audio_url": "https://www.dwds.de/audio/101/online.mp3",
+    "example_de": "Ich bin online.",
+    "example_en": "I am online.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/organisieren",
+    "translation_en": "organize",
+    "audio_url": "https://www.dwds.de/audio/004/organisieren.mp3",
+    "example_de": "Ich möchte, dass Sie das Treffen organisieren.",
+    "example_en": "I want you to arrange a meeting.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/paar",
+    "translation_en": "pair",
+    "audio_url": "https://www.dwds.de/audio/120/paar.mp3",
+    "example_de": "Gib mir ein paar.",
+    "example_en": "Give me a few.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/packen",
+    "translation_en": "pack",
+    "audio_url": "https://www.dwds.de/audio/017/packen.mp3",
+    "example_de": "Packen wir’s an!",
+    "example_en": "Let's do it!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/parken",
+    "translation_en": "park",
+    "audio_url": "https://www.dwds.de/audio/120/parken.mp3",
+    "example_de": "Wo parken Sie?",
+    "example_en": "Where do you park?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/passen",
+    "translation_en": "fit",
+    "audio_url": "https://www.dwds.de/audio/002/passen.mp3",
+    "example_de": "Passen Sie auch auf?",
+    "example_en": "Are you paying attention?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/passieren#2",
+    "translation_en": "pass",
+    "audio_url": "https://www.dwds.de/audio/002/passieren.mp3",
+    "example_de": "Was wird passieren?",
+    "example_en": "What'll happen?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/pl%C3%B6tzlich",
+    "translation_en": "suddenly",
+    "audio_url": "https://www.dwds.de/audio/001/ploetzlich.mp3",
+    "example_de": "Ich bremste plötzlich.",
+    "example_en": "I braked suddenly.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/planen",
+    "translation_en": "plan",
+    "audio_url": "https://www.dwds.de/audio/004/planen.mp3",
+    "example_de": "Was planen sie?",
+    "example_en": "What're they planning?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/pr%C3%BCfen",
+    "translation_en": "check",
+    "audio_url": "https://www.dwds.de/audio/002/pruefen.mp3",
+    "example_de": "Tom wird es prüfen.",
+    "example_en": "Tom will check it out.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/praktisch",
+    "translation_en": "practical",
+    "audio_url": "https://www.dwds.de/audio/002/praktisch.mp3",
+    "example_de": "Es war praktisch.",
+    "example_en": "It was convenient.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/preiswert",
+    "translation_en": "inexpensive",
+    "audio_url": "https://www.dwds.de/audio/010/preiswert.mp3",
+    "example_de": "Dieses Kleid ist preiswert.",
+    "example_en": "This dress is cheap.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/privat",
+    "translation_en": "private",
+    "audio_url": "https://www.dwds.de/audio/004/privat.mp3",
+    "example_de": "Kann ich mit dir privat sprechen?",
+    "example_en": "Can I speak to you in private?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/pro#1",
+    "translation_en": "per",
+    "audio_url": "https://www.dwds.de/audio/001/pro.mp3",
+    "example_de": "Ich bade einmal pro Tag.",
+    "example_en": "I bathe once a day.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/probieren",
+    "translation_en": "try",
+    "audio_url": "https://www.dwds.de/audio/008/probieren.mp3",
+    "example_de": "Lass es uns probieren!",
+    "example_en": "Let's try!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/putzen",
+    "translation_en": "clean",
+    "audio_url": "https://www.dwds.de/audio/009/putzen.mp3",
+    "example_de": "Putzen Sie Ihre Zähne.",
+    "example_en": "Brush your teeth.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/raten#1",
+    "translation_en": "guess",
+    "audio_url": "https://www.dwds.de/audio/005/raten.mp3",
+    "example_de": "Raten Sie mal!",
+    "example_en": "Make a guess.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/raten#2",
+    "translation_en": "guess",
+    "audio_url": "https://www.dwds.de/audio/005/raten.mp3",
+    "example_de": "Raten Sie mal!",
+    "example_en": "Make a guess.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/raus",
+    "translation_en": "out",
+    "audio_url": "https://www.dwds.de/audio/031/raus.mp3",
+    "example_de": "Raus!",
+    "example_en": "Get out!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/rechnen",
+    "translation_en": "calculate",
+    "audio_url": "https://www.dwds.de/audio/001/rechnen.mp3",
+    "example_de": "Tom mag Rechnen.",
+    "example_en": "Tom likes arithmetic.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/recht#2",
+    "translation_en": "right",
+    "audio_url": "https://www.dwds.de/audio/001/recht.mp3",
+    "example_de": "Hat er recht?",
+    "example_en": "Is he right?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/reden",
+    "translation_en": "talk",
+    "audio_url": "https://www.dwds.de/audio/001/reden.mp3",
+    "example_de": "Alle reden.",
+    "example_en": "Everybody's talking.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/reich",
+    "translation_en": "rich",
+    "audio_url": "https://www.dwds.de/audio/001/reich.mp3",
+    "example_de": "Er ist reich.",
+    "example_en": "He's rich.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/rein#2",
+    "translation_en": "pure",
+    "audio_url": "https://www.dwds.de/audio/001/rein.mp3",
+    "example_de": "Geh rein!",
+    "example_en": "Go inside.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/reiten",
+    "translation_en": "ride",
+    "audio_url": "",
+    "example_de": "Er kann reiten.",
+    "example_en": "He can ride a horse.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/renovieren",
+    "translation_en": "renovate",
+    "audio_url": "https://www.dwds.de/audio/011/renovieren.mp3",
+    "example_de": "Es ist notwendig, alle Zimmer zu renovieren.",
+    "example_en": "All the rooms need renovating.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/reservieren",
+    "translation_en": "reserve",
+    "audio_url": "https://www.dwds.de/audio/012/reservieren.mp3",
+    "example_de": "Hast du reservieren lassen?",
+    "example_en": "Did you make a reservation?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/romantisch",
+    "translation_en": "romantic",
+    "audio_url": "https://www.dwds.de/audio/009/romantisch.mp3",
+    "example_de": "Wie romantisch!",
+    "example_en": "How romantic!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/rufen",
+    "translation_en": "call",
+    "audio_url": "https://www.dwds.de/audio/004/rufen.mp3",
+    "example_de": "Rufen wir an.",
+    "example_en": "Let's make a phone call.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/rund",
+    "translation_en": "round",
+    "audio_url": "https://www.dwds.de/audio/002/rund.mp3",
+    "example_de": "Bälle sind rund.",
+    "example_en": "Balls are round.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/s%C3%BC%C3%9F",
+    "translation_en": "sweet",
+    "audio_url": "https://www.dwds.de/audio/009/suess.mp3",
+    "example_de": "Wie süß!",
+    "example_en": "How cute!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/sammeln",
+    "translation_en": "Collect",
+    "audio_url": "https://www.dwds.de/audio/004/sammeln.mp3",
+    "example_de": "Sie sammeln Nüsse.",
+    "example_en": "They are gathering nuts.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/sauber",
+    "translation_en": "clean",
+    "audio_url": "https://www.dwds.de/audio/003/sauber.mp3",
+    "example_de": "Es ist sauber.",
+    "example_en": "It's clean.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/sauer",
+    "translation_en": "sour",
+    "audio_url": "https://www.dwds.de/audio/005/sauer.mp3",
+    "example_de": "Ich bin sauer.",
+    "example_en": "I'm mad.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/sch%C3%A4dlich",
+    "translation_en": "harmful",
+    "audio_url": "https://www.dwds.de/audio/006/schaedlich.mp3",
+    "example_de": "Ist Fingerknacken schädlich?",
+    "example_en": "Is cracking your knuckles bad for you?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schade",
+    "translation_en": "a pity",
+    "audio_url": "https://www.dwds.de/audio/003/schade.mp3",
+    "example_de": "Schade.",
+    "example_en": "It's a pity.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schaffen",
+    "translation_en": "create",
+    "audio_url": "https://www.dwds.de/audio/003/schaffen.mp3",
+    "example_de": "Wir schaffen das!",
+    "example_en": "We can do it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/scharf",
+    "translation_en": "hot",
+    "audio_url": "https://www.dwds.de/audio/002/scharf.mp3",
+    "example_de": "Tom war scharf.",
+    "example_en": "Tom was hot.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schenken",
+    "translation_en": "give as a present",
+    "audio_url": "https://www.dwds.de/audio/003/schenken.mp3",
+    "example_de": "Schenken Sie gerne?",
+    "example_en": "Do you like to give gifts?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schimpfen",
+    "translation_en": "scold",
+    "audio_url": "https://www.dwds.de/audio/009/schimpfen.mp3",
+    "example_de": "Ich werde mit ihm schimpfen.",
+    "example_en": "I'll scold him.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schlimm",
+    "translation_en": "bad",
+    "audio_url": "https://www.dwds.de/audio/004/schlimm.mp3",
+    "example_de": "Ist es schlimm?",
+    "example_en": "Is it bad?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schmutzig",
+    "translation_en": "dirty",
+    "audio_url": "https://www.dwds.de/audio/010/schmutzig.mp3",
+    "example_de": "Tom ist schmutzig.",
+    "example_en": "Tom's filthy.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schneiden",
+    "translation_en": "cut",
+    "audio_url": "https://www.dwds.de/audio/006/schneiden.mp3",
+    "example_de": "Das Brot ganz dünn schneiden!",
+    "example_en": "Slice the bread very thinly.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schneien",
+    "translation_en": "snow",
+    "audio_url": "https://www.dwds.de/audio/023/schneien.mp3",
+    "example_de": "Wird es schneien?",
+    "example_en": "Is it going to snow?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schrecklich",
+    "translation_en": "terrible",
+    "audio_url": "https://www.dwds.de/audio/005/schrecklich.mp3",
+    "example_de": "Schrecklich!",
+    "example_en": "How awful!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schriftlich",
+    "translation_en": "In writing",
+    "audio_url": "https://www.dwds.de/audio/004/schriftlich.mp3",
+    "example_de": "Gib mir das schriftlich.",
+    "example_en": "Put that in writing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schwach",
+    "translation_en": "weak",
+    "audio_url": "https://www.dwds.de/audio/004/schwach.mp3",
+    "example_de": "Ich bin schwach.",
+    "example_en": "I'm weak.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schwanger",
+    "translation_en": "Pregnant",
+    "audio_url": "https://www.dwds.de/audio/007/schwanger.mp3",
+    "example_de": "Ich bin schwanger.",
+    "example_en": "I'm pregnant.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/schwierig",
+    "translation_en": "difficult",
+    "audio_url": "https://www.dwds.de/audio/002/schwierig.mp3",
+    "example_de": "Es ist schwierig.",
+    "example_en": "It's difficult.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/selbst#1",
+    "translation_en": "itself",
+    "audio_url": "https://www.dwds.de/audio/112/selbst.mp3",
+    "example_de": "Tu es selbst!",
+    "example_en": "Do it yourself.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/setzen",
+    "translation_en": "set",
+    "audio_url": "https://www.dwds.de/audio/112/setzen.mp3",
+    "example_de": "Setzen wir uns!",
+    "example_en": "Let's sit down.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/singen",
+    "translation_en": "sing",
+    "audio_url": "https://www.dwds.de/audio/004/singen.mp3",
+    "example_de": "Alle singen.",
+    "example_en": "Everyone is singing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/sogar",
+    "translation_en": "even",
+    "audio_url": "https://www.dwds.de/audio/001/sogar.mp3",
+    "example_de": "Sogar Tom grinste.",
+    "example_en": "Even Tom grinned.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/sonnig",
+    "translation_en": "sunny",
+    "audio_url": "https://www.dwds.de/audio/005/sonnig.mp3",
+    "example_de": "Heute ist es sonnig.",
+    "example_en": "It's sunny today.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/sonst",
+    "translation_en": "otherwise",
+    "audio_url": "https://www.dwds.de/audio/120/sonst.mp3",
+    "example_de": "Sonst noch was?",
+    "example_en": "Anything else?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/spannend",
+    "translation_en": "exciting",
+    "audio_url": "https://www.dwds.de/audio/003/spannend.mp3",
+    "example_de": "Das Spiel wurde spannend.",
+    "example_en": "The game became exciting.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/sparen",
+    "translation_en": "save",
+    "audio_url": "https://www.dwds.de/audio/002/sparen.mp3",
+    "example_de": "Tom muß sparen.",
+    "example_en": "Tom needs to save money.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/spazieren",
+    "translation_en": "walk",
+    "audio_url": "https://www.dwds.de/audio/007/spazieren.mp3",
+    "example_de": "Geh spazieren!",
+    "example_en": "Take a walk.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/sportlich",
+    "translation_en": "sporty",
+    "audio_url": "https://www.dwds.de/audio/003/sportlich.mp3",
+    "example_de": "Bist du sportlich?",
+    "example_en": "Are you athletic?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/st%C3%B6ren",
+    "translation_en": "disturb",
+    "audio_url": "https://www.dwds.de/audio/004/stoeren.mp3",
+    "example_de": "Wir stören.",
+    "example_en": "We're interfering.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/stark",
+    "translation_en": "strong",
+    "audio_url": "https://www.dwds.de/audio/120/stark.mp3",
+    "example_de": "Bleib stark!",
+    "example_en": "Stay strong.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/stattfinden",
+    "translation_en": "take place",
+    "audio_url": "https://www.dwds.de/audio/002/stattfinden.mp3",
+    "example_de": "Wann wird die Hochzeit stattfinden?",
+    "example_en": "When's the wedding?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/sterben",
+    "translation_en": "die",
+    "audio_url": "https://www.dwds.de/audio/002/sterben.mp3",
+    "example_de": "Wir sterben.",
+    "example_en": "We're dying.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/streiten",
+    "translation_en": "argue",
+    "audio_url": "https://www.dwds.de/audio/120/streiten.mp3",
+    "example_de": "Sie streiten.",
+    "example_en": "They're arguing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/streng",
+    "translation_en": "strict",
+    "audio_url": "https://www.dwds.de/audio/002/streng.mp3",
+    "example_de": "Tom ist streng.",
+    "example_en": "Tom's strict.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/stressig",
+    "translation_en": "stressful",
+    "audio_url": "https://www.dwds.de/audio/094/stressig.mp3",
+    "example_de": "Es war stressig.",
+    "example_en": "It was stressful.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/super",
+    "translation_en": "super",
+    "audio_url": "https://www.dwds.de/audio/100/super.mp3",
+    "example_de": "Er war super.",
+    "example_en": "He was great.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/surfen",
+    "translation_en": "surf",
+    "audio_url": "https://www.dwds.de/audio/101/surfen.mp3",
+    "example_de": "Er ging surfen.",
+    "example_en": "He went surfing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/sympathisch",
+    "translation_en": "likeable",
+    "audio_url": "https://www.dwds.de/audio/007/sympathisch.mp3",
+    "example_de": "Tom ist sympathisch.",
+    "example_en": "Tom is likable.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/tauschen",
+    "translation_en": "swap",
+    "audio_url": "https://www.dwds.de/audio/006/tauschen.mp3",
+    "example_de": "Tauschen Sie es aus.",
+    "example_en": "Replace it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/teilen",
+    "translation_en": "share",
+    "audio_url": "https://www.dwds.de/audio/002/teilen.mp3",
+    "example_de": "Tom wird teilen.",
+    "example_en": "Tom will share.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/teilnehmen",
+    "translation_en": "participate",
+    "audio_url": "https://www.dwds.de/audio/002/teilnehmen.mp3",
+    "example_de": "Tom wird teilnehmen.",
+    "example_en": "Tom will attend.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/tief",
+    "translation_en": "deep",
+    "audio_url": "https://www.dwds.de/audio/120/tief.mp3",
+    "example_de": "Wie tief?",
+    "example_en": "How deep?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/toll",
+    "translation_en": "great",
+    "audio_url": "https://www.dwds.de/audio/005/toll.mp3",
+    "example_de": "Na toll!",
+    "example_en": "That's just great.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/total",
+    "translation_en": "total",
+    "audio_url": "https://www.dwds.de/audio/004/total.mp3",
+    "example_de": "Tom war total blank.",
+    "example_en": "Tom was very broke.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/tr%C3%A4umen",
+    "translation_en": "dream",
+    "audio_url": "https://www.dwds.de/audio/003/traeumen.mp3",
+    "example_de": "Träumen Hunde?",
+    "example_en": "Do dogs dream?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/tragen",
+    "translation_en": "carry",
+    "audio_url": "https://www.dwds.de/audio/001/tragen.mp3",
+    "example_de": "Lass es Tom tragen.",
+    "example_en": "Let Tom carry it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/trainieren",
+    "translation_en": "train",
+    "audio_url": "https://www.dwds.de/audio/005/trainieren.mp3",
+    "example_de": "Wir trainieren.",
+    "example_en": "We're exercising.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/traurig",
+    "translation_en": "sad",
+    "audio_url": "https://www.dwds.de/audio/003/traurig.mp3",
+    "example_de": "Es ist traurig.",
+    "example_en": "It's sad.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/trocken",
+    "translation_en": "dry",
+    "audio_url": "https://www.dwds.de/audio/003/trocken.mp3",
+    "example_de": "Es ist trocken.",
+    "example_en": "It's dry.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/typisch",
+    "translation_en": "typical",
+    "audio_url": "https://www.dwds.de/audio/004/typisch.mp3",
+    "example_de": "Das ist typisch.",
+    "example_en": "That's typical.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/umsteigen",
+    "translation_en": "change",
+    "audio_url": "https://www.dwds.de/audio/010/umsteigen.mp3",
+    "example_de": "Muss ich umsteigen?",
+    "example_en": "Do I need to transfer?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/unbedingt",
+    "translation_en": "absolutely",
+    "audio_url": "https://www.dwds.de/audio/001/unbedingt_1.mp3",
+    "example_de": "Schreib mir unbedingt!",
+    "example_en": "Don't fail to write to me.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/unterhalten#1",
+    "translation_en": "maintain",
+    "audio_url": "https://www.dwds.de/audio/004/unterhalten.mp3",
+    "example_de": "Wir unterhalten uns nur.",
+    "example_en": "We're just talking.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/unterhalten#2",
+    "translation_en": "maintain",
+    "audio_url": "https://www.dwds.de/audio/004/unterhalten.mp3",
+    "example_de": "Wir unterhalten uns nur.",
+    "example_en": "We're just talking.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/unternehmen",
+    "translation_en": "company",
+    "audio_url": "https://www.dwds.de/audio/122/unternehmen.mp3",
+    "example_de": "Das ist mein Unternehmen.",
+    "example_en": "This is my business.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/untersuchen",
+    "translation_en": "examine",
+    "audio_url": "https://www.dwds.de/audio/004/untersuchen.mp3",
+    "example_de": "Untersuchen Sie es.",
+    "example_en": "Examine it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/unterwegs",
+    "translation_en": "on the road",
+    "audio_url": "https://www.dwds.de/audio/002/unterwegs.mp3",
+    "example_de": "Er ist unterwegs.",
+    "example_en": "He's on his way.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/verabreden",
+    "translation_en": "arrange",
+    "audio_url": "https://www.dwds.de/audio/017/verabreden.mp3",
+    "example_de": "Verabreden Sie sich mit ihm!",
+    "example_en": "Make an appointment with him.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/verbieten",
+    "translation_en": "prohibit",
+    "audio_url": "https://www.dwds.de/audio/003/verbieten.mp3",
+    "example_de": "Wir sollten an Kinder gerichtete Werbung verbieten.",
+    "example_en": "We should ban advertising aimed towards children.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/vereinbaren",
+    "translation_en": "agree",
+    "audio_url": "https://www.dwds.de/audio/005/vereinbaren.mp3",
+    "example_de": "Das kann ich moralisch nicht mit mir vereinbaren.",
+    "example_en": "It's against my morals.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/vergessen",
+    "translation_en": "forget",
+    "audio_url": "https://www.dwds.de/audio/001/vergessen.mp3",
+    "example_de": "Nicht vergessen!",
+    "example_en": "Don't forget.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/vergleichen",
+    "translation_en": "Compare",
+    "audio_url": "https://www.dwds.de/audio/004/vergleichen.mp3",
+    "example_de": "Womit kann man das vergleichen?",
+    "example_en": "What can it be compared to?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/verletzen",
+    "translation_en": "injure",
+    "audio_url": "https://www.dwds.de/audio/006/verletzen.mp3",
+    "example_de": "Wer würde Tom verletzen?",
+    "example_en": "Who'd hurt Tom?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/verlieben",
+    "translation_en": "fall in love",
+    "audio_url": "https://www.dwds.de/audio/015/verlieben.mp3",
+    "example_de": "Jeden Tag verlieben sich Menschen.",
+    "example_en": "People fall in love every day.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/verlieren",
+    "translation_en": "lose",
+    "audio_url": "https://www.dwds.de/audio/002/verlieren.mp3",
+    "example_de": "Wir verlieren.",
+    "example_en": "We're losing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/verpassen",
+    "translation_en": "miss",
+    "audio_url": "https://www.dwds.de/audio/006/verpassen.mp3",
+    "example_de": "Sie verpassen nichts.",
+    "example_en": "They don't miss a thing.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/verreisen",
+    "translation_en": "travel",
+    "audio_url": "https://www.dwds.de/audio/016/verreisen.mp3",
+    "example_de": "Verreisen Sie oft?",
+    "example_en": "Do you often take trips?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/verschieben",
+    "translation_en": "shift",
+    "audio_url": "https://www.dwds.de/audio/003/verschieben.mp3",
+    "example_de": "Können wir das verschieben?",
+    "example_en": "Can we reschedule?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/verschieden",
+    "translation_en": "different",
+    "audio_url": "https://www.dwds.de/audio/003/verschieden.mp3",
+    "example_de": "Wir sind verschieden.",
+    "example_en": "We're different.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/versuchen",
+    "translation_en": "try",
+    "audio_url": "https://www.dwds.de/audio/001/versuchen.mp3",
+    "example_de": "Versuchen wir's!",
+    "example_en": "Let's give it a try.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/voll",
+    "translation_en": "full",
+    "audio_url": "https://www.dwds.de/audio/001/voll.mp3",
+    "example_de": "Es ist voll.",
+    "example_en": "It's full.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/vorbei",
+    "translation_en": "over",
+    "audio_url": "https://www.dwds.de/audio/001/vorbei.mp3",
+    "example_de": "Es ist vorbei.",
+    "example_en": "It's over.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/vorbereiten",
+    "translation_en": "prepare",
+    "audio_url": "https://www.dwds.de/audio/003/vorbereiten.mp3",
+    "example_de": "Ich muss mich vorbereiten.",
+    "example_en": "I have to prepare.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/vorgestern",
+    "translation_en": "day before yesterday",
+    "audio_url": "https://www.dwds.de/audio/007/vorgestern.mp3",
+    "example_de": "Vorgestern war Montag.",
+    "example_en": "The day before yesterday was Monday.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/vorher",
+    "translation_en": "before",
+    "audio_url": "https://www.dwds.de/audio/001/vorher.mp3",
+    "example_de": "Küss mich wie vorher.",
+    "example_en": "Kiss me like you did before.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/vorn",
+    "translation_en": "front",
+    "audio_url": "https://www.dwds.de/audio/131/vorn.mp3",
+    "example_de": "Am Ende lag er vorn.",
+    "example_en": "He came out on top.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/vorne",
+    "translation_en": "front",
+    "audio_url": "https://www.dwds.de/audio/131/vorn.mp3",
+    "example_de": "Wir saßen vorne.",
+    "example_en": "We sat in the front.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/vorw%C3%A4rts",
+    "translation_en": "forward",
+    "audio_url": "https://www.dwds.de/audio/005/vorwaerts_1.mp3",
+    "example_de": "Tom schob sich langsam vorwärts.",
+    "example_en": "Tom advanced slowly.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/w%C3%A4hlen",
+    "translation_en": "choose",
+    "audio_url": "https://www.dwds.de/audio/002/waehlen.mp3",
+    "example_de": "Wen wählen Sie?",
+    "example_en": "Who are you voting for?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/w%C3%BCnschen",
+    "translation_en": "wish",
+    "audio_url": "https://www.dwds.de/audio/112/wuenschen.mp3",
+    "example_de": "Was wünschen Sie?",
+    "example_en": "What are your wishes?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/wach",
+    "translation_en": "awake",
+    "audio_url": "https://www.dwds.de/audio/005/wach.mp3",
+    "example_de": "Wach auf!",
+    "example_en": "Wake up!",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/wahr",
+    "translation_en": "true",
+    "audio_url": "https://www.dwds.de/audio/002/wahr.mp3",
+    "example_de": "Wie wahr!",
+    "example_en": "It's all true.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/wahrscheinlich",
+    "translation_en": "probably",
+    "audio_url": "https://www.dwds.de/audio/001/wahrscheinlich.mp3",
+    "example_de": "Es regnet wahrscheinlich.",
+    "example_en": "It's probably raining.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/warm",
+    "translation_en": "warm",
+    "audio_url": "https://www.dwds.de/audio/003/warm.mp3",
+    "example_de": "Es war warm.",
+    "example_en": "It was warm.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/wechseln",
+    "translation_en": "change",
+    "audio_url": "https://www.dwds.de/audio/004/wechseln.mp3",
+    "example_de": "Wechseln wir das Thema.",
+    "example_en": "Let's change the subject.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/wecken",
+    "translation_en": "awaken",
+    "audio_url": "https://www.dwds.de/audio/028/wecken.mp3",
+    "example_de": "Geh Mary wecken.",
+    "example_en": "Go and wake Mary up.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/weg",
+    "translation_en": "away",
+    "audio_url": "https://www.dwds.de/audio/001/weg.mp3",
+    "example_de": "Geh weg!",
+    "example_en": "Beat it.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/wegen",
+    "translation_en": "because of",
+    "audio_url": "https://www.dwds.de/audio/112/wegen.mp3",
+    "example_de": "Ich kam wegen Tom.",
+    "example_en": "I came for Tom.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/weich",
+    "translation_en": "soft",
+    "audio_url": "https://www.dwds.de/audio/005/weich.mp3",
+    "example_de": "Der Schnee ist weich.",
+    "example_en": "The snow is soft.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/weil",
+    "translation_en": "because",
+    "audio_url": "https://www.dwds.de/audio/001/weil.mp3",
+    "example_de": "Ich tue es, weil ich muss.",
+    "example_en": "I do it because I have to.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/weinen",
+    "translation_en": "cry",
+    "audio_url": "https://www.dwds.de/audio/006/weinen.mp3",
+    "example_de": "Wir weinen.",
+    "example_en": "We're crying.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/wenigstens",
+    "translation_en": "at least",
+    "audio_url": "https://www.dwds.de/audio/001/wenigstens.mp3",
+    "example_de": "Bedank dich wenigstens!",
+    "example_en": "At least, say \"thank you.\"",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/wenn",
+    "translation_en": "when",
+    "audio_url": "https://www.dwds.de/audio/001/wenn.mp3",
+    "example_de": "Wenn ich nur wüsste!",
+    "example_en": "I wish I knew.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/windig",
+    "translation_en": "windy",
+    "audio_url": "https://www.dwds.de/audio/022/windig.mp3",
+    "example_de": "Es ist windig.",
+    "example_en": "It's windy.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/wirklich",
+    "translation_en": "really",
+    "audio_url": "https://www.dwds.de/audio/001/wirklich.mp3",
+    "example_de": "Wirklich?",
+    "example_en": "Really?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/witzig",
+    "translation_en": "funny",
+    "audio_url": "https://www.dwds.de/audio/006/witzig.mp3",
+    "example_de": "Tom ist witzig.",
+    "example_en": "Tom's funny.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/wurscht",
+    "translation_en": "doesn't matter",
+    "audio_url": "https://www.dwds.de/audio/125/wurscht.mp3",
+    "example_de": "Ich weiß, das ist dir wurscht.",
+    "example_en": "I know you don't care.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/wurst",
+    "translation_en": "sausage",
+    "audio_url": "https://www.dwds.de/audio/125/wurscht.mp3",
+    "example_de": "Tom mag Wurst.",
+    "example_en": "Tom likes sausage.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zeichnen",
+    "translation_en": "draw",
+    "audio_url": "https://www.dwds.de/audio/003/zeichnen.mp3",
+    "example_de": "Was willst du zeichnen?",
+    "example_en": "What are you going to draw?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zeigen",
+    "translation_en": "show",
+    "audio_url": "https://www.dwds.de/audio/001/zeigen.mp3",
+    "example_de": "Zeigen Sie sich!",
+    "example_en": "Show yourself.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/ziehen",
+    "translation_en": "draw",
+    "audio_url": "https://www.dwds.de/audio/001/ziehen.mp3",
+    "example_de": "Wir ziehen um.",
+    "example_en": "We're moving.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zuerst",
+    "translation_en": "first",
+    "audio_url": "https://www.dwds.de/audio/001/zuerst.mp3",
+    "example_de": "Du zuerst.",
+    "example_en": "You go first.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zuh%C3%B6ren",
+    "translation_en": "listen",
+    "audio_url": "https://www.dwds.de/audio/008/zuhoeren.mp3",
+    "example_de": "Tom wird zuhören.",
+    "example_en": "Tom will listen.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zuletzt",
+    "translation_en": "last",
+    "audio_url": "https://www.dwds.de/audio/001/zuletzt.mp3",
+    "example_de": "Tom lachte zuletzt.",
+    "example_en": "Tom had the last laugh.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zum%20Beispiel",
+    "translation_en": "for example",
+    "audio_url": "",
+    "example_de": "\"Tatoeba\" heißt \"zum Beispiel\" auf Japanisch.",
+    "example_en": "\"Tatoeba\" means \"for example\" in Japanese.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zumachen",
+    "translation_en": "close",
+    "audio_url": "https://www.dwds.de/audio/016/zumachen.mp3",
+    "example_de": "Soll ich die Tür zumachen?",
+    "example_en": "Shall I close the door?",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zur%C3%BCck-",
+    "translation_en": "back-",
+    "audio_url": "",
+    "example_de": "Komm zurück!",
+    "example_en": "Come on back.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zur%C3%BCckfahren",
+    "translation_en": "drive back",
+    "audio_url": "https://www.dwds.de/audio/019/zurueckfahren.mp3",
+    "example_de": "Ich möchte zurückfahren.",
+    "example_en": "I'd like to go back.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zur%C3%BCckgeben",
+    "translation_en": "return",
+    "audio_url": "https://www.dwds.de/audio/008/zurueckgeben.mp3",
+    "example_de": "Ich werde es zurückgeben.",
+    "example_en": "I'll give it back.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zur%C3%BCckgehen",
+    "translation_en": "go back",
+    "audio_url": "https://www.dwds.de/audio/005/zurueckgehen.mp3",
+    "example_de": "Lass uns zurückgehen.",
+    "example_en": "Let's go back.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zur%C3%BCckkommen",
+    "translation_en": "come back",
+    "audio_url": "https://www.dwds.de/audio/009/zurueckkommen.mp3",
+    "example_de": "Tom wird zurückkommen.",
+    "example_en": "Tom will be back.",
+    "example_source": "tatoeba"
+  },
+  {
+    "url": "https://www.dwds.de/wb/zur%C3%BCcklaufen",
+    "translation_en": "run back",
+    "audio_url": "https://www.dwds.de/audio/121/zuruecklaufen.mp3"
+  }
+]

@@ -8,8 +8,9 @@ data/
 *.db-wal
 *.db-shm
 
-# Build output
-recall
+# Build output (anchored to repo root so cmd/seed-export/ source dir isn't matched)
+/recall
+/seed-export
 /bin/
 /dist/
 

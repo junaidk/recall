@@ -6,6 +6,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/junaidk/recall/internal/seed"
 )
 
 // ScanAndImport walks dir for *.json files and imports each as a deck
@@ -21,6 +23,9 @@ func ScanAndImport(db *sql.DB, dir string) error {
 		}
 		name := entry.Name()
 		if !strings.HasSuffix(strings.ToLower(name), ".json") {
+			continue
+		}
+		if seed.IsEnrichmentFile(name) {
 			continue
 		}
 		stem := strings.TrimSuffix(name, filepath.Ext(name))

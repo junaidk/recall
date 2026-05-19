@@ -1,6 +1,9 @@
 {{define "title"}}Studying {{.Deck.Name}}{{end}}
 {{define "body"}}
-<h2>Studying: {{.Deck.Name}}</h2>
+<div class="study-header">
+  <h2>Studying: {{.Deck.Name}}</h2>
+  <label class="audio-toggle"><input type="checkbox" id="audio-autoplay-toggle"><span>Autoplay audio</span></label>
+</div>
 <p><a href="/decks">← Back to decks</a></p>
 
 <div id="card-slot"
