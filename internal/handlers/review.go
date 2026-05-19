@@ -13,6 +13,7 @@ import (
 	"github.com/junaidk/recall/internal/auth"
 	"github.com/junaidk/recall/internal/fsrs"
 	"github.com/junaidk/recall/internal/models"
+	"github.com/junaidk/recall/internal/sentences"
 )
 
 // Module-level scheduler instance — FSRS is stateless, just holds params.
@@ -26,6 +27,7 @@ type studyPage struct {
 type cardView struct {
 	Card        models.Card
 	DeckID      int64
+	WordID      int64
 	Display     string // German with article, e.g. "die Ampel"
 	Pos         string
 	Translation string
@@ -208,6 +210,7 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 	if err != nil {
 		return cv, err
 	}
+	cv.WordID = cv.Card.WordID
 	cv.Display = displayLemma(lemma, articles.String)
 	cv.Pos = pos.String
 	if trans.Valid {
@@ -258,6 +261,7 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 	if err != nil {
 		return cv, err
 	}
+	cv.WordID = cv.Card.WordID
 	cv.Display = displayLemma(lemma, articles.String)
 	cv.Pos = pos.String
 	if trans.Valid {
@@ -273,6 +277,107 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 		cv.ExampleEN = exEN.String
 	}
 	return cv, nil
+}
+
+// --- example-swap handlers (card-back ↻ / ⋯) ---
+
+// exampleBlockView is what _example_block.html expects.
+type exampleBlockView struct {
+	WordID    int64
+	ExampleDE string
+	ExampleEN string
+}
+
+// exampleChoicesView is what _example_choices.html expects.
+type exampleChoicesView struct {
+	WordID     int64
+	Candidates []sentences.Candidate
+}
+
+func (s *Server) handleNextExample(w http.ResponseWriter, r *http.Request) {
+	wordID, err := strconv.ParseInt(r.PathValue("wordID"), 10, 64)
+	if err != nil {
+		http.Error(w, "bad word id", http.StatusBadRequest)
+		return
+	}
+	c, err := sentences.SwapToNext(s.DB, wordID)
+	if err != nil && !errors.Is(err, sql.ErrNoRows) {
+		http.Error(w, "swap example: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	// On ErrNoRows: word has no candidates; re-render whatever is persisted.
+	view, err := s.loadExampleBlock(wordID)
+	if err != nil {
+		http.Error(w, "load example: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	_ = c
+	s.Templates.RenderPartial(w, "example_block", view)
+}
+
+func (s *Server) handleExampleChoices(w http.ResponseWriter, r *http.Request) {
+	wordID, err := strconv.ParseInt(r.PathValue("wordID"), 10, 64)
+	if err != nil {
+		http.Error(w, "bad word id", http.StatusBadRequest)
+		return
+	}
+	var lemma string
+	if err := s.DB.QueryRow(`SELECT lemma FROM words WHERE id = ?`, wordID).Scan(&lemma); err != nil {
+		http.Error(w, "load word: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	cands, err := sentences.Candidates(s.DB, lemma, 20)
+	if err != nil {
+		http.Error(w, "candidates: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	s.Templates.RenderPartial(w, "example_choices", exampleChoicesView{WordID: wordID, Candidates: cands})
+}
+
+func (s *Server) handleSetExample(w http.ResponseWriter, r *http.Request) {
+	wordID, err := strconv.ParseInt(r.PathValue("wordID"), 10, 64)
+	if err != nil {
+		http.Error(w, "bad word id", http.StatusBadRequest)
+		return
+	}
+	pairID, err := strconv.ParseInt(r.URL.Query().Get("pair"), 10, 64)
+	if err != nil || pairID <= 0 {
+		http.Error(w, "bad pair id", http.StatusBadRequest)
+		return
+	}
+	if _, err := sentences.SwapToPairID(s.DB, wordID, pairID); err != nil {
+		http.Error(w, "set example: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	view, err := s.loadExampleBlock(wordID)
+	if err != nil {
+		http.Error(w, "load example: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	s.Templates.RenderPartial(w, "example_block", view)
+}
+
+func (s *Server) handleExampleBlock(w http.ResponseWriter, r *http.Request) {
+	wordID, err := strconv.ParseInt(r.PathValue("wordID"), 10, 64)
+	if err != nil {
+		http.Error(w, "bad word id", http.StatusBadRequest)
+		return
+	}
+	view, err := s.loadExampleBlock(wordID)
+	if err != nil {
+		http.Error(w, "load example: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	s.Templates.RenderPartial(w, "example_block", view)
+}
+
+func (s *Server) loadExampleBlock(wordID int64) (exampleBlockView, error) {
+	var de, en sql.NullString
+	err := s.DB.QueryRow(`SELECT example_de, example_en FROM words WHERE id = ?`, wordID).Scan(&de, &en)
+	if err != nil {
+		return exampleBlockView{}, err
+	}
+	return exampleBlockView{WordID: wordID, ExampleDE: de.String, ExampleEN: en.String}, nil
 }
 
 // displayLemma renders a noun with its article (e.g. "die Ampel"); other parts

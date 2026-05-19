@@ -10,12 +10,13 @@ import (
 	"strings"
 
 	_ "github.com/mattn/go-sqlite3"
+	"github.com/junaidk/recall/internal/sentences"
 )
 
 //go:embed schema.sql
 var schemaSQL string
 
-const currentSchemaVersion = 1
+const currentSchemaVersion = 2
 
 func Open(path string) (*sql.DB, error) {
 	if dir := filepath.Dir(path); dir != "" && dir != "." {
@@ -71,9 +72,69 @@ func migrate(db *sql.DB) error {
 		}
 	}
 
+	if version < 2 {
+		// Null out examples that fail the case filter — e.g. "Schloss" matched
+		// with "schloss" (verb). The boot's existing sentences.Backfill call
+		// will re-pick a case-appropriate example for each affected word.
+		nulled, err := nullStaleExamples(db)
+		if err != nil {
+			return fmt.Errorf("v2 null stale examples: %w", err)
+		}
+		log.Printf("migrate v2: nulled %d stale examples (case filter)", nulled)
+	}
+
 	if _, err := db.Exec(fmt.Sprintf(`PRAGMA user_version = %d`, currentSchemaVersion)); err != nil {
 		return err
 	}
 	log.Printf("migrate: applied user_version=%d (was %d)", currentSchemaVersion, version)
 	return nil
+}
+
+// nullStaleExamples clears example_de/en/examples_at for any word whose
+// persisted German example fails the case filter for its lemma. Returns the
+// count of rows reset.
+func nullStaleExamples(db *sql.DB) (int, error) {
+	rows, err := db.Query(`SELECT id, lemma, example_de FROM words WHERE example_de IS NOT NULL`)
+	if err != nil {
+		return 0, err
+	}
+	type row struct {
+		id    int64
+		lemma string
+		ex    string
+	}
+	var stale []int64
+	for rows.Next() {
+		var r row
+		if err := rows.Scan(&r.id, &r.lemma, &r.ex); err != nil {
+			rows.Close()
+			return 0, err
+		}
+		if !sentences.FilterByCase(r.lemma, r.ex) {
+			stale = append(stale, r.id)
+		}
+	}
+	rows.Close()
+	if len(stale) == 0 {
+		return 0, nil
+	}
+	tx, err := db.Begin()
+	if err != nil {
+		return 0, err
+	}
+	defer tx.Rollback()
+	stmt, err := tx.Prepare(`UPDATE words SET example_de = NULL, example_en = NULL, examples_at = NULL WHERE id = ?`)
+	if err != nil {
+		return 0, err
+	}
+	defer stmt.Close()
+	for _, id := range stale {
+		if _, err := stmt.Exec(id); err != nil {
+			return 0, err
+		}
+	}
+	if err := tx.Commit(); err != nil {
+		return 0, err
+	}
+	return len(stale), nil
 }

@@ -97,6 +97,67 @@ button.primary:hover { background: #244e92; }
 .card .example-de { font-weight: 500; color: #1a1a1a; }
 .card .example-en { color: #666; font-size: 0.9rem; margin-top: 0.25rem; font-style: italic; }
 
+.card .example-actions {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+.card .example-actions button {
+  background: transparent;
+  border: 1px solid #d4dde9;
+  color: #5a6b86;
+  border-radius: 4px;
+  padding: 0.1rem 0.45rem;
+  font: inherit;
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.card .example-actions button:hover { background: #e8eef7; color: #2d62b8; }
+
+.card .example-picker { padding: 0.5rem 0.75rem; }
+.card .example-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #5a6b86;
+  margin-bottom: 0.5rem;
+}
+.card .example-picker-cancel {
+  background: none;
+  border: none;
+  color: #5a6b86;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+.card .example-picker-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 18rem;
+  overflow-y: auto;
+}
+.card .example-picker-list li { margin: 0; padding: 0; }
+.card .example-picker-list li + li { border-top: 1px solid #e1e8f1; }
+.card .example-picker-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 0.4rem 0.25rem;
+  cursor: pointer;
+  font: inherit;
+}
+.card .example-picker-list button:hover { background: #e8eef7; }
+.card .example-picker-list .example-de { font-weight: 500; }
+.card .example-picker-list .example-en { font-size: 0.85rem; color: #666; font-style: italic; margin-top: 0.15rem; }
+.card .example-picker-empty { color: #888; font-size: 0.9rem; padding: 0.5rem 0; }
+
 .grade-buttons { display: flex; gap: 0.5rem; justify-content: center; margin-top: 1.5rem; }
 .grade-buttons button {
   padding: 0.6rem 1rem;

@@ -1,0 +1,20 @@
+{{define "example_block"}}
+<div class="example" id="example-block-{{.WordID}}">
+  {{if .ExampleDE}}
+    <div class="example-de">{{.ExampleDE}}</div>
+    <div class="example-en">{{.ExampleEN}}</div>
+    <div class="example-actions">
+      <button type="button"
+              title="Another example"
+              hx-post="/review/word/{{.WordID}}/example/next"
+              hx-target="#example-block-{{.WordID}}"
+              hx-swap="outerHTML">↻</button>
+      <button type="button"
+              title="See all"
+              hx-get="/review/word/{{.WordID}}/example/choices"
+              hx-target="#example-block-{{.WordID}}"
+              hx-swap="outerHTML">⋯</button>
+    </div>
+  {{end}}
+</div>
+{{end}}

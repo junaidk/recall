@@ -35,6 +35,11 @@ func (s *Server) Register(mux *http.ServeMux) {
 	mux.Handle("GET /review/{deckID}/next", s.Sessions.RequireUser(http.HandlerFunc(s.handleNextCard)))
 	mux.Handle("GET /review/{deckID}/card/{cardID}", s.Sessions.RequireUser(http.HandlerFunc(s.handleRevealCard)))
 	mux.Handle("POST /review/{cardID}/grade", s.Sessions.RequireUser(http.HandlerFunc(s.handleGrade)))
+
+	mux.Handle("POST /review/word/{wordID}/example/next", s.Sessions.RequireUser(http.HandlerFunc(s.handleNextExample)))
+	mux.Handle("GET /review/word/{wordID}/example/choices", s.Sessions.RequireUser(http.HandlerFunc(s.handleExampleChoices)))
+	mux.Handle("POST /review/word/{wordID}/example/set", s.Sessions.RequireUser(http.HandlerFunc(s.handleSetExample)))
+	mux.Handle("GET /review/word/{wordID}/example/block", s.Sessions.RequireUser(http.HandlerFunc(s.handleExampleBlock)))
 }
 
 func (s *Server) handleRoot(w http.ResponseWriter, r *http.Request) {

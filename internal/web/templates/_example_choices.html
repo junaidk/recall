@@ -1,0 +1,29 @@
+{{define "example_choices"}}
+<div class="example example-picker" id="example-block-{{.WordID}}">
+  <div class="example-picker-header">
+    <span>Pick an example</span>
+    <button type="button"
+            class="example-picker-cancel"
+            hx-get="/review/word/{{.WordID}}/example/block"
+            hx-target="#example-block-{{.WordID}}"
+            hx-swap="outerHTML">cancel</button>
+  </div>
+  {{if .Candidates}}
+  <ul class="example-picker-list">
+    {{range .Candidates}}
+    <li>
+      <button type="button"
+              hx-post="/review/word/{{$.WordID}}/example/set?pair={{.PairID}}"
+              hx-target="#example-block-{{$.WordID}}"
+              hx-swap="outerHTML">
+        <div class="example-de">{{.DE}}</div>
+        <div class="example-en">{{.EN}}</div>
+      </button>
+    </li>
+    {{end}}
+  </ul>
+  {{else}}
+  <div class="example-picker-empty">No alternative examples found.</div>
+  {{end}}
+</div>
+{{end}}
