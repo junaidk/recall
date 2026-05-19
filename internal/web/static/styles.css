@@ -1,0 +1,132 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: #1a1a1a;
+  background: #fafaf7;
+  line-height: 1.5;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+header nav a, header nav form { display: inline; margin-left: 1rem; }
+header nav button { background: none; border: none; color: #444; cursor: pointer; font: inherit; }
+
+h2 { margin-top: 0; }
+
+form { display: flex; flex-direction: column; gap: 0.75rem; max-width: 320px; }
+label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9rem; }
+input[type=text], input[type=password] {
+  padding: 0.5rem;
+  font: inherit;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+button.primary, input[type=submit] {
+  padding: 0.5rem 1rem;
+  font: inherit;
+  background: #2d62b8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button.primary:hover { background: #244e92; }
+
+.error { color: #b00020; margin: 0.5rem 0; }
+.flash { padding: 0.5rem; background: #fff3cd; border: 1px solid #ffeeba; border-radius: 4px; }
+
+.deck-list { list-style: none; padding: 0; }
+.deck-list li {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.deck-list .counts { color: #666; font-size: 0.85rem; }
+.deck-list a.study {
+  padding: 0.4rem 0.8rem;
+  background: #2d62b8;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+.card .lemma { font-size: 2rem; font-weight: 600; margin-bottom: 0.25rem; }
+.card .pos { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
+.card .translation { font-size: 1.5rem; color: #2d62b8; margin: 1.5rem 0; }
+.card .dwds { font-size: 0.8rem; }
+.card .dwds a { color: #888; }
+
+.card .example {
+  margin: 1.25rem auto 1rem;
+  max-width: 28rem;
+  text-align: left;
+  border-left: 3px solid #c8d4ea;
+  padding: 0.5rem 0.75rem;
+  background: #f6f8fc;
+  border-radius: 0 4px 4px 0;
+}
+.card .example-de { font-weight: 500; color: #1a1a1a; }
+.card .example-en { color: #666; font-size: 0.9rem; margin-top: 0.25rem; font-style: italic; }
+
+.grade-buttons { display: flex; gap: 0.5rem; justify-content: center; margin-top: 1.5rem; }
+.grade-buttons button {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font: inherit;
+  flex: 1;
+  max-width: 120px;
+}
+.grade-buttons button:hover { background: #f0f0f0; }
+.grade-buttons button.again { border-color: #d63a3a; color: #d63a3a; }
+.grade-buttons button.hard { border-color: #d6863a; color: #d6863a; }
+.grade-buttons button.good { border-color: #3aa53a; color: #3aa53a; }
+.grade-buttons button.easy { border-color: #2d62b8; color: #2d62b8; }
+.grade-buttons .kbd { display: block; font-size: 0.7rem; opacity: 0.6; }
+
+.show-btn {
+  padding: 0.6rem 1.5rem;
+  background: #2d62b8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+}
+.show-btn:hover { background: #244e92; }
+
+.done { text-align: center; padding: 3rem 1rem; }
+.done h2 { color: #3aa53a; }
+
+a { color: #2d62b8; }

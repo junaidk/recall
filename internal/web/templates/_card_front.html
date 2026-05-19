@@ -1,0 +1,10 @@
+{{define "card_front"}}
+<div class="card" data-card-id="{{.Card.ID}}">
+  <div class="lemma">{{.Display}}</div>
+  <div class="pos">{{.Pos}}</div>
+  <button class="show-btn"
+          hx-get="/review/{{.DeckID}}/card/{{.Card.ID}}?reveal=1"
+          hx-target="#card-slot"
+          hx-swap="innerHTML">Show answer <span style="opacity:.6">(space)</span></button>
+</div>
+{{end}}

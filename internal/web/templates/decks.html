@@ -1,0 +1,22 @@
+{{define "title"}}Decks{{end}}
+{{define "body"}}
+<h2>Your decks</h2>
+{{if not .Decks}}
+  <p>No decks imported. Add JSON files to <code>word-list/</code> and restart the server.</p>
+{{else}}
+<ul class="deck-list">
+  {{range .Decks}}
+  <li>
+    <div>
+      <div><strong>{{.Deck.Name}}</strong></div>
+      <div class="counts">
+        {{.New}} new · {{.Learning}} learning · {{.Review}} review · <strong>{{.DueNow}} due now</strong> · {{.Total}} total
+      </div>
+    </div>
+    <a class="study" href="/decks/{{.Deck.ID}}/study">Study →</a>
+  </li>
+  {{end}}
+</ul>
+{{end}}
+{{end}}
+{{template "base" .}}

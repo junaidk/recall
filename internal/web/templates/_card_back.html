@@ -1,0 +1,22 @@
+{{define "card_back"}}
+<div class="card" data-card-id="{{.Card.ID}}">
+  <div class="lemma">{{.Display}}</div>
+  <div class="pos">{{.Pos}}</div>
+  <div class="translation">{{if .Translation}}{{.Translation}}{{else}}<em style="opacity:.5">(no translation)</em>{{end}}</div>
+  {{if .ExampleDE}}
+  <div class="example">
+    <div class="example-de">{{.ExampleDE}}</div>
+    <div class="example-en">{{.ExampleEN}}</div>
+  </div>
+  {{end}}
+  {{if .URL}}<div class="dwds"><a href="{{.URL}}" target="_blank" rel="noopener">DWDS entry</a></div>{{end}}
+  <div class="grade-buttons"
+       hx-target="#card-slot"
+       hx-swap="innerHTML">
+    <button class="again" data-rating="1" hx-post="/review/{{.Card.ID}}/grade?rating=1">Again<span class="kbd">1</span></button>
+    <button class="hard"  data-rating="2" hx-post="/review/{{.Card.ID}}/grade?rating=2">Hard<span class="kbd">2</span></button>
+    <button class="good"  data-rating="3" hx-post="/review/{{.Card.ID}}/grade?rating=3">Good<span class="kbd">3</span></button>
+    <button class="easy"  data-rating="4" hx-post="/review/{{.Card.ID}}/grade?rating=4">Easy<span class="kbd">4</span></button>
+  </div>
+</div>
+{{end}}

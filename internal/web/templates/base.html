@@ -1,0 +1,30 @@
+{{define "base"}}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{block "title" .}}Recall{{end}}</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/htmx.min.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="/" style="text-decoration:none;color:inherit;">Recall</a></h1>
+    <nav>
+      {{if .User}}
+        <span>{{.User.Username}}</span>
+        <form method="post" action="/logout" style="display:inline">
+          <button type="submit">Log out</button>
+        </form>
+      {{else}}
+        <a href="/login">Log in</a>
+        <a href="/register">Register</a>
+      {{end}}
+    </nav>
+  </header>
+  <main>
+    {{block "body" .}}{{end}}
+  </main>
+</body>
+</html>
+{{end}}

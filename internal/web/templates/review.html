@@ -1,0 +1,29 @@
+{{define "title"}}Studying {{.Deck.Name}}{{end}}
+{{define "body"}}
+<h2>Studying: {{.Deck.Name}}</h2>
+<p><a href="/decks">← Back to decks</a></p>
+
+<div id="card-slot"
+     hx-get="/review/{{.Deck.ID}}/next"
+     hx-trigger="load"
+     hx-swap="innerHTML">
+  Loading…
+</div>
+
+<script>
+document.addEventListener('keydown', function(e) {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  const slot = document.getElementById('card-slot');
+  if (!slot) return;
+  if (e.code === 'Space') {
+    const sb = slot.querySelector('.show-btn');
+    if (sb) { e.preventDefault(); sb.click(); }
+  } else if (['Digit1','Digit2','Digit3','Digit4'].includes(e.code)) {
+    const n = e.code.slice(-1);
+    const btn = slot.querySelector('.grade-buttons button[data-rating="' + n + '"]');
+    if (btn) { e.preventDefault(); btn.click(); }
+  }
+});
+</script>
+{{end}}
+{{template "base" .}}

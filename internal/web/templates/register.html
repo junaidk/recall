@@ -1,0 +1,12 @@
+{{define "title"}}Register{{end}}
+{{define "body"}}
+<h2>Create an account</h2>
+{{if .Error}}<p class="error">{{.Error}}</p>{{end}}
+<form method="post" action="/register">
+  <label>Username<input type="text" name="username" required autofocus minlength="2" maxlength="40"></label>
+  <label>Password<input type="password" name="password" required minlength="6"></label>
+  <button class="primary" type="submit">Register</button>
+</form>
+<p>Already have one? <a href="/login">Log in</a>.</p>
+{{end}}
+{{template "base" .}}

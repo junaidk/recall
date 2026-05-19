@@ -1,0 +1,15 @@
+server:
+  addr: ":8080"
+  session_secret: "change-me-to-a-long-random-string"
+
+db:
+  path: "data/anki.db"
+
+deepl:
+  api_key: ""
+  api_url: "https://api-free.deepl.com/v2/translate"
+  source_lang: "DE"
+  target_lang: "EN-US"
+
+import:
+  word_list_dir: "word-list"
