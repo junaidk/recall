@@ -12,7 +12,7 @@ BUILD_TAGS  := sqlite_fts5
 # Override with `make CC_CROSS=aarch64-linux-musl-gcc ...` if you prefer musl-cross.
 ZIG         ?= zig
 
-.PHONY: help all host run linux-amd64 linux-arm64 linux-armv7 linux-armv6 seed-export clean tidy
+.PHONY: help all host run linux-amd64 linux-arm64 linux-armv7 linux-armv6 seed-export seed-conjugations clean tidy
 
 help:
 	@echo "Targets:"
@@ -24,6 +24,7 @@ help:
 	@echo "  linux-armv6   Cross-build for ARMv6 Linux (Pi 0/1) -> $(TARGET_DIR)/linux-armv6/"
 	@echo "  all           Build every target above"
 	@echo "  seed-export   Build the seed-export tool for host"
+	@echo "  seed-conjugations  Build seed/de_verb_conjugations.jsonl from kaikki German extract"
 	@echo "  clean         Remove $(TARGET_DIR)/"
 	@echo ""
 	@echo "Cross-compilation uses 'zig cc' for CGO. Install with: brew install zig"
@@ -69,6 +70,12 @@ linux-armv6:
 seed-export:
 	@mkdir -p $(TARGET_DIR)/host
 	CGO_ENABLED=1 go build -tags "$(BUILD_TAGS)" -ldflags="$(LDFLAGS)" -o $(TARGET_DIR)/host/$(SEED_BIN) $(PKG_SEED)
+
+# Fetch the kaikki German Wiktionary extract and emit seed/de_verb_conjugations.jsonl.
+# Run once; the produced file is committed and consumed at boot by internal/conjugations.
+# Override -src to point at a local copy of the kaikki .jsonl.gz if you've already downloaded it.
+seed-conjugations:
+	go run ./cmd/build-conjugations -out seed/de_verb_conjugations.jsonl
 
 tidy:
 	go mod tidy

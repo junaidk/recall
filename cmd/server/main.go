@@ -8,6 +8,7 @@ import (
 	"github.com/junaidk/recall/internal/audio"
 	"github.com/junaidk/recall/internal/auth"
 	"github.com/junaidk/recall/internal/config"
+	"github.com/junaidk/recall/internal/conjugations"
 	"github.com/junaidk/recall/internal/db"
 	"github.com/junaidk/recall/internal/fsrs"
 	"github.com/junaidk/recall/internal/handlers"
@@ -55,6 +56,12 @@ func main() {
 		log.Printf("sentences: corpus load failed: %v", err)
 	} else if _, _, err := sentences.Backfill(dbConn); err != nil {
 		log.Printf("sentences: backfill failed: %v", err)
+	}
+
+	if err := conjugations.EnsureCorpus(dbConn, cfg.Import.SeedDir); err != nil {
+		log.Printf("conjugations: corpus load failed: %v", err)
+	} else if _, _, err := conjugations.Backfill(dbConn); err != nil {
+		log.Printf("conjugations: backfill failed: %v", err)
 	}
 
 	go func() {

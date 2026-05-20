@@ -134,6 +134,36 @@ button.primary:hover { background: #244e92; }
 .card .example-de { font-weight: 500; color: #1a1a1a; }
 .card .example-en { color: #666; font-size: 0.9rem; margin-top: 0.25rem; font-style: italic; }
 
+.conjugations-card { padding: 1.25rem 2rem; }
+.conjugations-card .conjugations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  justify-content: center;
+  text-align: left;
+}
+.conjugations-card .tense-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin-bottom: 0.4rem;
+}
+.conjugations-card table.conj-table { border-collapse: collapse; }
+.conjugations-card table.conj-table th {
+  text-align: left;
+  font-weight: 400;
+  color: #666;
+  padding-right: 0.9rem;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.conjugations-card table.conj-table td {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+html[data-hide-conjugations="1"] .conjugations-card { display: none; }
+
 .card .example-actions {
   display: flex;
   gap: 0.25rem;

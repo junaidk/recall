@@ -7,11 +7,13 @@ data/
 *.db-journal
 *.db-wal
 *.db-shm
+extra/
 
 # Build output (anchored to repo root so cmd/seed-export/ source dir isn't matched)
 /recall
 /recall-server
 /seed-export
+/build-conjugations
 /bin/
 /dist/
 /target/

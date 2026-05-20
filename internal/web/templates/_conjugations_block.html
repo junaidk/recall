@@ -1,0 +1,26 @@
+{{define "conjugations_block"}}
+<div class="card conjugations-card">
+  <div class="conjugations">
+    {{if .Conjugations.Praesens}}
+      <div class="tense">
+        <div class="tense-label">Präsens</div>
+        <table class="conj-table">
+          {{range .Conjugations.Praesens}}
+          <tr><th>{{.Pronoun}}</th><td>{{.Form}}</td></tr>
+          {{end}}
+        </table>
+      </div>
+    {{end}}
+    {{if .Conjugations.Perfekt}}
+      <div class="tense">
+        <div class="tense-label">Perfekt</div>
+        <table class="conj-table">
+          {{range .Conjugations.Perfekt}}
+          <tr><th>{{.Pronoun}}</th><td>{{.Form}}</td></tr>
+          {{end}}
+        </table>
+      </div>
+    {{end}}
+  </div>
+</div>
+{{end}}

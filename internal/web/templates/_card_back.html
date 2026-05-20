@@ -20,4 +20,5 @@
     <button class="easy"  data-rating="4" hx-post="/review/{{.Card.ID}}/grade?rating=4">Easy<span class="kbd">4</span></button>
   </div>
 </div>
+{{if .Conjugations}}{{template "conjugations_block" .}}{{end}}
 {{end}}

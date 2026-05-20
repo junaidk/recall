@@ -47,6 +47,21 @@
         const audio = e.target.querySelector('audio[data-card-audio]');
         if (audio) play(audio);
       });
+
+      const KEY_CONJ = 'recall.conjugations.show';
+      function applyConjVisibility() {
+        const hide = localStorage.getItem(KEY_CONJ) === '0';
+        document.documentElement.dataset.hideConjugations = hide ? '1' : '';
+      }
+      const cbc = document.getElementById('conjugations-show-toggle');
+      if (cbc) {
+        cbc.checked = localStorage.getItem(KEY_CONJ) !== '0';
+        cbc.addEventListener('change', () => {
+          localStorage.setItem(KEY_CONJ, cbc.checked ? '1' : '0');
+          applyConjVisibility();
+        });
+      }
+      applyConjVisibility();
     })();
   </script>
 </body>

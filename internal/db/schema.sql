@@ -31,7 +31,9 @@ CREATE TABLE IF NOT EXISTS words (
   example_en TEXT,
   example_source TEXT,
   examples_at DATETIME,
-  audio_url TEXT
+  audio_url TEXT,
+  conjugations TEXT,
+  conjugations_at DATETIME
 );
 CREATE UNIQUE INDEX IF NOT EXISTS idx_words_unique
   ON words(deck_id, lemma, COALESCE(hidx, 0));
@@ -86,3 +88,8 @@ CREATE TRIGGER IF NOT EXISTS sentence_pairs_ai
   AFTER INSERT ON sentence_pairs BEGIN
     INSERT INTO sentence_pairs_fts(rowid, de) VALUES (new.id, new.de);
   END;
+
+CREATE TABLE IF NOT EXISTS verb_conjugations (
+  infinitive TEXT PRIMARY KEY,
+  payload TEXT NOT NULL
+);

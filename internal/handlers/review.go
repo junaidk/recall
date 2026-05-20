@@ -22,16 +22,88 @@ type studyPage struct {
 }
 
 type cardView struct {
-	Card        models.Card
-	DeckID      int64
-	WordID      int64
-	Display     string // German with article, e.g. "die Ampel"
-	Pos         string
-	Translation string
-	URL         string
-	AudioURL    string
-	ExampleDE   string
-	ExampleEN   string
+	Card         models.Card
+	DeckID       int64
+	WordID       int64
+	Display      string // German with article, e.g. "die Ampel"
+	Pos          string
+	Translation  string
+	URL          string
+	AudioURL     string
+	ExampleDE    string
+	ExampleEN    string
+	Conjugations *conjugationView
+}
+
+// conjugationView is the verb conjugation panel rendered below the main card.
+// Nil unless the word is a Verb and a non-empty payload was loaded. Both
+// tables are rendered the same way — six rows of (pronoun, form).
+type conjugationView struct {
+	Praesens []personForm // ich, du, er/sie/es, wir, ihr, sie
+	Perfekt  []personForm // same order, e.g. "bin gelaufen" / "habe gemacht"
+}
+
+type personForm struct {
+	Pronoun string
+	Form    string
+}
+
+// praesensOrder pins the row order rendered on the card. Tied to the JSON
+// keys produced by cmd/build-conjugations.
+var praesensOrder = []struct {
+	Key, Label string
+}{
+	{"ich", "ich"},
+	{"du", "du"},
+	{"er", "er/sie/es"},
+	{"wir", "wir"},
+	{"ihr", "ihr"},
+	{"sie", "sie"},
+}
+
+// auxPraesens conjugates the two German Perfekt auxiliaries. These never
+// change with the main verb, so we don't ship them per-row in the corpus —
+// we just compose <aux_form> + Partizip II at render time.
+var auxPraesens = map[string]map[string]string{
+	"haben": {"ich": "habe", "du": "hast", "er": "hat", "wir": "haben", "ihr": "habt", "sie": "haben"},
+	"sein":  {"ich": "bin", "du": "bist", "er": "ist", "wir": "sind", "ihr": "seid", "sie": "sind"},
+}
+
+// parseConjugations turns the JSON payload stored in words.conjugations into
+// the view-ready struct. Returns nil for empty/missing/invalid input — the
+// template gate (Conjugations != nil) then suppresses the panel.
+func parseConjugations(raw string) *conjugationView {
+	if raw == "" || raw == "{}" {
+		return nil
+	}
+	var p struct {
+		Praesens map[string]string `json:"praesens"`
+		Perfekt  struct {
+			Aux       string `json:"aux"`
+			Partizip2 string `json:"partizip2"`
+		} `json:"perfekt"`
+	}
+	if err := json.Unmarshal([]byte(raw), &p); err != nil {
+		return nil
+	}
+	if len(p.Praesens) == 0 && p.Perfekt.Partizip2 == "" {
+		return nil
+	}
+	cv := &conjugationView{}
+	for _, row := range praesensOrder {
+		if form, ok := p.Praesens[row.Key]; ok && form != "" {
+			cv.Praesens = append(cv.Praesens, personForm{Pronoun: row.Label, Form: form})
+		}
+	}
+	if aux, ok := auxPraesens[p.Perfekt.Aux]; ok && p.Perfekt.Partizip2 != "" {
+		for _, row := range praesensOrder {
+			cv.Perfekt = append(cv.Perfekt, personForm{
+				Pronoun: row.Label,
+				Form:    aux[row.Key] + " " + p.Perfekt.Partizip2,
+			})
+		}
+	}
+	return cv
 }
 
 func (s *Server) handleStudyPage(w http.ResponseWriter, r *http.Request) {
@@ -204,13 +276,14 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 		trans    sql.NullString
 		exDE     sql.NullString
 		exEN     sql.NullString
+		conj     sql.NullString
 		lemma    string
 	)
 	err := s.DB.QueryRow(`
 		SELECT c.id, c.user_id, c.word_id, c.due, c.stability, c.difficulty,
 		       c.elapsed_days, c.scheduled_days, c.reps, c.lapses, c.state, c.last_review,
 		       w.deck_id, w.lemma, w.pos, w.articles, w.url, w.audio_url, w.translation_en,
-		       w.example_de, w.example_en
+		       w.example_de, w.example_en, w.conjugations
 		FROM cards c
 		JOIN words w ON w.id = c.word_id
 		WHERE c.id = ? AND c.user_id = ?
@@ -220,7 +293,7 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 		&cv.Card.ElapsedDays, &cv.Card.ScheduledDays,
 		&cv.Card.Reps, &cv.Card.Lapses, &cv.Card.State, &cv.Card.LastReview,
 		&cv.DeckID, &lemma, &pos, &articles, &url, &audio, &trans,
-		&exDE, &exEN,
+		&exDE, &exEN, &conj,
 	)
 	if err != nil {
 		return cv, err
@@ -243,6 +316,9 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 	if exEN.Valid {
 		cv.ExampleEN = exEN.String
 	}
+	if cv.Pos == "Verb" && conj.Valid {
+		cv.Conjugations = parseConjugations(conj.String)
+	}
 	return cv, nil
 }
 
@@ -256,6 +332,7 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 		trans    sql.NullString
 		exDE     sql.NullString
 		exEN     sql.NullString
+		conj     sql.NullString
 		lemma    string
 	)
 	cv.DeckID = deckID
@@ -276,7 +353,7 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 		SELECT c.id, c.user_id, c.word_id, c.due, c.stability, c.difficulty,
 		       c.elapsed_days, c.scheduled_days, c.reps, c.lapses, c.state, c.last_review,
 		       w.lemma, w.pos, w.articles, w.url, w.audio_url, w.translation_en,
-		       w.example_de, w.example_en
+		       w.example_de, w.example_en, w.conjugations
 		FROM cards c
 		JOIN words w ON w.id = c.word_id
 		WHERE c.user_id = ? AND w.deck_id = ? AND c.due <= CURRENT_TIMESTAMP`+stateFilter+`
@@ -288,7 +365,7 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 		&cv.Card.ElapsedDays, &cv.Card.ScheduledDays,
 		&cv.Card.Reps, &cv.Card.Lapses, &cv.Card.State, &cv.Card.LastReview,
 		&lemma, &pos, &articles, &url, &audio, &trans,
-		&exDE, &exEN,
+		&exDE, &exEN, &conj,
 	)
 	if err != nil {
 		return cv, err
@@ -310,6 +387,9 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 	}
 	if exEN.Valid {
 		cv.ExampleEN = exEN.String
+	}
+	if cv.Pos == "Verb" && conj.Valid {
+		cv.Conjugations = parseConjugations(conj.String)
 	}
 	return cv, nil
 }
