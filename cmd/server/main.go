@@ -70,6 +70,11 @@ func main() {
 		}
 	}()
 
+	audioCache, err := audio.NewCache(cfg.Audio.CacheDir)
+	if err != nil {
+		log.Fatalf("audio cache: %v", err)
+	}
+
 	templates := web.MustLoadTemplates()
 	sessions := auth.NewStore(dbConn)
 	scheduler := fsrs.New(fsrs.Options{
@@ -77,7 +82,7 @@ func main() {
 		MaximumInterval:  cfg.FSRS.MaximumInterval,
 		EnableFuzz:       cfg.FSRS.EnableFuzz,
 	})
-	server := handlers.New(dbConn, sessions, templates, scheduler, cfg.FSRS.NewCardsPerDay)
+	server := handlers.New(dbConn, sessions, templates, scheduler, audioCache, cfg.FSRS.NewCardsPerDay)
 
 	mux := http.NewServeMux()
 	server.Register(mux)

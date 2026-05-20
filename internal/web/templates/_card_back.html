@@ -4,7 +4,7 @@
     {{.Display}}
     {{if .AudioURL}}
     <button type="button" class="audio-play" title="Play pronunciation">▶</button>
-    <audio data-card-audio preload="none" src="{{.AudioURL}}"></audio>
+    <audio data-card-audio preload="none" src="/media/audio/{{.WordID}}"></audio>
     {{end}}
   </div>
   <div class="pos">{{.Pos}}</div>

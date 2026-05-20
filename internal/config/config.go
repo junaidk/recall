@@ -12,6 +12,7 @@ type Config struct {
 	DB     DBConfig     `yaml:"db"`
 	DeepL  DeepLConfig  `yaml:"deepl"`
 	Import ImportConfig `yaml:"import"`
+	Audio  AudioConfig  `yaml:"audio"`
 	FSRS   FSRSConfig   `yaml:"fsrs"`
 }
 
@@ -33,6 +34,10 @@ type DeepLConfig struct {
 
 type ImportConfig struct {
 	SeedDir string `yaml:"seed_dir"`
+}
+
+type AudioConfig struct {
+	CacheDir string `yaml:"cache_dir"`
 }
 
 type FSRSConfig struct {
@@ -68,6 +73,9 @@ func Load(path string) (*Config, error) {
 	}
 	if c.Import.SeedDir == "" {
 		c.Import.SeedDir = "seed"
+	}
+	if c.Audio.CacheDir == "" {
+		c.Audio.CacheDir = "data/audio_cache"
 	}
 	if c.FSRS.RequestRetention <= 0 || c.FSRS.RequestRetention >= 1 {
 		c.FSRS.RequestRetention = 0.9

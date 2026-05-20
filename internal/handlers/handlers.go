@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"net/http"
 
+	"github.com/junaidk/recall/internal/audio"
 	"github.com/junaidk/recall/internal/auth"
 	"github.com/junaidk/recall/internal/fsrs"
 	"github.com/junaidk/recall/internal/web"
@@ -15,11 +16,12 @@ type Server struct {
 	Sessions       *auth.Store
 	Templates      *web.Templates
 	Scheduler      *fsrs.Scheduler
+	AudioCache     *audio.Cache
 	NewCardsPerDay int
 }
 
-func New(db *sql.DB, sessions *auth.Store, t *web.Templates, scheduler *fsrs.Scheduler, newCardsPerDay int) *Server {
-	return &Server{DB: db, Sessions: sessions, Templates: t, Scheduler: scheduler, NewCardsPerDay: newCardsPerDay}
+func New(db *sql.DB, sessions *auth.Store, t *web.Templates, scheduler *fsrs.Scheduler, audioCache *audio.Cache, newCardsPerDay int) *Server {
+	return &Server{DB: db, Sessions: sessions, Templates: t, Scheduler: scheduler, AudioCache: audioCache, NewCardsPerDay: newCardsPerDay}
 }
 
 // Register mounts all routes on mux.
@@ -39,6 +41,8 @@ func (s *Server) Register(mux *http.ServeMux) {
 	mux.Handle("GET /review/{deckID}/next", s.Sessions.RequireUser(http.HandlerFunc(s.handleNextCard)))
 	mux.Handle("GET /review/{deckID}/card/{cardID}", s.Sessions.RequireUser(http.HandlerFunc(s.handleRevealCard)))
 	mux.Handle("POST /review/{cardID}/grade", s.Sessions.RequireUser(http.HandlerFunc(s.handleGrade)))
+
+	mux.Handle("GET /media/audio/{wordID}", s.Sessions.RequireUser(http.HandlerFunc(s.handleAudio)))
 
 	mux.Handle("POST /review/word/{wordID}/example/next", s.Sessions.RequireUser(http.HandlerFunc(s.handleNextExample)))
 	mux.Handle("GET /review/word/{wordID}/example/choices", s.Sessions.RequireUser(http.HandlerFunc(s.handleExampleChoices)))
