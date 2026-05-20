@@ -66,6 +66,80 @@ The scheduler is a single `*fsrs.Scheduler` held on `handlers.Server` and constr
 [cmd/server/main.go](../cmd/server/main.go) from the YAML config. FSRS itself is stateless — it
 just holds parameters.
 
+## How `due` is calculated
+
+Recall itself does not compute `due` — it persists whichever value `go-fsrs` returns. The flow
+through [internal/fsrs/scheduler.go](../internal/fsrs/scheduler.go):
+
+1. Handler calls `Scheduler.Grade(card, rating, now)`.
+2. `toLib` hands the current card state (`Stability`, `Difficulty`, `State`, `LastReview`, …) to
+   `go-fsrs`.
+3. `f.Repeat(card, now)` returns four candidate next-cards (one per rating). The candidate
+   matching the user's rating is selected and its `Due` is written back to the DB.
+
+What `f.Repeat` does internally depends on the card's **state**:
+
+- **New** (`state=0`) — no stability yet, so the rating maps to a fixed short interval (FSRS's
+  "learning steps"). With `EnableShortTerm=true` (the go-fsrs default) Again is ~1 minute, Hard
+  ~5 min, Good ~10 min; Easy promotes straight to Review with a multi-day interval. The card
+  moves to `Learning` (state 1) for Again/Hard/Good.
+- **Learning / Relearning** (`state=1`/`3`) — short sub-day steps again, until a Good/Easy
+  promotes the card to `Review`. On promotion, the first real interval is derived from the
+  freshly-computed `Stability`.
+- **Review** (`state=2`) — the proper spaced-repetition formula:
+  1. Update `Difficulty` and `Stability` from the rating, elapsed days since `LastReview`, and
+     the current `Stability`/`Difficulty` (using the 19 FSRS `W` weights).
+  2. Compute the next interval so the predicted recall probability at that interval equals
+     `RequestRetention` (default `0.9`). Roughly `interval ≈ Stability · f(RequestRetention)` —
+     higher stability or lower retention target → longer interval.
+  3. Clamp to `MaximumInterval`.
+  4. If `EnableFuzz` is on and interval ≥ 2.5 days, nudge ±5–15%.
+  5. `Again` demotes the card to `Relearning` with a short interval and increments `lapses`.
+
+  `due = LastReview + interval`.
+
+The exact numeric formula lives in the FSRS-4.5 algorithm inside
+[`go-fsrs`](https://github.com/open-spaced-repetition/go-fsrs); Recall only configures
+`RequestRetention`, `MaximumInterval`, and `EnableFuzz` and trusts the library for the rest.
+
+### When the card reappears
+
+The next-card query is just `WHERE c.due <= CURRENT_TIMESTAMP ORDER BY c.due ASC, RANDOM()` (see
+[Lifecycle of a word](#lifecycle-of-a-word) above). So a card resurfaces as soon as wall-clock
+time crosses its `due` **and** it's the oldest-due card in the deck. For Learning/Relearning that
+is typically the same session (minutes later); for Review cards it is days to months later,
+depending on `Stability`. Ties on `due` are broken randomly.
+
+## When a session ends
+
+There is no explicit "session" object — a session ends when the next-card query returns zero
+rows. After every grade (and on the initial page load) the handler calls `fetchNextCardView`; if
+that returns `sql.ErrNoRows`, the `done` partial is rendered instead of `card_front`
+([internal/handlers/review.go](../internal/handlers/review.go), `handleNextCard` /
+`handleGrade`).
+
+Concretely, "no more cards" means **one** of:
+
+- **Nothing is due yet.** Every card in this deck has `due > NOW`. The next card will appear
+  whenever its `due` timestamp passes — minutes later for Learning/Relearning, days/months later
+  for Review.
+- **Daily new-card cap reached and nothing else is due.** Once
+  `countNewIntroducedToday(user, deck) >= new_cards_per_day` the query gains `AND c.state != 0`,
+  filtering New cards out. If no Learning/Review/Relearning card is also due at that moment, the
+  query returns zero rows even though unseen New cards still exist in the deck — they become
+  eligible again at the next local-midnight rollover.
+- **Deck exhausted.** Every word has been graded at least once and every card's next `due` is in
+  the future.
+
+Notes:
+
+- The check is **per request**, not a stored session counter. If the user leaves the page open
+  and a Learning card's ~1-minute interval elapses, the next request will surface that card —
+  the "done" screen is just a snapshot of the current moment.
+- The query uses SQLite's `CURRENT_TIMESTAMP` (UTC `now`), so the eligibility boundary moves
+  continuously.
+- There is no minimum or maximum cards-per-session; the loop runs until the query is empty.
+
 ## Configuration
 
 A `fsrs:` block in `config.yaml` is optional. Omitted fields fall back to the library defaults
