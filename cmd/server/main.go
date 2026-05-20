@@ -70,7 +70,7 @@ func main() {
 		MaximumInterval:  cfg.FSRS.MaximumInterval,
 		EnableFuzz:       cfg.FSRS.EnableFuzz,
 	})
-	server := handlers.New(dbConn, sessions, templates, scheduler)
+	server := handlers.New(dbConn, sessions, templates, scheduler, cfg.FSRS.NewCardsPerDay)
 
 	mux := http.NewServeMux()
 	server.Register(mux)

@@ -160,6 +160,22 @@ func (s *Server) handleGrade(w http.ResponseWriter, r *http.Request) {
 
 // --- helpers ---
 
+// countNewIntroducedToday counts cards from this deck that the user graded out
+// of the New state today. review_logs.state captures the card's prior state,
+// so rows with state=0 are exactly the "first-time" gradings of New cards.
+func (s *Server) countNewIntroducedToday(userID, deckID int64) (int, error) {
+	var n int
+	err := s.DB.QueryRow(`
+		SELECT COUNT(*) FROM review_logs rl
+		JOIN cards c ON c.id = rl.card_id
+		JOIN words w ON w.id = c.word_id
+		WHERE c.user_id = ? AND w.deck_id = ?
+		  AND rl.state = 0
+		  AND date(rl.reviewed_at, 'localtime') = date('now', 'localtime')
+	`, userID, deckID).Scan(&n)
+	return n, err
+}
+
 func (s *Server) loadCard(userID, cardID int64) (models.Card, int64, error) {
 	var c models.Card
 	var deckID int64
@@ -243,14 +259,27 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 		lemma    string
 	)
 	cv.DeckID = deckID
-	err := s.DB.QueryRow(`
+
+	// Daily new-card cap: if the user has already introduced N new cards from
+	// this deck today, exclude state=0 (New) from the queue. Learning/Review/
+	// Relearning cards remain eligible.
+	introducedToday, err := s.countNewIntroducedToday(userID, deckID)
+	if err != nil {
+		return cv, err
+	}
+	stateFilter := ""
+	if introducedToday >= s.NewCardsPerDay {
+		stateFilter = " AND c.state != 0"
+	}
+
+	err = s.DB.QueryRow(`
 		SELECT c.id, c.user_id, c.word_id, c.due, c.stability, c.difficulty,
 		       c.elapsed_days, c.scheduled_days, c.reps, c.lapses, c.state, c.last_review,
 		       w.lemma, w.pos, w.articles, w.url, w.audio_url, w.translation_en,
 		       w.example_de, w.example_en
 		FROM cards c
 		JOIN words w ON w.id = c.word_id
-		WHERE c.user_id = ? AND w.deck_id = ? AND c.due <= CURRENT_TIMESTAMP
+		WHERE c.user_id = ? AND w.deck_id = ? AND c.due <= CURRENT_TIMESTAMP`+stateFilter+`
 		ORDER BY c.due ASC, RANDOM()
 		LIMIT 1
 	`, userID, deckID).Scan(

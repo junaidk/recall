@@ -39,6 +39,7 @@ type FSRSConfig struct {
 	RequestRetention float64 `yaml:"request_retention"`
 	MaximumInterval  float64 `yaml:"maximum_interval"`
 	EnableFuzz       bool    `yaml:"enable_fuzz"`
+	NewCardsPerDay   int     `yaml:"new_cards_per_day"`
 }
 
 func Load(path string) (*Config, error) {
@@ -73,6 +74,9 @@ func Load(path string) (*Config, error) {
 	}
 	if c.FSRS.MaximumInterval <= 0 {
 		c.FSRS.MaximumInterval = 36500
+	}
+	if c.FSRS.NewCardsPerDay <= 0 {
+		c.FSRS.NewCardsPerDay = 20
 	}
 	if c.Server.SessionSecret == "" {
 		return nil, fmt.Errorf("server.session_secret must be set")

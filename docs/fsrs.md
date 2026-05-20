@@ -36,11 +36,13 @@ Every grading also appends one row to `review_logs` (rating, state, elapsed/sche
    ```sql
    SELECT ... FROM cards c JOIN words w ON w.id = c.word_id
    WHERE c.user_id = ? AND w.deck_id = ? AND c.due <= CURRENT_TIMESTAMP
+     [AND c.state != 0]   -- added when the daily new-card cap is reached
    ORDER BY c.due ASC, RANDOM()
    LIMIT 1
    ```
    Oldest-due first; ties broken randomly. When the query returns zero rows, the session ends
-   ("done" partial is rendered).
+   ("done" partial is rendered). The `state != 0` filter is applied when
+   [`new_cards_per_day`](#daily-new-card-cap) has been hit for this user+deck today — see below.
 
 3. **Grading.** The user picks one of four ratings:
 
@@ -74,6 +76,7 @@ fsrs:
   request_retention: 0.9      # 0 < x < 1
   maximum_interval: 36500     # days
   enable_fuzz: false
+  new_cards_per_day: 20       # per (user, deck), local-day boundary
 ```
 
 ### Knobs
@@ -83,6 +86,33 @@ fsrs:
 | `request_retention` | `0.9` | Target probability of recall at next review. **Lower** → longer intervals, fewer reviews, more forgetting. **Higher** → tighter intervals, more daily work. Typical range 0.80–0.97. Values outside `(0, 1)` are clamped to the default. |
 | `maximum_interval` | `36500` (≈100 years) | Hard cap on how far out a card can be scheduled. Lower this if you want long-mature cards to still resurface periodically. |
 | `enable_fuzz` | `false` | When true, intervals ≥ 2.5 days are randomly nudged ±5–15% so a big batch added on the same day doesn't all come due on the same future day. Recommended once a deck stabilizes. |
+| `new_cards_per_day` | `20` | Cap on **New** (state=0) cards introduced from each deck per day. Once reached, the queue serves only Learning/Review/Relearning cards until the next local-day rollover. See below. |
+
+### Daily new-card cap
+
+Without a cap, opening a large deck (e.g. Goethe-A2, ~700 words) seeds every word with
+`due = NOW`, so the queue picks unseen New cards before any rated card can repeat. With
+`EnableShortTerm=true`, an **Again** rating only pushes a card ~1 minute into the future — but
+that's still *later* than the original seed time of every unseen card, so the spaced-repetition
+loop never engages until the entire deck has been touched once.
+
+The cap fixes this:
+
+- The handler counts how many cards from the current deck have left the New state today, via
+  `SELECT COUNT(*) FROM review_logs WHERE state = 0 AND date(reviewed_at, 'localtime') = date('now', 'localtime')`
+  (`review_logs.state` records the card's **prior** state, so rows with `state=0` are
+  exactly the first-time gradings of New cards).
+- When that count reaches `new_cards_per_day`, the next-card query gains `AND c.state != 0`,
+  so only Learning/Review/Relearning cards can come up for the rest of the local day.
+- The cap is per `(user, deck)` and resets at local midnight on the server.
+
+**Practical effect.** With the default `20`, you introduce up to 20 new words per deck per day.
+Failed (Again) cards from today's batch come back within the same session because they're the
+only remaining due cards once the cap is hit — which is the spaced-repetition loop working as
+intended.
+
+Setting `new_cards_per_day: 0` (or any non-positive number) falls back to the default `20`;
+there's no "zero new cards" mode in config — pause manually if you need that.
 
 ### Knobs we do NOT expose
 
@@ -97,10 +127,11 @@ steps), and `W` (the 19 FSRS weights). These aren't surfaced because:
 
 Things commonly found in other SRS apps that Recall does *not* currently have:
 
-- No daily new-card cap.
 - No daily review cap.
 - No order options (mature-first, by-difficulty, etc.) — the queue is strictly `due ASC, RANDOM()`.
-- No per-user or per-deck overrides — one scheduler instance serves the whole server.
+- No per-user or per-deck overrides for FSRS algorithm parameters — one scheduler instance
+  serves the whole server. (The `new_cards_per_day` cap *is* applied per user+deck, but the
+  number itself is global.)
 - No leech detection / suspension.
 
 ## Code map

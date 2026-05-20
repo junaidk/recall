@@ -11,14 +11,15 @@ import (
 
 // Server bundles dependencies passed to every handler.
 type Server struct {
-	DB        *sql.DB
-	Sessions  *auth.Store
-	Templates *web.Templates
-	Scheduler *fsrs.Scheduler
+	DB             *sql.DB
+	Sessions       *auth.Store
+	Templates      *web.Templates
+	Scheduler      *fsrs.Scheduler
+	NewCardsPerDay int
 }
 
-func New(db *sql.DB, sessions *auth.Store, t *web.Templates, scheduler *fsrs.Scheduler) *Server {
-	return &Server{DB: db, Sessions: sessions, Templates: t, Scheduler: scheduler}
+func New(db *sql.DB, sessions *auth.Store, t *web.Templates, scheduler *fsrs.Scheduler, newCardsPerDay int) *Server {
+	return &Server{DB: db, Sessions: sessions, Templates: t, Scheduler: scheduler, NewCardsPerDay: newCardsPerDay}
 }
 
 // Register mounts all routes on mux.
