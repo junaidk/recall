@@ -9,6 +9,7 @@ import (
 	"github.com/junaidk/recall/internal/auth"
 	"github.com/junaidk/recall/internal/config"
 	"github.com/junaidk/recall/internal/db"
+	"github.com/junaidk/recall/internal/fsrs"
 	"github.com/junaidk/recall/internal/handlers"
 	"github.com/junaidk/recall/internal/importer"
 	"github.com/junaidk/recall/internal/seed"
@@ -64,7 +65,12 @@ func main() {
 
 	templates := web.MustLoadTemplates()
 	sessions := auth.NewStore(dbConn)
-	server := handlers.New(dbConn, sessions, templates)
+	scheduler := fsrs.New(fsrs.Options{
+		RequestRetention: cfg.FSRS.RequestRetention,
+		MaximumInterval:  cfg.FSRS.MaximumInterval,
+		EnableFuzz:       cfg.FSRS.EnableFuzz,
+	})
+	server := handlers.New(dbConn, sessions, templates, scheduler)
 
 	mux := http.NewServeMux()
 	server.Register(mux)

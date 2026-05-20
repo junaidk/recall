@@ -13,3 +13,13 @@ deepl:
 
 import:
   seed_dir: "seed"
+
+# FSRS spaced-repetition tuning. Omit any field to keep the library default.
+fsrs:
+  # Target probability of recall at next review. Lower → longer intervals,
+  # fewer reviews, more forgetting. Typical range: 0.80–0.97.
+  request_retention: 0.9
+  # Cap on how far out a card can be scheduled, in days.
+  maximum_interval: 36500
+  # Randomize intervals ±5–15% so batches don't all come due on the same day.
+  enable_fuzz: false

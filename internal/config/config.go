@@ -12,6 +12,7 @@ type Config struct {
 	DB     DBConfig     `yaml:"db"`
 	DeepL  DeepLConfig  `yaml:"deepl"`
 	Import ImportConfig `yaml:"import"`
+	FSRS   FSRSConfig   `yaml:"fsrs"`
 }
 
 type ServerConfig struct {
@@ -32,6 +33,12 @@ type DeepLConfig struct {
 
 type ImportConfig struct {
 	SeedDir string `yaml:"seed_dir"`
+}
+
+type FSRSConfig struct {
+	RequestRetention float64 `yaml:"request_retention"`
+	MaximumInterval  float64 `yaml:"maximum_interval"`
+	EnableFuzz       bool    `yaml:"enable_fuzz"`
 }
 
 func Load(path string) (*Config, error) {
@@ -60,6 +67,12 @@ func Load(path string) (*Config, error) {
 	}
 	if c.Import.SeedDir == "" {
 		c.Import.SeedDir = "seed"
+	}
+	if c.FSRS.RequestRetention <= 0 || c.FSRS.RequestRetention >= 1 {
+		c.FSRS.RequestRetention = 0.9
+	}
+	if c.FSRS.MaximumInterval <= 0 {
+		c.FSRS.MaximumInterval = 36500
 	}
 	if c.Server.SessionSecret == "" {
 		return nil, fmt.Errorf("server.session_secret must be set")

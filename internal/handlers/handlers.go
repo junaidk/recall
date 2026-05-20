@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/junaidk/recall/internal/auth"
+	"github.com/junaidk/recall/internal/fsrs"
 	"github.com/junaidk/recall/internal/web"
 )
 
@@ -13,10 +14,11 @@ type Server struct {
 	DB        *sql.DB
 	Sessions  *auth.Store
 	Templates *web.Templates
+	Scheduler *fsrs.Scheduler
 }
 
-func New(db *sql.DB, sessions *auth.Store, t *web.Templates) *Server {
-	return &Server{DB: db, Sessions: sessions, Templates: t}
+func New(db *sql.DB, sessions *auth.Store, t *web.Templates, scheduler *fsrs.Scheduler) *Server {
+	return &Server{DB: db, Sessions: sessions, Templates: t, Scheduler: scheduler}
 }
 
 // Register mounts all routes on mux.

@@ -13,8 +13,24 @@ type Scheduler struct {
 	f *fsrslib.FSRS
 }
 
-func New() *Scheduler {
-	return &Scheduler{f: fsrslib.NewFSRS(fsrslib.DefaultParam())}
+// Options are the tunable FSRS knobs we surface through config.
+// Zero values mean "use library defaults" — resolved by Load() in the config package.
+type Options struct {
+	RequestRetention float64
+	MaximumInterval  float64
+	EnableFuzz       bool
+}
+
+func New(opts Options) *Scheduler {
+	p := fsrslib.DefaultParam()
+	if opts.RequestRetention > 0 {
+		p.RequestRetention = opts.RequestRetention
+	}
+	if opts.MaximumInterval > 0 {
+		p.MaximumInterval = opts.MaximumInterval
+	}
+	p.EnableFuzz = opts.EnableFuzz
+	return &Scheduler{f: fsrslib.NewFSRS(p)}
 }
 
 // Grade applies the rating to the card and returns the updated card and the

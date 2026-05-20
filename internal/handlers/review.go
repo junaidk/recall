@@ -16,9 +16,6 @@ import (
 	"github.com/junaidk/recall/internal/sentences"
 )
 
-// Module-level scheduler instance — FSRS is stateless, just holds params.
-var scheduler = fsrs.New()
-
 type studyPage struct {
 	User *models.User
 	Deck models.Deck
@@ -114,7 +111,7 @@ func (s *Server) handleGrade(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	updated, log := scheduler.Grade(card, rating, time.Now())
+	updated, log := s.Scheduler.Grade(card, rating, time.Now())
 
 	tx, err := s.DB.Begin()
 	if err != nil {
