@@ -1,0 +1,49 @@
+{{define "title"}}Edit · {{.Display}}{{end}}
+{{define "body"}}
+<div class="study-header">
+  <h2>Edit card</h2>
+  <a class="edit-back" href="/decks/{{.DeckID}}/study?card={{.CardID}}">← Cancel</a>
+</div>
+
+<form method="post" action="/review/{{.CardID}}/edit" class="card card-edit">
+  <div class="lemma">{{.Display}}</div>
+
+  <div class="card-edit-field">
+    <label for="cef-trans">Translation</label>
+    <input id="cef-trans" type="text" name="translation_en" value="{{.TranslationEN}}" autofocus>
+  </div>
+
+  <div class="card-edit-field card-edit-example">
+    <label for="cef-de">Example · German</label>
+    <textarea id="cef-de" name="example_de" rows="2">{{.ExampleDE}}</textarea>
+    <label for="cef-en">Example · English</label>
+    <textarea id="cef-en" name="example_en" rows="2">{{.ExampleEN}}</textarea>
+  </div>
+
+  <div class="card-edit-actions">
+    <a class="secondary" href="/decks/{{.DeckID}}/study?card={{.CardID}}">Cancel</a>
+    <button class="primary" type="submit">Save</button>
+  </div>
+</form>
+
+<details class="edit-candidates">
+  <summary>Browse example candidates from corpus</summary>
+  <div class="edit-candidates-body"
+       hx-get="/review/{{.CardID}}/edit/candidates"
+       hx-trigger="toggle from:closest details once"
+       hx-swap="innerHTML">
+    <div class="edit-candidates-loading">Loading…</div>
+  </div>
+</details>
+
+<script>
+function recallFillExample(de, en) {
+  const deField = document.querySelector('[name=example_de]');
+  const enField = document.querySelector('[name=example_en]');
+  if (deField) { deField.value = de; deField.dispatchEvent(new Event('input')); }
+  if (enField) { enField.value = en; enField.dispatchEvent(new Event('input')); }
+  deField && deField.focus();
+}
+</script>
+{{end}}
+{{template "base" .}}

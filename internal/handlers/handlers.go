@@ -44,6 +44,10 @@ func (s *Server) Register(mux *http.ServeMux) {
 
 	mux.Handle("GET /media/audio/{wordID}", s.Sessions.RequireUser(http.HandlerFunc(s.handleAudio)))
 
+	mux.Handle("GET /review/{cardID}/edit", s.Sessions.RequireUser(http.HandlerFunc(s.handleEditCardForm)))
+	mux.Handle("POST /review/{cardID}/edit", s.Sessions.RequireUser(http.HandlerFunc(s.handleEditCard)))
+	mux.Handle("GET /review/{cardID}/edit/candidates", s.Sessions.RequireUser(http.HandlerFunc(s.handleEditCandidates)))
+
 	mux.Handle("POST /review/word/{wordID}/example/next", s.Sessions.RequireUser(http.HandlerFunc(s.handleNextExample)))
 	mux.Handle("GET /review/word/{wordID}/example/choices", s.Sessions.RequireUser(http.HandlerFunc(s.handleExampleChoices)))
 	mux.Handle("POST /review/word/{wordID}/example/set", s.Sessions.RequireUser(http.HandlerFunc(s.handleSetExample)))

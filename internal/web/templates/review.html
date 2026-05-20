@@ -2,13 +2,23 @@
 {{define "body"}}
 <div class="study-header">
   <h2>Studying: {{.Deck.Name}}</h2>
-  <label class="audio-toggle"><input type="checkbox" id="audio-autoplay-toggle"><span>Autoplay audio</span></label>
-  <label class="audio-toggle"><input type="checkbox" id="conjugations-show-toggle"><span>Show conjugations</span></label>
+  <details class="settings-menu">
+    <summary title="Study settings" aria-label="Study settings">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path>
+      </svg>
+    </summary>
+    <div class="settings-panel">
+      <label class="settings-option"><span>Autoplay audio</span><input type="checkbox" id="audio-autoplay-toggle"></label>
+      <label class="settings-option"><span>Show conjugations</span><input type="checkbox" id="conjugations-show-toggle"></label>
+    </div>
+  </details>
 </div>
 <p><a href="/decks">← Back to decks</a></p>
 
 <div id="card-slot"
-     hx-get="/review/{{.Deck.ID}}/next"
+     hx-get="{{if .InitialCardID}}/review/{{.Deck.ID}}/card/{{.InitialCardID}}{{else}}/review/{{.Deck.ID}}/next{{end}}"
      hx-trigger="load"
      hx-swap="innerHTML">
   Loading…

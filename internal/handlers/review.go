@@ -17,8 +17,9 @@ import (
 )
 
 type studyPage struct {
-	User *models.User
-	Deck models.Deck
+	User          *models.User
+	Deck          models.Deck
+	InitialCardID int64 // when non-zero, load this card's back instead of the next-due front
 }
 
 type cardView struct {
@@ -126,7 +127,13 @@ func (s *Server) handleStudyPage(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "seed cards: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
-	s.Templates.RenderPage(w, "review.html", studyPage{User: u, Deck: d})
+	var initialCardID int64
+	if raw := r.URL.Query().Get("card"); raw != "" {
+		if id, err := strconv.ParseInt(raw, 10, 64); err == nil && id > 0 {
+			initialCardID = id
+		}
+	}
+	s.Templates.RenderPage(w, "review.html", studyPage{User: u, Deck: d, InitialCardID: initialCardID})
 }
 
 func (s *Server) handleNextCard(w http.ResponseWriter, r *http.Request) {

@@ -9,6 +9,7 @@
   </div>
   <div class="pos">{{.Pos}}</div>
   <div class="translation">{{if .Translation}}{{.Translation}}{{else}}<em style="opacity:.5">(no translation)</em>{{end}}</div>
+  <div class="card-actions"><a href="/review/{{.Card.ID}}/edit">✎ Edit</a></div>
   {{template "example_block" .}}
   {{if .URL}}<div class="dwds"><a href="{{.URL}}" target="_blank" rel="noopener">DWDS entry</a></div>{{end}}
   <div class="grade-buttons"

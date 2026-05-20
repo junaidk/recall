@@ -1,0 +1,14 @@
+{{define "edit_candidates"}}
+<ul class="example-picker-list">
+  {{range .Candidates}}
+  <li>
+    <button type="button" onclick="recallFillExample({{.DE}}, {{.EN}})">
+      <div class="example-de">{{.DE}}</div>
+      <div class="example-en">{{.EN}}</div>
+    </button>
+  </li>
+  {{else}}
+  <li class="example-picker-empty">No candidates found.</li>
+  {{end}}
+</ul>
+{{end}}
