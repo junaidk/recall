@@ -238,7 +238,7 @@ button.primary:hover { background: #244e92; }
   font-weight: 500;
   color: #1a1a1a;
 }
-html[data-hide-conjugations="1"] .conjugations-card { display: none; }
+html[data-hide-grammar="1"] .conjugations-card { display: none; }
 
 .card .example-actions {
   display: flex;

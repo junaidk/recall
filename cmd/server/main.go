@@ -13,6 +13,7 @@ import (
 	"github.com/junaidk/recall/internal/fsrs"
 	"github.com/junaidk/recall/internal/handlers"
 	"github.com/junaidk/recall/internal/importer"
+	"github.com/junaidk/recall/internal/plurals"
 	"github.com/junaidk/recall/internal/seed"
 	"github.com/junaidk/recall/internal/sentences"
 	"github.com/junaidk/recall/internal/translator"
@@ -62,6 +63,12 @@ func main() {
 		log.Printf("conjugations: corpus load failed: %v", err)
 	} else if _, _, err := conjugations.Backfill(dbConn); err != nil {
 		log.Printf("conjugations: backfill failed: %v", err)
+	}
+
+	if err := plurals.EnsureCorpus(dbConn, cfg.Import.SeedDir); err != nil {
+		log.Printf("plurals: corpus load failed: %v", err)
+	} else if _, _, err := plurals.Backfill(dbConn); err != nil {
+		log.Printf("plurals: backfill failed: %v", err)
 	}
 
 	go func() {

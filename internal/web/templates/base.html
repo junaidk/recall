@@ -48,20 +48,20 @@
         if (audio) play(audio);
       });
 
-      const KEY_CONJ = 'recall.conjugations.show';
-      function applyConjVisibility() {
-        const hide = localStorage.getItem(KEY_CONJ) === '0';
-        document.documentElement.dataset.hideConjugations = hide ? '1' : '';
+      const KEY_GRAMMAR = 'recall.grammar.show';
+      function applyGrammarVisibility() {
+        const hide = localStorage.getItem(KEY_GRAMMAR) === '0';
+        document.documentElement.dataset.hideGrammar = hide ? '1' : '';
       }
-      const cbc = document.getElementById('conjugations-show-toggle');
-      if (cbc) {
-        cbc.checked = localStorage.getItem(KEY_CONJ) !== '0';
-        cbc.addEventListener('change', () => {
-          localStorage.setItem(KEY_CONJ, cbc.checked ? '1' : '0');
-          applyConjVisibility();
+      const cbg = document.getElementById('grammar-show-toggle');
+      if (cbg) {
+        cbg.checked = localStorage.getItem(KEY_GRAMMAR) !== '0';
+        cbg.addEventListener('change', () => {
+          localStorage.setItem(KEY_GRAMMAR, cbg.checked ? '1' : '0');
+          applyGrammarVisibility();
         });
       }
-      applyConjVisibility();
+      applyGrammarVisibility();
     })();
   </script>
 </body>

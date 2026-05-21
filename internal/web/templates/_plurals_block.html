@@ -1,0 +1,22 @@
+{{define "plurals_block"}}
+<div class="card conjugations-card">
+  <div class="conjugations">
+    <div class="tense">
+      <div class="tense-label">Singular</div>
+      <table class="conj-table">
+        {{range .Plurals.Rows}}
+        <tr><th>{{.Case}}</th><td>{{if .SgArticle}}{{.SgArticle}} {{end}}{{.SgForm}}</td></tr>
+        {{end}}
+      </table>
+    </div>
+    <div class="tense">
+      <div class="tense-label">Plural</div>
+      <table class="conj-table">
+        {{range .Plurals.Rows}}
+        <tr><th>{{.Case}}</th><td>{{.PlArticle}} {{.PlForm}}</td></tr>
+        {{end}}
+      </table>
+    </div>
+  </div>
+</div>
+{{end}}

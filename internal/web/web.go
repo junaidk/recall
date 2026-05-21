@@ -36,7 +36,7 @@ func MustLoadTemplates() *Templates {
 
 	// Partials returned by HTMX endpoints. Each is a single named template
 	// (no base layout); we invoke them via ExecuteTemplate.
-	partials := []string{"_card_front.html", "_card_back.html", "_done.html", "_example_block.html", "_example_choices.html", "_conjugations_block.html", "_edit_candidates.html"}
+	partials := []string{"_card_front.html", "_card_back.html", "_done.html", "_example_block.html", "_example_choices.html", "_conjugations_block.html", "_plurals_block.html", "_edit_candidates.html"}
 	partialSet, err := template.ParseFS(templateFS, partialNames(partials)...)
 	if err != nil {
 		panic(fmt.Errorf("parse partials: %w", err))

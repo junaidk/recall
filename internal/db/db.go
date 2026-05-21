@@ -16,7 +16,7 @@ import (
 //go:embed schema.sql
 var schemaSQL string
 
-const currentSchemaVersion = 4
+const currentSchemaVersion = 5
 
 func Open(path string) (*sql.DB, error) {
 	if dir := filepath.Dir(path); dir != "" && dir != "." {
@@ -93,6 +93,18 @@ func migrate(db *sql.DB) error {
 		alters := []string{
 			`ALTER TABLE words ADD COLUMN conjugations TEXT`,
 			`ALTER TABLE words ADD COLUMN conjugations_at DATETIME`,
+		}
+		for _, stmt := range alters {
+			if _, err := db.Exec(stmt); err != nil && !strings.Contains(err.Error(), "duplicate column") {
+				return fmt.Errorf("%s: %w", stmt, err)
+			}
+		}
+	}
+
+	if version < 5 {
+		alters := []string{
+			`ALTER TABLE words ADD COLUMN plurals TEXT`,
+			`ALTER TABLE words ADD COLUMN plurals_at DATETIME`,
 		}
 		for _, stmt := range alters {
 			if _, err := db.Exec(stmt); err != nil && !strings.Contains(err.Error(), "duplicate column") {

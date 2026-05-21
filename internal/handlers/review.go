@@ -35,6 +35,7 @@ type cardView struct {
 	ExampleDE    string
 	ExampleEN    string
 	Conjugations *conjugationView
+	Plurals      *declensionView
 }
 
 // conjugationView is the verb conjugation panel rendered below the main card.
@@ -69,6 +70,157 @@ var praesensOrder = []struct {
 var auxPraesens = map[string]map[string]string{
 	"haben": {"ich": "habe", "du": "hast", "er": "hat", "wir": "haben", "ihr": "habt", "sie": "haben"},
 	"sein":  {"ich": "bin", "du": "bist", "er": "ist", "wir": "sind", "ihr": "seid", "sie": "sind"},
+}
+
+// declensionView is the noun declension panel rendered below the main card.
+// Nil unless the word is a Substantiv (and not plural-only) and a non-empty
+// payload was loaded. Rows are pinned in caseOrder; the singular column
+// renders SgArticle + SgForm, the plural column renders PlArticle + PlForm.
+type declensionView struct {
+	Rows []declensionRow
+}
+
+type declensionRow struct {
+	Case      string // "Nominativ", "Akkusativ", "Dativ", "Genitiv"
+	SgArticle string
+	SgForm    string
+	PlArticle string
+	PlForm    string
+}
+
+// caseOrder pins the row order rendered on the noun card.
+var caseOrder = []struct {
+	Key, Label string
+}{
+	{"nom", "Nominativ"},
+	{"akk", "Akkusativ"},
+	{"dat", "Dativ"},
+	{"gen", "Genitiv"},
+}
+
+// singularArticles maps the canonical DWDS genus to the per-case singular
+// article. Plural articles are fixed (see pluralArticles).
+var singularArticles = map[string]map[string]string{
+	"mask.":  {"nom": "der", "akk": "den", "dat": "dem", "gen": "des"},
+	"fem.":   {"nom": "die", "akk": "die", "dat": "der", "gen": "der"},
+	"neutr.": {"nom": "das", "akk": "das", "dat": "dem", "gen": "des"},
+}
+
+var pluralArticles = map[string]string{
+	"nom": "die",
+	"akk": "die",
+	"dat": "den",
+	"gen": "der",
+}
+
+// articleByNominative maps a nominative-singular article (as stored in
+// words.articles) back to its genus, so we can derive the full per-case
+// article set even when words.genera is empty or unexpected.
+var articleByNominative = map[string]string{
+	"der": "mask.",
+	"die": "fem.",
+	"das": "neutr.",
+}
+
+// parsePlurals turns the JSON payload stored in words.plurals into the
+// view-ready struct. Returns nil for empty/missing/invalid input — the
+// template gate (Plurals != nil) then suppresses the panel. The lemma is
+// used as the fallback singular form whenever the payload omits a slot
+// (common for feminine nouns where kaikki only lists Nom Sg explicitly).
+func parsePlurals(raw, lemma, articlesJSON, generaJSON string) *declensionView {
+	if raw == "" || raw == "{}" {
+		return nil
+	}
+	var p struct {
+		Sg struct {
+			Nom, Akk, Dat, Gen string
+		} `json:"sg"`
+		Pl struct {
+			Nom, Akk, Dat, Gen string
+		} `json:"pl"`
+	}
+	if err := json.Unmarshal([]byte(raw), &p); err != nil {
+		return nil
+	}
+	if p.Pl.Nom == "" && p.Pl.Akk == "" && p.Pl.Dat == "" && p.Pl.Gen == "" {
+		return nil
+	}
+
+	genus := pickGenus(articlesJSON, generaJSON)
+	sgArt := singularArticles[genus]
+
+	sgForms := map[string]string{"nom": p.Sg.Nom, "akk": p.Sg.Akk, "dat": p.Sg.Dat, "gen": p.Sg.Gen}
+	plForms := map[string]string{"nom": p.Pl.Nom, "akk": p.Pl.Akk, "dat": p.Pl.Dat, "gen": p.Pl.Gen}
+	// Plural cases that share the form of Nominativ in German morphology.
+	if plForms["akk"] == "" {
+		plForms["akk"] = plForms["nom"]
+	}
+	if plForms["gen"] == "" {
+		plForms["gen"] = plForms["nom"]
+	}
+	if plForms["dat"] == "" {
+		plForms["dat"] = dativPlural(plForms["nom"])
+	}
+
+	dv := &declensionView{}
+	for _, row := range caseOrder {
+		sgForm := sgForms[row.Key]
+		if sgForm == "" {
+			sgForm = lemma
+		}
+		plForm := plForms[row.Key]
+		sgArticle := ""
+		if sgArt != nil {
+			sgArticle = sgArt[row.Key]
+		}
+		dv.Rows = append(dv.Rows, declensionRow{
+			Case:      row.Label,
+			SgArticle: sgArticle,
+			SgForm:    sgForm,
+			PlArticle: pluralArticles[row.Key],
+			PlForm:    plForm,
+		})
+	}
+	return dv
+}
+
+// pickGenus returns the first usable DWDS genus label from genera, falling
+// back to the gender implied by the first nominative article. Returns "" if
+// neither yields a recognised label — the renderer then leaves the singular
+// article blank rather than fabricating one.
+func pickGenus(articlesJSON, generaJSON string) string {
+	var genera []string
+	if generaJSON != "" {
+		_ = json.Unmarshal([]byte(generaJSON), &genera)
+	}
+	for _, g := range genera {
+		if _, ok := singularArticles[g]; ok {
+			return g
+		}
+	}
+	var articles []string
+	if articlesJSON != "" {
+		_ = json.Unmarshal([]byte(articlesJSON), &articles)
+	}
+	for _, a := range articles {
+		if g, ok := articleByNominative[a]; ok {
+			return g
+		}
+	}
+	return ""
+}
+
+// dativPlural applies the German Dat Pl -n suffix rule. The dative plural of
+// every noun ends in -n unless the nominative plural already ends in -n or
+// -s (loanwords like Autos take no extra n).
+func dativPlural(nomPl string) string {
+	if nomPl == "" {
+		return ""
+	}
+	if strings.HasSuffix(nomPl, "n") || strings.HasSuffix(nomPl, "s") {
+		return nomPl
+	}
+	return nomPl + "n"
 }
 
 // parseConjugations turns the JSON payload stored in words.conjugations into
@@ -278,6 +430,7 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 	var (
 		cv       cardView
 		articles sql.NullString
+		genera   sql.NullString
 		pos      sql.NullString
 		url      sql.NullString
 		audio    sql.NullString
@@ -285,13 +438,14 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 		exDE     sql.NullString
 		exEN     sql.NullString
 		conj     sql.NullString
+		plur     sql.NullString
 		lemma    string
 	)
 	err := s.DB.QueryRow(`
 		SELECT c.id, c.user_id, c.word_id, c.due, c.stability, c.difficulty,
 		       c.elapsed_days, c.scheduled_days, c.reps, c.lapses, c.state, c.last_review,
-		       w.deck_id, w.lemma, w.pos, w.articles, w.url, w.audio_url, w.translation_en,
-		       w.example_de, w.example_en, w.conjugations
+		       w.deck_id, w.lemma, w.pos, w.articles, w.genera, w.url, w.audio_url, w.translation_en,
+		       w.example_de, w.example_en, w.conjugations, w.plurals
 		FROM cards c
 		JOIN words w ON w.id = c.word_id
 		WHERE c.id = ? AND c.user_id = ?
@@ -300,8 +454,8 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 		&cv.Card.Stability, &cv.Card.Difficulty,
 		&cv.Card.ElapsedDays, &cv.Card.ScheduledDays,
 		&cv.Card.Reps, &cv.Card.Lapses, &cv.Card.State, &cv.Card.LastReview,
-		&cv.DeckID, &lemma, &pos, &articles, &url, &audio, &trans,
-		&exDE, &exEN, &conj,
+		&cv.DeckID, &lemma, &pos, &articles, &genera, &url, &audio, &trans,
+		&exDE, &exEN, &conj, &plur,
 	)
 	if err != nil {
 		return cv, err
@@ -327,6 +481,9 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 	if cv.Pos == "Verb" && conj.Valid {
 		cv.Conjugations = parseConjugations(conj.String)
 	}
+	if cv.Pos == "Substantiv" && plur.Valid {
+		cv.Plurals = parsePlurals(plur.String, lemma, articles.String, genera.String)
+	}
 	return cv, nil
 }
 
@@ -334,6 +491,7 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 	var (
 		cv       cardView
 		articles sql.NullString
+		genera   sql.NullString
 		pos      sql.NullString
 		url      sql.NullString
 		audio    sql.NullString
@@ -341,6 +499,7 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 		exDE     sql.NullString
 		exEN     sql.NullString
 		conj     sql.NullString
+		plur     sql.NullString
 		lemma    string
 	)
 	cv.DeckID = deckID
@@ -380,8 +539,8 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 	err = s.DB.QueryRow(`
 		SELECT c.id, c.user_id, c.word_id, c.due, c.stability, c.difficulty,
 		       c.elapsed_days, c.scheduled_days, c.reps, c.lapses, c.state, c.last_review,
-		       w.lemma, w.pos, w.articles, w.url, w.audio_url, w.translation_en,
-		       w.example_de, w.example_en, w.conjugations
+		       w.lemma, w.pos, w.articles, w.genera, w.url, w.audio_url, w.translation_en,
+		       w.example_de, w.example_en, w.conjugations, w.plurals
 		FROM cards c
 		JOIN words w ON w.id = c.word_id
 		WHERE c.user_id = ? AND w.deck_id = ? AND c.due <= CURRENT_TIMESTAMP`+stateFilter+`
@@ -392,8 +551,8 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 		&cv.Card.Stability, &cv.Card.Difficulty,
 		&cv.Card.ElapsedDays, &cv.Card.ScheduledDays,
 		&cv.Card.Reps, &cv.Card.Lapses, &cv.Card.State, &cv.Card.LastReview,
-		&lemma, &pos, &articles, &url, &audio, &trans,
-		&exDE, &exEN, &conj,
+		&lemma, &pos, &articles, &genera, &url, &audio, &trans,
+		&exDE, &exEN, &conj, &plur,
 	)
 	if err != nil {
 		return cv, err
@@ -418,6 +577,9 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 	}
 	if cv.Pos == "Verb" && conj.Valid {
 		cv.Conjugations = parseConjugations(conj.String)
+	}
+	if cv.Pos == "Substantiv" && plur.Valid {
+		cv.Plurals = parsePlurals(plur.String, lemma, articles.String, genera.String)
 	}
 	return cv, nil
 }

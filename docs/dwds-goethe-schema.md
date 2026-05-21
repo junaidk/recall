@@ -57,3 +57,14 @@ Each list is a top-level array of entries:
 | `onlypl` | string | Optional; literal value `"nur im Plural"` when the word is plural-only. |
 
 Source: <https://www.dwds.de/d/api#wb-list-goethe>
+
+## What DWDS does not provide
+
+The Goethe themenglossar export carries only the headword, article, and gender — no declined or conjugated forms. Recall enriches the imported nouns and verbs from a second source (the de.wiktionary morphological dump on [kaikki.org](https://kaikki.org/dictionary/downloads/de/de-extract.jsonl.gz)) via two maintainer-only builders:
+
+| Builder | Output | Powers |
+|---|---|---|
+| `cmd/build-conjugations` | `seed/de_verb_conjugations.jsonl` | The Präsens / Perfekt panel on verb cards |
+| `cmd/build-noun-plurals` | `seed/de_noun_plurals.jsonl` | The Nom/Akk/Dat/Gen × Singular/Plural panel on noun cards |
+
+Both seeds are loaded once at boot into corpus tables (`verb_conjugations`, `noun_plurals`) and backfilled onto the `words` rows. Nouns flagged `onlypl` are excluded from the plural backfill — the lemma itself is already a plural form.
