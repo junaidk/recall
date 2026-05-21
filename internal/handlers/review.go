@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"math/rand/v2"
 	"net/http"
 	"strconv"
 	"strings"
@@ -344,16 +345,36 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 	)
 	cv.DeckID = deckID
 
-	// Daily new-card cap: if the user has already introduced N new cards from
-	// this deck today, exclude state=0 (New) from the queue. Learning/Review/
-	// Relearning cards remain eligible.
+	// Pick the next card by weighted random across two tracks (new vs review)
+	// so new cards are sprinkled through the session instead of being front-
+	// loaded. Once the daily new-card cap is hit, the new track has zero weight
+	// and only reviews are served.
 	introducedToday, err := s.countNewIntroducedToday(userID, deckID)
 	if err != nil {
 		return cv, err
 	}
-	stateFilter := ""
-	if introducedToday >= s.NewCardsPerDay {
-		stateFilter = " AND c.state != 0"
+	remainingNew := max(s.NewCardsPerDay-introducedToday, 0)
+
+	var newDue, reviewDue int
+	err = s.DB.QueryRow(`
+		SELECT
+		  COALESCE(SUM(CASE WHEN c.state = 0 THEN 1 ELSE 0 END), 0),
+		  COALESCE(SUM(CASE WHEN c.state != 0 THEN 1 ELSE 0 END), 0)
+		FROM cards c
+		JOIN words w ON w.id = c.word_id
+		WHERE c.user_id = ? AND w.deck_id = ? AND c.due <= CURRENT_TIMESTAMP
+	`, userID, deckID).Scan(&newDue, &reviewDue)
+	if err != nil {
+		return cv, err
+	}
+
+	effectiveNew := min(newDue, remainingNew)
+	if effectiveNew+reviewDue == 0 {
+		return cv, sql.ErrNoRows
+	}
+	stateFilter := " AND c.state != 0"
+	if rand.IntN(effectiveNew+reviewDue) < effectiveNew {
+		stateFilter = " AND c.state = 0"
 	}
 
 	err = s.DB.QueryRow(`
