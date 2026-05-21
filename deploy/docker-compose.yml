@@ -1,0 +1,24 @@
+# Run the Recall server in Docker.
+#
+# Usage (from repo root):
+#   cp config.example.yaml config.yaml   # then edit server.session_secret
+#   docker compose -f deploy/docker-compose.yml up -d --build
+#
+# The SQLite DB and audio cache live in ./data on the host (gitignored).
+
+services:
+  recall:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: recall:latest
+    container_name: recall
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../docker-data:/app/data
+      - ../config.yaml:/app/config.yaml:ro
+    environment:
+      # Match the host timezone so the daily new-card rollover lines up.
+      TZ: ${TZ:-UTC}
