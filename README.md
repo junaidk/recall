@@ -14,6 +14,16 @@ go build -tags sqlite_fts5 -o recall ./cmd/server
 
 Open http://localhost:8080, register, pick a deck, study.
 
+## Screenshots
+
+| Decks | Study (front) | Study (back) |
+|---|---|---|
+| ![Decks](docs/screenshots/03-decks.png) | ![Card front](docs/screenshots/04-study-front.png) | ![Card back](docs/screenshots/05-study-back.png) |
+
+| Edit card | Stats |
+|---|---|
+| ![Edit card](docs/screenshots/07-card-edit.png) | ![Stats](docs/screenshots/06-stats.png) |
+
 ## Configuration (`config.yaml`)
 
 | Key | Notes |
@@ -70,7 +80,7 @@ Output is deterministic (URL-sorted, indented JSON, trailing newline), so re-run
 
 ## Adding a new word list
 
-Drop a JSON file shaped like `seed/A2.json` into `seed/` and restart. The DWDS JSON schema is documented in [api-doc.md](api-doc.md). The first boot will fetch translations / examples / audio for the new words; once everything is filled in, run `./seed-export` to capture the harvested data and commit the new `seed/<deck>.enrichment.json`.
+Drop a JSON file shaped like `seed/A2.json` into `seed/` and restart. The DWDS JSON schema is documented in [docs/dwds-goethe-schema.md](docs/dwds-goethe-schema.md). The first boot will fetch translations / examples / audio for the new words; once everything is filled in, run `./seed-export` to capture the harvested data and commit the new `seed/<deck>.enrichment.json`.
 
 ## Layout
 

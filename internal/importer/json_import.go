@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-// Raw JSON entry shape (see api-doc.md).
+// Raw JSON entry shape (see docs/dwds-goethe-schema.md).
 type rawEntry struct {
 	Sch      []rawSch `json:"sch"`
 	URL      string   `json:"url"`
