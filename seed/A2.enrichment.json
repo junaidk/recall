@@ -19,8 +19,8 @@
     "url": "https://www.dwds.de/wb/%C3%A4rgern",
     "translation_en": "annoy",
     "audio_url": "https://www.dwds.de/audio/007/aergern.mp3",
-    "example_de": "Ärgern Sie sich nicht!",
-    "example_en": "Don't be upset.",
+    "example_de": "Hör auf, Tom zu ärgern!",
+    "example_en": "Stop bullying Tom.",
     "example_source": "tatoeba"
   },
   {
@@ -83,8 +83,8 @@
     "url": "https://www.dwds.de/wb/Anzug",
     "translation_en": "Suit",
     "audio_url": "https://www.dwds.de/audio/005/der_Anzug.mp3",
-    "example_de": "Passt dieser Anzug?",
-    "example_en": "Does this suit fit?",
+    "example_de": "Mein Anzug ist grau.",
+    "example_en": "My suit is gray.",
     "example_source": "tatoeba"
   },
   {
@@ -363,8 +363,8 @@
     "url": "https://www.dwds.de/wb/Erfahrung",
     "translation_en": "Experience",
     "audio_url": "https://www.dwds.de/audio/001/die_Erfahrung.mp3",
-    "example_de": "Hast du Erfahrung?",
-    "example_en": "Are you experienced?",
+    "example_de": "Tom hat viel Erfahrung.",
+    "example_en": "Tom has a lot of experience.",
     "example_source": "tatoeba"
   },
   {
@@ -1773,8 +1773,8 @@
     "url": "https://www.dwds.de/wb/Star#3",
     "translation_en": "Star",
     "audio_url": "https://www.dwds.de/audio/112/der_Star_1.mp3",
-    "example_de": "Haben Sie grauen Star?",
-    "example_en": "Do you have cataracts?",
+    "example_de": "Der Star der Show war Tom.",
+    "example_en": "The star of the show was Tom.",
     "example_source": "tatoeba"
   },
   {
@@ -2628,8 +2628,8 @@
     "url": "https://www.dwds.de/wb/besonders",
     "translation_en": "especially",
     "audio_url": "https://www.dwds.de/audio/001/besonders.mp3",
-    "example_de": "Wir sind besonders.",
-    "example_en": "We're special.",
+    "example_de": "Sei besonders leise.",
+    "example_en": "Be very quiet.",
     "example_source": "tatoeba"
   },
   {
@@ -2716,8 +2716,8 @@
     "url": "https://www.dwds.de/wb/bunt",
     "translation_en": "colorful",
     "audio_url": "https://www.dwds.de/audio/005/bunt.mp3",
-    "example_de": "Es wird mir zu bunt.",
-    "example_en": "I can't stand it.",
+    "example_de": "Dieser Vogel ist sehr bunt.",
+    "example_en": "This bird is very colorful.",
     "example_source": "tatoeba"
   },
   {
@@ -2966,8 +2966,8 @@
     "url": "https://www.dwds.de/wb/einverstanden",
     "translation_en": "agree",
     "audio_url": "https://www.dwds.de/audio/004/einverstanden.mp3",
-    "example_de": "Einverstanden?",
-    "example_en": "Got it?",
+    "example_de": "Bist du nicht einverstanden?",
+    "example_en": "Don't you agree?",
     "example_source": "tatoeba"
   },
   {
@@ -3342,8 +3342,8 @@
     "url": "https://www.dwds.de/wb/husten",
     "translation_en": "cough",
     "audio_url": "https://www.dwds.de/audio/012/husten.mp3",
-    "example_de": "Tom hat Husten.",
-    "example_en": "Tom has a cough.",
+    "example_de": "Tom begann zu husten.",
+    "example_en": "Tom began coughing.",
     "example_source": "tatoeba"
   },
   {
@@ -4102,8 +4102,8 @@
     "url": "https://www.dwds.de/wb/setzen",
     "translation_en": "set",
     "audio_url": "https://www.dwds.de/audio/112/setzen.mp3",
-    "example_de": "Setzen wir uns!",
-    "example_en": "Let's sit down.",
+    "example_de": "Setzen Sie sich.",
+    "example_en": "Be seated.",
     "example_source": "tatoeba"
   },
   {
@@ -4254,8 +4254,8 @@
     "url": "https://www.dwds.de/wb/tauschen",
     "translation_en": "swap",
     "audio_url": "https://www.dwds.de/audio/006/tauschen.mp3",
-    "example_de": "Tauschen Sie es aus.",
-    "example_en": "Replace it.",
+    "example_de": "Tauschen wir die Plätze.",
+    "example_en": "Let me exchange seats with you.",
     "example_source": "tatoeba"
   },
   {
@@ -4382,8 +4382,8 @@
     "url": "https://www.dwds.de/wb/unternehmen",
     "translation_en": "company",
     "audio_url": "https://www.dwds.de/audio/122/unternehmen.mp3",
-    "example_de": "Das ist mein Unternehmen.",
-    "example_en": "This is my business.",
+    "example_de": "Ich muss etwas unternehmen.",
+    "example_en": "I must do something.",
     "example_source": "tatoeba"
   },
   {
@@ -4422,8 +4422,8 @@
     "url": "https://www.dwds.de/wb/vereinbaren",
     "translation_en": "agree",
     "audio_url": "https://www.dwds.de/audio/005/vereinbaren.mp3",
-    "example_de": "Das kann ich moralisch nicht mit mir vereinbaren.",
-    "example_en": "It's against my morals.",
+    "example_de": "Vereinbaren Sie einen weiteren Termin an der Rezeption.",
+    "example_en": "Make another appointment at the front desk.",
     "example_source": "tatoeba"
   },
   {
@@ -4494,8 +4494,8 @@
     "url": "https://www.dwds.de/wb/verschieden",
     "translation_en": "different",
     "audio_url": "https://www.dwds.de/audio/003/verschieden.mp3",
-    "example_de": "Wir sind verschieden.",
-    "example_en": "We're different.",
+    "example_de": "Wir waren zu verschieden.",
+    "example_en": "We were too different.",
     "example_source": "tatoeba"
   },
   {
@@ -4598,8 +4598,8 @@
     "url": "https://www.dwds.de/wb/wahr",
     "translation_en": "true",
     "audio_url": "https://www.dwds.de/audio/002/wahr.mp3",
-    "example_de": "Wie wahr!",
-    "example_en": "It's all true.",
+    "example_de": "Es ist nicht wahr.",
+    "example_en": "It isn't true.",
     "example_source": "tatoeba"
   },
   {

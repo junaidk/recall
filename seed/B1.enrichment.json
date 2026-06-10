@@ -514,7 +514,7 @@
     "translation_en": "Claim",
     "audio_url": "https://www.dwds.de/audio/001/der_Anspruch.mp3",
     "example_de": "Wie viel Zeit wird es in Anspruch nehmen?",
-    "example_en": "How long's it going to take?",
+    "example_en": "How long is it going to take?",
     "example_source": "tatoeba"
   },
   {
@@ -1121,8 +1121,8 @@
     "url": "https://www.dwds.de/wb/Beweis",
     "translation_en": "Proof",
     "audio_url": "https://www.dwds.de/audio/002/der_Beweis.mp3",
-    "example_de": "Beweis es mir.",
-    "example_en": "Prove it to me.",
+    "example_de": "Hast du einen Beweis?",
+    "example_en": "Do you have any proof?",
     "example_source": "tatoeba"
   },
   {
@@ -2060,7 +2060,9 @@
   {
     "url": "https://www.dwds.de/wb/Fahrbahn",
     "translation_en": "Roadway",
-    "audio_url": "https://www.dwds.de/audio/120/die_Fahrbahn.mp3"
+    "audio_url": "https://www.dwds.de/audio/120/die_Fahrbahn.mp3",
+    "example_de": "Die Fahrbahn war nach dem Regen glatt und gefährlich.",
+    "example_en": "The road(way) was slippery and dangerous after the rain."
   },
   {
     "url": "https://www.dwds.de/wb/Fahrzeug",
@@ -2102,7 +2104,9 @@
   {
     "url": "https://www.dwds.de/wb/Fasching",
     "translation_en": "Carnival",
-    "audio_url": "https://www.dwds.de/audio/012/der_Fasching.mp3"
+    "audio_url": "https://www.dwds.de/audio/012/der_Fasching.mp3",
+    "example_de": "Im Februar feiern wir den Fasching mit bunten Kostümen und viel Musik.",
+    "example_en": "In February, we celebrate Carnival with colorful costumes and lots of music."
   },
   {
     "url": "https://www.dwds.de/wb/Fasnacht",
@@ -2735,8 +2739,8 @@
     "url": "https://www.dwds.de/wb/Gewalt",
     "translation_en": "Violence",
     "audio_url": "https://www.dwds.de/audio/001/die_Gewalt.mp3",
-    "example_de": "Ich verabscheue Gewalt.",
-    "example_en": "I abhor violence.",
+    "example_de": "Wir mögen keine Gewalt.",
+    "example_en": "We don't like violence.",
     "example_source": "tatoeba"
   },
   {
@@ -3006,7 +3010,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/Hausmeister",
-    "translation_en": "Janitor",
+    "translation_en": "Building supervisor",
     "audio_url": "https://www.dwds.de/audio/007/der_Hausmeister.mp3",
     "example_de": "Tom ist kein Hausmeister.",
     "example_en": "Tom isn't a caretaker.",
@@ -4602,8 +4606,8 @@
     "url": "https://www.dwds.de/wb/Mut",
     "translation_en": "Courage",
     "audio_url": "https://www.dwds.de/audio/002/der_Mut.mp3",
-    "example_de": "Nur Mut.",
-    "example_en": "Have courage.",
+    "example_de": "Tom hat keinen Mut.",
+    "example_en": "Tom has no guts.",
     "example_source": "tatoeba"
   },
   {
@@ -4625,7 +4629,9 @@
   {
     "url": "https://www.dwds.de/wb/Nachhilfe",
     "translation_en": "Tutoring",
-    "audio_url": "https://www.dwds.de/audio/013/die_Nachhilfe.mp3"
+    "audio_url": "https://www.dwds.de/audio/013/die_Nachhilfe.mp3",
+    "example_de": "Mein Sohn braucht Nachhilfe in Mathematik.",
+    "example_en": "My son needs tutoring in mathematics."
   },
   {
     "url": "https://www.dwds.de/wb/Nachspeise",
@@ -4918,7 +4924,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/Paradeiser",
-    "translation_en": "Grapes",
+    "translation_en": "Tomato",
     "audio_url": "https://www.dwds.de/audio/055/der_Paradeiser.mp3"
   },
   {
@@ -6369,7 +6375,9 @@
   {
     "url": "https://www.dwds.de/wb/Stiege#1",
     "translation_en": "Staircase",
-    "audio_url": "https://www.dwds.de/audio/022/die_Stiege.mp3"
+    "audio_url": "https://www.dwds.de/audio/022/die_Stiege.mp3",
+    "example_de": "Er ging die Stiege hinauf in den zweiten Stock.",
+    "example_en": "He went up the staircase to the second floor."
   },
   {
     "url": "https://www.dwds.de/wb/Stiegenhaus",
@@ -8050,7 +8058,9 @@
   {
     "url": "https://www.dwds.de/wb/abonnieren",
     "translation_en": "subscribe",
-    "audio_url": "https://www.dwds.de/audio/024/abonnieren.mp3"
+    "audio_url": "https://www.dwds.de/audio/024/abonnieren.mp3",
+    "example_de": "Ich möchte diesen Newsletter abonnieren",
+    "example_en": "I would like to subscribe to this newsletter."
   },
   {
     "url": "https://www.dwds.de/wb/absagen",
@@ -9633,8 +9643,8 @@
     "url": "https://www.dwds.de/wb/entstehen",
     "translation_en": "arise",
     "audio_url": "https://www.dwds.de/audio/001/entstehen.mp3",
-    "example_de": "Es ist im Entstehen begriffen.",
-    "example_en": "It's a work in progress.",
+    "example_de": "Wie entstehen eigentlich Sterne?",
+    "example_en": "How are stars formed?",
     "example_source": "tatoeba"
   },
   {
@@ -9841,8 +9851,8 @@
     "url": "https://www.dwds.de/wb/erschrecken#1",
     "translation_en": "frighten",
     "audio_url": "https://www.dwds.de/audio/112/erschrecken.mp3",
-    "example_de": "Hör auf, Tom zu erschrecken.",
-    "example_en": "Stop scaring Tom.",
+    "example_de": "Ich will Tom nicht erschrecken.",
+    "example_en": "I don't want to scare Tom.",
     "example_source": "tatoeba"
   },
   {
@@ -10005,7 +10015,9 @@
   {
     "url": "https://www.dwds.de/wb/farbig",
     "translation_en": "colored",
-    "audio_url": "https://www.dwds.de/audio/104/farbig.mp3"
+    "audio_url": "https://www.dwds.de/audio/104/farbig.mp3",
+    "example_de": "Sie trägt heute ein farbiges Kleid.",
+    "example_en": "She is wearing a colorful dress today."
   },
   {
     "url": "https://www.dwds.de/wb/fassen",
@@ -10058,7 +10070,9 @@
   {
     "url": "https://www.dwds.de/wb/festsetzen",
     "translation_en": "set",
-    "audio_url": "https://www.dwds.de/audio/012/festsetzen.mp3"
+    "audio_url": "https://www.dwds.de/audio/012/festsetzen.mp3",
+    "example_de": "Die Behörden haben eine hohe Strafe festgesetzt.",
+    "example_en": "The authorities have imposed a heavy fine."
   },
   {
     "url": "https://www.dwds.de/wb/feststehen",
@@ -10609,8 +10623,8 @@
     "url": "https://www.dwds.de/wb/heizen",
     "translation_en": "heat",
     "audio_url": "https://www.dwds.de/audio/014/heizen.mp3",
-    "example_de": "Heizen ist teuer.",
-    "example_en": "Heating costs a lot.",
+    "example_de": "Das Haus wird mit Gas geheizt.",
+    "example_en": "The house is heated with gas.",
     "example_source": "tatoeba"
   },
   {
@@ -11981,8 +11995,8 @@
     "url": "https://www.dwds.de/wb/regeln",
     "translation_en": "regulate",
     "audio_url": "https://www.dwds.de/audio/003/regeln.mp3",
-    "example_de": "Es gibt Regeln.",
-    "example_en": "There are rules.",
+    "example_de": "Lass das Tom regeln.",
+    "example_en": "Let's let Tom handle that.",
     "example_source": "tatoeba"
   },
   {
@@ -12666,10 +12680,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/stimmen",
-    "translation_en": "vote",
+    "translation_en": "vote / to be correct / agree",
     "audio_url": "https://www.dwds.de/audio/002/stimmen.mp3",
-    "example_de": "Wir stimmen zu.",
-    "example_en": "We agree.",
+    "example_de": "Das kann nicht stimmen.",
+    "example_en": "It cannot be true.",
     "example_source": "tatoeba"
   },
   {
@@ -12918,8 +12932,8 @@
     "url": "https://www.dwds.de/wb/umgekehrt",
     "translation_en": "vice versa",
     "audio_url": "https://www.dwds.de/audio/002/umgekehrt.mp3",
-    "example_de": "Ist es nicht umgekehrt?",
-    "example_en": "Isn't it the other way around?",
+    "example_de": "Hat Tom mit Maria Schluss gemacht oder umgekehrt?",
+    "example_en": "Was Tom dumped by Mary, or was she dumped by him?",
     "example_source": "tatoeba"
   },
   {
@@ -13386,8 +13400,8 @@
     "url": "https://www.dwds.de/wb/versprechen",
     "translation_en": "promise",
     "audio_url": "https://www.dwds.de/audio/004/versprechen.mp3",
-    "example_de": "Es ist ein Versprechen.",
-    "example_en": "It's a promise.",
+    "example_de": "Ich kann nichts versprechen.",
+    "example_en": "I can't promise anything.",
     "example_source": "tatoeba"
   },
   {
