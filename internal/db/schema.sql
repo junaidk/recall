@@ -66,7 +66,19 @@ CREATE TABLE IF NOT EXISTS review_logs (
   state INTEGER NOT NULL,
   elapsed_days INTEGER NOT NULL,
   scheduled_days INTEGER NOT NULL,
-  reviewed_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+  reviewed_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  -- Snapshot of the card *before* this review was applied, so a grade can be
+  -- undone by restoring these values and deleting the log row. NULL on rows
+  -- written before schema v6.
+  prev_due DATETIME,
+  prev_stability REAL,
+  prev_difficulty REAL,
+  prev_elapsed_days INTEGER,
+  prev_scheduled_days INTEGER,
+  prev_reps INTEGER,
+  prev_lapses INTEGER,
+  prev_state INTEGER,
+  prev_last_review DATETIME
 );
 
 CREATE TABLE IF NOT EXISTS sessions (

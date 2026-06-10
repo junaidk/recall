@@ -15,7 +15,11 @@
     </div>
   </details>
 </div>
-<p><a href="/decks">← Back to decks</a></p>
+<div class="study-toolbar">
+  <a href="/decks">← Back to decks</a>
+  <span id="session-stats"></span>
+  <span id="undo-slot"></span>
+</div>
 
 <div id="card-slot"
      hx-get="{{if .InitialCardID}}/review/{{.Deck.ID}}/card/{{.InitialCardID}}{{else}}/review/{{.Deck.ID}}/next{{end}}"
@@ -36,6 +40,9 @@ document.addEventListener('keydown', function(e) {
     const n = e.code.slice(-1);
     const btn = slot.querySelector('.grade-buttons button[data-rating="' + n + '"]');
     if (btn) { e.preventDefault(); btn.click(); }
+  } else if (e.code === 'KeyU') {
+    const ub = document.querySelector('#undo-slot .undo-btn');
+    if (ub) { e.preventDefault(); ub.click(); }
   }
 });
 </script>

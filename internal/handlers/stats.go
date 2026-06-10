@@ -27,9 +27,11 @@ type statsPage struct {
 	StateCounts  []barRow
 	GradeCounts  []barRow
 	DailyReviews []dayBar
+	Forecast     []dayBar
 	TotalReviews int
 	RetentionPct int
 	HasReviews   bool
+	HasForecast  bool
 }
 
 func (s *Server) handleDeckStats(w http.ResponseWriter, r *http.Request) {
@@ -64,15 +66,30 @@ func (s *Server) handleDeckStats(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	forecast, err := s.statsForecast(u.ID, deckID, 14)
+	if err != nil {
+		http.Error(w, "forecast: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	hasForecast := false
+	for _, f := range forecast {
+		if f.Count > 0 {
+			hasForecast = true
+			break
+		}
+	}
+
 	s.Templates.RenderPage(w, "stats.html", statsPage{
 		User:         u,
 		Deck:         d,
 		StateCounts:  stateCounts,
 		GradeCounts:  gradeCounts,
 		DailyReviews: daily,
+		Forecast:     forecast,
 		TotalReviews: totalReviews,
 		RetentionPct: retention,
 		HasReviews:   totalReviews > 0,
+		HasForecast:  hasForecast,
 	})
 }
 
@@ -103,26 +120,30 @@ func (s *Server) statsByState(userID, deckID int64) ([]barRow, error) {
 
 func (s *Server) statsByGrade(userID, deckID int64) ([]barRow, int, int, error) {
 	rows, err := s.DB.Query(`
-		SELECT rl.rating, COUNT(*)
+		SELECT rl.rating, rl.state, COUNT(*)
 		FROM review_logs rl
 		JOIN cards c ON c.id = rl.card_id
 		JOIN words w ON w.id = c.word_id
 		WHERE c.user_id = ? AND w.deck_id = ?
-		GROUP BY rl.rating
+		GROUP BY rl.rating, rl.state
 	`, userID, deckID)
 	if err != nil {
 		return nil, 0, 0, err
 	}
 	defer rows.Close()
 
-	counts := [5]int{} // index by rating 1..4
+	counts := [5]int{}       // all reviews, index by rating 1..4 — grade bars
+	reviewCounts := [5]int{} // reviews of Review-state cards only — retention
 	for rows.Next() {
-		var rating, n int
-		if err := rows.Scan(&rating, &n); err != nil {
+		var rating, state, n int
+		if err := rows.Scan(&rating, &state, &n); err != nil {
 			return nil, 0, 0, err
 		}
 		if rating >= 1 && rating <= 4 {
-			counts[rating] = n
+			counts[rating] += n
+			if state == 2 {
+				reviewCounts[rating] += n
+			}
 		}
 	}
 	if err := rows.Err(); err != nil {
@@ -138,23 +159,29 @@ func (s *Server) statsByGrade(userID, deckID int64) ([]barRow, int, int, error) 
 	scaleByMax(out)
 
 	total := counts[1] + counts[2] + counts[3] + counts[4]
+	// True retention: of cards in the Review state (where the scheduler's
+	// retention target applies), how many were recalled. Hard is a pass —
+	// the card was remembered, just with effort.
+	reviewTotal := reviewCounts[1] + reviewCounts[2] + reviewCounts[3] + reviewCounts[4]
 	retention := 0
-	if total > 0 {
-		retention = (counts[3] + counts[4]) * 100 / total
+	if reviewTotal > 0 {
+		retention = (reviewCounts[2] + reviewCounts[3] + reviewCounts[4]) * 100 / reviewTotal
 	}
 	return out, total, retention, nil
 }
 
 func (s *Server) statsDaily(userID, deckID int64, days int) ([]dayBar, error) {
+	// Bucket by local calendar day, matching the daily new-card cap rollover
+	// (the extra '-1 days' on the prefilter absorbs the UTC/local offset).
 	rows, err := s.DB.Query(`
-		SELECT DATE(rl.reviewed_at) AS d, COUNT(*)
+		SELECT DATE(rl.reviewed_at, 'localtime') AS d, COUNT(*)
 		FROM review_logs rl
 		JOIN cards c ON c.id = rl.card_id
 		JOIN words w ON w.id = c.word_id
 		WHERE c.user_id = ? AND w.deck_id = ?
 		  AND rl.reviewed_at >= DATE('now', ?)
-		GROUP BY DATE(rl.reviewed_at)
-	`, userID, deckID, "-"+strconv.Itoa(days-1)+" days")
+		GROUP BY d
+	`, userID, deckID, "-"+strconv.Itoa(days)+" days")
 	if err != nil {
 		return nil, err
 	}
@@ -174,10 +201,63 @@ func (s *Server) statsDaily(userID, deckID int64, days int) ([]dayBar, error) {
 	}
 
 	out := make([]dayBar, 0, days)
-	today := time.Now().UTC()
+	today := time.Now()
 	max := 0
 	for i := days - 1; i >= 0; i-- {
 		d := today.AddDate(0, 0, -i).Format("2006-01-02")
+		c := byDate[d]
+		if c > max {
+			max = c
+		}
+		out = append(out, dayBar{Date: d, Count: c})
+	}
+	for i := range out {
+		if max > 0 {
+			out[i].Pct = out[i].Count * 100 / max
+		}
+	}
+	return out, nil
+}
+
+// statsForecast counts cards coming due per local day over the next `days`
+// days. Already-overdue cards land in today's bucket; New cards are excluded
+// because their introduction is governed by the daily cap, not by due date.
+func (s *Server) statsForecast(userID, deckID int64, days int) ([]dayBar, error) {
+	rows, err := s.DB.Query(`
+		SELECT DATE(c.due, 'localtime') AS d, COUNT(*)
+		FROM cards c
+		JOIN words w ON w.id = c.word_id
+		WHERE c.user_id = ? AND w.deck_id = ? AND c.state != 0
+		  AND DATE(c.due, 'localtime') <= DATE('now', 'localtime', ?)
+		GROUP BY d
+	`, userID, deckID, "+"+strconv.Itoa(days-1)+" days")
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	today := time.Now().Format("2006-01-02")
+	byDate := map[string]int{}
+	for rows.Next() {
+		var date string
+		var n int
+		if err := rows.Scan(&date, &n); err != nil {
+			return nil, err
+		}
+		if date < today {
+			date = today // overdue → due today
+		}
+		byDate[date] += n
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+
+	out := make([]dayBar, 0, days)
+	now := time.Now()
+	max := 0
+	for i := range days {
+		d := now.AddDate(0, 0, i).Format("2006-01-02")
 		c := byDate[d]
 		if c > max {
 			max = c

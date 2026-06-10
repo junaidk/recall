@@ -7,4 +7,12 @@
           hx-target="#card-slot"
           hx-swap="innerHTML">Show answer <span style="opacity:.6">(space)</span></button>
 </div>
+{{if .HasCounts}}
+<div id="session-stats" hx-swap-oob="true">{{.DueReview}} due · {{.DueNew}} new today</div>
+{{end}}
+{{if .UndoLogID}}
+<div id="undo-slot" hx-swap-oob="true">
+  <button class="undo-btn" hx-post="/review/log/{{.UndoLogID}}/undo" hx-target="#card-slot" hx-swap="innerHTML" title="Revert the last grade and show that card again">↩ Undo<span class="kbd">u</span></button>
+</div>
+{{end}}
 {{end}}

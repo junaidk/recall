@@ -35,11 +35,36 @@ func New(opts Options) *Scheduler {
 
 // Grade applies the rating to the card and returns the updated card and the
 // review log entry to persist.
+//
+// All times are normalized to UTC before they reach the library. The DB
+// compares cards.due to SQLite's CURRENT_TIMESTAMP (a UTC string) with plain
+// string ordering, so a due written with a non-UTC offset would surface hours
+// early or late depending on the server timezone.
 func (s *Scheduler) Grade(c models.Card, rating fsrslib.Rating, now time.Time) (models.Card, fsrslib.ReviewLog) {
 	lib := toLib(c)
-	log := s.f.Repeat(lib, now)
+	log := s.f.Repeat(lib, now.UTC())
 	info := log[rating]
-	return fromLib(c, info.Card), info.ReviewLog
+	rl := info.ReviewLog
+	rl.Review = rl.Review.UTC()
+	return fromLib(c, info.Card), rl
+}
+
+// Previews holds, per rating, the interval from now until the card would
+// next be due — used to label the grade buttons before the user picks.
+type Previews struct {
+	Again, Hard, Good, Easy time.Duration
+}
+
+// Preview computes the four candidate intervals without mutating anything.
+func (s *Scheduler) Preview(c models.Card, now time.Time) Previews {
+	now = now.UTC()
+	log := s.f.Repeat(toLib(c), now)
+	return Previews{
+		Again: log[fsrslib.Again].Card.Due.Sub(now),
+		Hard:  log[fsrslib.Hard].Card.Due.Sub(now),
+		Good:  log[fsrslib.Good].Card.Due.Sub(now),
+		Easy:  log[fsrslib.Easy].Card.Due.Sub(now),
+	}
 }
 
 func toLib(c models.Card) fsrslib.Card {
@@ -61,7 +86,7 @@ func toLib(c models.Card) fsrslib.Card {
 
 func fromLib(orig models.Card, lc fsrslib.Card) models.Card {
 	out := orig
-	out.Due = lc.Due
+	out.Due = lc.Due.UTC()
 	out.Stability = lc.Stability
 	out.Difficulty = lc.Difficulty
 	out.ElapsedDays = lc.ElapsedDays
@@ -70,7 +95,7 @@ func fromLib(orig models.Card, lc fsrslib.Card) models.Card {
 	out.Lapses = lc.Lapses
 	out.State = int(lc.State)
 	if !lc.LastReview.IsZero() {
-		out.LastReview = sql.NullTime{Time: lc.LastReview, Valid: true}
+		out.LastReview = sql.NullTime{Time: lc.LastReview.UTC(), Valid: true}
 	}
 	return out
 }

@@ -15,10 +15,10 @@
   <div class="grade-buttons"
        hx-target="#card-slot"
        hx-swap="innerHTML">
-    <button class="again" data-rating="1" hx-post="/review/{{.Card.ID}}/grade?rating=1">Again<span class="kbd">1</span></button>
-    <button class="hard"  data-rating="2" hx-post="/review/{{.Card.ID}}/grade?rating=2">Hard<span class="kbd">2</span></button>
-    <button class="good"  data-rating="3" hx-post="/review/{{.Card.ID}}/grade?rating=3">Good<span class="kbd">3</span></button>
-    <button class="easy"  data-rating="4" hx-post="/review/{{.Card.ID}}/grade?rating=4">Easy<span class="kbd">4</span></button>
+    <button class="again" data-rating="1" hx-post="/review/{{.Card.ID}}/grade?rating=1"><span class="ivl">{{.IvlAgain}}</span>Again<span class="kbd">1</span></button>
+    <button class="hard"  data-rating="2" hx-post="/review/{{.Card.ID}}/grade?rating=2"><span class="ivl">{{.IvlHard}}</span>Hard<span class="kbd">2</span></button>
+    <button class="good"  data-rating="3" hx-post="/review/{{.Card.ID}}/grade?rating=3"><span class="ivl">{{.IvlGood}}</span>Good<span class="kbd">3</span></button>
+    <button class="easy"  data-rating="4" hx-post="/review/{{.Card.ID}}/grade?rating=4"><span class="ivl">{{.IvlEasy}}</span>Easy<span class="kbd">4</span></button>
   </div>
 </div>
 {{if .Conjugations}}{{template "conjugations_block" .}}{{end}}

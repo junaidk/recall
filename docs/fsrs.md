@@ -1,6 +1,6 @@
 # Spaced repetition (FSRS)
 
-Recall schedules reviews with [FSRS-4.5](https://github.com/open-spaced-repetition/fsrs4anki/wiki) via
+Recall schedules reviews with [FSRS-5](https://github.com/open-spaced-repetition/fsrs4anki/wiki) via
 [`open-spaced-repetition/go-fsrs/v3`](https://github.com/open-spaced-repetition/go-fsrs). This doc
 describes how a word reappears for revision and which knobs are exposed.
 
@@ -98,7 +98,7 @@ What `f.Repeat` does internally depends on the card's **state**:
 
   `due = LastReview + interval`.
 
-The exact numeric formula lives in the FSRS-4.5 algorithm inside
+The exact numeric formula lives in the FSRS-5 algorithm inside
 [`go-fsrs`](https://github.com/open-spaced-repetition/go-fsrs); Recall only configures
 `RequestRetention`, `MaximumInterval`, and `EnableFuzz` and trusts the library for the rest.
 
@@ -149,7 +149,7 @@ A `fsrs:` block in `config.yaml` is optional. Omitted fields fall back to the li
 fsrs:
   request_retention: 0.9      # 0 < x < 1
   maximum_interval: 36500     # days
-  enable_fuzz: false
+  enable_fuzz: true
   new_cards_per_day: 20       # per (user, deck), local-day boundary
 ```
 
@@ -159,7 +159,7 @@ fsrs:
 |---|---|---|
 | `request_retention` | `0.9` | Target probability of recall at next review. **Lower** → longer intervals, fewer reviews, more forgetting. **Higher** → tighter intervals, more daily work. Typical range 0.80–0.97. Values outside `(0, 1)` are clamped to the default. |
 | `maximum_interval` | `36500` (≈100 years) | Hard cap on how far out a card can be scheduled. Lower this if you want long-mature cards to still resurface periodically. |
-| `enable_fuzz` | `false` | When true, intervals ≥ 2.5 days are randomly nudged ±5–15% so a big batch added on the same day doesn't all come due on the same future day. Recommended once a deck stabilizes. |
+| `enable_fuzz` | `true` | When true, intervals ≥ 2.5 days are randomly nudged ±5–15% so a big batch added on the same day doesn't all come due on the same future day. Set to `false` for fully deterministic intervals. |
 | `new_cards_per_day` | `20` | Cap on **New** (state=0) cards introduced from each deck per day. Once reached, the queue serves only Learning/Review/Relearning cards until the next local-day rollover. See below. |
 
 ### Daily new-card cap

@@ -1,22 +1,22 @@
 package db
 
 import (
-	_ "embed"
 	"database/sql"
+	_ "embed"
 	"fmt"
 	"log"
 	"os"
 	"path/filepath"
 	"strings"
 
-	_ "github.com/mattn/go-sqlite3"
 	"github.com/junaidk/recall/internal/sentences"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 //go:embed schema.sql
 var schemaSQL string
 
-const currentSchemaVersion = 5
+const currentSchemaVersion = 6
 
 func Open(path string) (*sql.DB, error) {
 	if dir := filepath.Dir(path); dir != "" && dir != "." {
@@ -105,6 +105,26 @@ func migrate(db *sql.DB) error {
 		alters := []string{
 			`ALTER TABLE words ADD COLUMN plurals TEXT`,
 			`ALTER TABLE words ADD COLUMN plurals_at DATETIME`,
+		}
+		for _, stmt := range alters {
+			if _, err := db.Exec(stmt); err != nil && !strings.Contains(err.Error(), "duplicate column") {
+				return fmt.Errorf("%s: %w", stmt, err)
+			}
+		}
+	}
+
+	if version < 6 {
+		// Pre-review card snapshot on each log row, so grades can be undone.
+		alters := []string{
+			`ALTER TABLE review_logs ADD COLUMN prev_due DATETIME`,
+			`ALTER TABLE review_logs ADD COLUMN prev_stability REAL`,
+			`ALTER TABLE review_logs ADD COLUMN prev_difficulty REAL`,
+			`ALTER TABLE review_logs ADD COLUMN prev_elapsed_days INTEGER`,
+			`ALTER TABLE review_logs ADD COLUMN prev_scheduled_days INTEGER`,
+			`ALTER TABLE review_logs ADD COLUMN prev_reps INTEGER`,
+			`ALTER TABLE review_logs ADD COLUMN prev_lapses INTEGER`,
+			`ALTER TABLE review_logs ADD COLUMN prev_state INTEGER`,
+			`ALTER TABLE review_logs ADD COLUMN prev_last_review DATETIME`,
 		}
 		for _, stmt := range alters {
 			if _, err := db.Exec(stmt); err != nil && !strings.Contains(err.Error(), "duplicate column") {

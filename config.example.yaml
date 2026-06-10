@@ -22,7 +22,8 @@ fsrs:
   # Cap on how far out a card can be scheduled, in days.
   maximum_interval: 36500
   # Randomize intervals ±5–15% so batches don't all come due on the same day.
-  enable_fuzz: false
+  # On by default; set to false for fully deterministic intervals.
+  enable_fuzz: true
   # Maximum number of New cards (state=0) introduced from each deck per day.
   # Once reached, the queue only serves Learning/Review/Relearning cards
   # until the next local-day rollover. Counted per (user, deck).

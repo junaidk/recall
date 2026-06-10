@@ -24,7 +24,7 @@
       <div class="stat-count">{{.Count}}</div>
     </div>
     {{end}}
-    <p class="stat-footer">Total reviews: {{.TotalReviews}} · Retention: {{.RetentionPct}}%</p>
+    <p class="stat-footer">Total reviews: {{.TotalReviews}} · True retention: {{.RetentionPct}}% <span title="Share of Review-state cards recalled (Hard, Good or Easy). Learning steps excluded.">ⓘ</span></p>
   {{else}}
     <p class="stat-empty">No reviews yet — grade some cards to see this.</p>
   {{end}}
@@ -42,6 +42,22 @@
     </div>
   {{else}}
     <p class="stat-empty">No reviews in the last 30 days.</p>
+  {{end}}
+</section>
+
+<section class="stat-section">
+  <h3>Due next 14 days</h3>
+  {{if .HasForecast}}
+    <div class="day-chart">
+      {{range .Forecast}}
+      <div class="day-bar-col" title="{{.Date}}: {{.Count}} due">
+        <div class="day-bar-fill forecast" style="height: {{.Pct}}%"></div>
+      </div>
+      {{end}}
+    </div>
+    <p class="stat-footer">Cards already overdue are counted under today.</p>
+  {{else}}
+    <p class="stat-empty">Nothing scheduled yet — review some cards first.</p>
   {{end}}
 </section>
 {{end}}

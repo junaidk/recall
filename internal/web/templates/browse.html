@@ -1,0 +1,38 @@
+{{define "title"}}{{.Deck.Name}} · Cards{{end}}
+{{define "body"}}
+<p><a href="/decks">← Back to decks</a></p>
+<h2>{{.Deck.Name}} · Cards</h2>
+
+<form class="browse-search" method="get" action="">
+  <input type="search" name="q" value="{{.Query}}" placeholder="Search German or English…" autofocus>
+  <button type="submit">Search</button>
+  {{if .Query}}<a href="?">Clear</a>{{end}}
+</form>
+
+{{if .Rows}}
+<p class="browse-summary">
+  {{if .Truncated}}Showing first {{len .Rows}} of {{.Total}} — refine the search to see the rest.{{else}}{{.Total}} {{if eq .Total 1}}card{{else}}cards{{end}}.{{end}}
+</p>
+<table class="browse-table">
+  <thead>
+    <tr><th>Word</th><th>Translation</th><th>State</th><th>Due</th><th>Reps</th><th>Lapses</th><th></th></tr>
+  </thead>
+  <tbody>
+    {{range .Rows}}
+    <tr>
+      <td><strong>{{.Display}}</strong>{{if .Pos}} <span class="browse-pos">{{.Pos}}</span>{{end}}</td>
+      <td>{{.Translation}}</td>
+      <td>{{.State}}</td>
+      <td>{{.DueText}}</td>
+      <td>{{.Reps}}</td>
+      <td>{{.Lapses}}</td>
+      <td>{{if .CardID}}<a href="/review/{{.CardID}}/edit">✎</a>{{end}}</td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+{{else}}
+<p class="stat-empty">{{if .Query}}No cards match “{{.Query}}”.{{else}}This deck has no words.{{end}}</p>
+{{end}}
+{{end}}
+{{template "base" .}}

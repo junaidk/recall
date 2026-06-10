@@ -1,7 +1,21 @@
 {{define "done"}}
-<div class="done">
+<div class="done"
+     {{if .PollSeconds}}hx-get="/review/{{.DeckID}}/next" hx-trigger="load delay:{{.PollSeconds}}s" hx-target="#card-slot" hx-swap="innerHTML"{{end}}>
   <h2>All caught up</h2>
+  {{if .NextDueText}}
+  <p>Next card due in ~{{.NextDueText}} — it will appear here automatically.</p>
+  {{else}}
   <p>No more cards are due in this deck right now.</p>
+  {{end}}
+  {{if .CapReached}}
+  <p class="done-cap">Daily new-card limit reached · {{.NewWaiting}} new {{if eq .NewWaiting 1}}card waits{{else}}cards wait{{end}} for tomorrow.</p>
+  {{end}}
   <p><a href="/decks">← Back to decks</a></p>
 </div>
+<div id="session-stats" hx-swap-oob="true"></div>
+{{if .UndoLogID}}
+<div id="undo-slot" hx-swap-oob="true">
+  <button class="undo-btn" hx-post="/review/log/{{.UndoLogID}}/undo" hx-target="#card-slot" hx-swap="innerHTML" title="Revert the last grade and show that card again">↩ Undo<span class="kbd">u</span></button>
+</div>
+{{end}}
 {{end}}

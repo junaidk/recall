@@ -43,8 +43,16 @@ type AudioConfig struct {
 type FSRSConfig struct {
 	RequestRetention float64 `yaml:"request_retention"`
 	MaximumInterval  float64 `yaml:"maximum_interval"`
-	EnableFuzz       bool    `yaml:"enable_fuzz"`
-	NewCardsPerDay   int     `yaml:"new_cards_per_day"`
+	// Pointer so an explicit `enable_fuzz: false` is distinguishable from
+	// "unset" — the default is on, to spread due dates and avoid cards
+	// graded together coming due in one lump.
+	EnableFuzz     *bool `yaml:"enable_fuzz"`
+	NewCardsPerDay int   `yaml:"new_cards_per_day"`
+}
+
+// FuzzEnabled resolves the EnableFuzz pointer (default true).
+func (f FSRSConfig) FuzzEnabled() bool {
+	return f.EnableFuzz == nil || *f.EnableFuzz
 }
 
 func Load(path string) (*Config, error) {

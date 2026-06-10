@@ -87,7 +87,7 @@ func main() {
 	scheduler := fsrs.New(fsrs.Options{
 		RequestRetention: cfg.FSRS.RequestRetention,
 		MaximumInterval:  cfg.FSRS.MaximumInterval,
-		EnableFuzz:       cfg.FSRS.EnableFuzz,
+		EnableFuzz:       cfg.FSRS.FuzzEnabled(),
 	})
 	server := handlers.New(dbConn, sessions, templates, scheduler, audioCache, cfg.FSRS.NewCardsPerDay)
 
