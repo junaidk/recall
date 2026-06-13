@@ -48,9 +48,10 @@ type kaikkiForm struct {
 // outEntry is one line of the shipped seed file. Matches the shape consumed
 // by internal/conjugations.Entry.
 type outEntry struct {
-	Infinitive string            `json:"infinitive"`
-	Praesens   map[string]string `json:"praesens"`
-	Perfekt    outPerfekt        `json:"perfekt"`
+	Infinitive  string            `json:"infinitive"`
+	Praesens    map[string]string `json:"praesens"`
+	Praeteritum map[string]string `json:"praeteritum,omitempty"`
+	Perfekt     outPerfekt        `json:"perfekt"`
 }
 
 type outPerfekt struct {
@@ -223,12 +224,18 @@ func (t *teeCloser) Close() error {
 //     ["first|second|third-person", "singular|plural", "present", "active",
 //     "indicative"]. The form value is the pronoun + verb (e.g. "ich liebe"
 //     or "er/sie/es liebt"), which we strip back to the bare form.
+//   - The Präteritum (simple past) table is identical in shape to Präsens but
+//     tagged "past" instead of "present"; we require "indicative"+"active" to
+//     exclude the Konjunktiv II (subjunctive-ii) and passive rows that share
+//     the "past" tag. Präteritum is supplementary: a verb missing it is still
+//     kept (only attached when all six cells are present).
 //   - Partizip II appears with tags ["participle-2", "perfect"] in the
 //     compact Übersicht section (no pronoun prefix).
 //   - Perfekt auxiliary appears as a separate form with tags
 //     ["auxiliary", "perfect"], where the form value is "haben" or "sein".
 func extract(ke kaikkiEntry) (outEntry, bool) {
 	praesens := map[string]string{}
+	praeteritum := map[string]string{}
 	var partizip2, aux string
 
 	for _, f := range ke.Forms {
@@ -242,6 +249,17 @@ func extract(ke kaikkiEntry) (outEntry, bool) {
 				if form := stripPronoun(f.Form); form != "" {
 					if _, taken := praesens[key]; !taken {
 						praesens[key] = form
+					}
+				}
+			}
+		}
+		// Full Präteritum indicative active row — same shape as Präsens.
+		if hasTag(f.Tags, "past") && hasTag(f.Tags, "indicative") && hasTag(f.Tags, "active") {
+			key := personKey(f.Tags)
+			if key != "" {
+				if form := stripPronoun(f.Form); form != "" {
+					if _, taken := praeteritum[key]; !taken {
+						praeteritum[key] = form
 					}
 				}
 			}
@@ -264,11 +282,15 @@ func extract(ke kaikkiEntry) (outEntry, bool) {
 	if aux == "" {
 		aux = "haben" // safe default — vast majority of verbs take haben
 	}
-	return outEntry{
+	out := outEntry{
 		Infinitive: ke.Word,
 		Praesens:   praesens,
 		Perfekt:    outPerfekt{Aux: aux, Partizip2: partizip2},
-	}, true
+	}
+	if len(praeteritum) == 6 {
+		out.Praeteritum = praeteritum
+	}
+	return out, true
 }
 
 // personKey maps kaikki person/number tags to the labels we render on the
@@ -317,7 +339,7 @@ func hasTag(tags []string, want string) bool {
 // score rewards entries with more populated Präsens cells, used to pick the
 // most complete entry when multiple senses share an infinitive.
 func score(e outEntry) int {
-	n := len(e.Praesens)
+	n := len(e.Praesens) + len(e.Praeteritum)
 	if e.Perfekt.Partizip2 != "" {
 		n++
 	}

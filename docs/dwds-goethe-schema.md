@@ -64,7 +64,7 @@ The Goethe themenglossar export carries only the headword, article, and gender �
 
 | Builder | Output | Powers |
 |---|---|---|
-| `cmd/build-conjugations` | `seed/de_verb_conjugations.jsonl` | The Präsens / Perfekt panel on verb cards |
+| `cmd/build-conjugations` | `seed/de_verb_conjugations.jsonl` | The Präsens / Präteritum / Perfekt panel on verb cards |
 | `cmd/build-noun-plurals` | `seed/de_noun_plurals.jsonl` | The Nom/Akk/Dat/Gen × Singular/Plural panel on noun cards |
 
 Both seeds are loaded once at boot into corpus tables (`verb_conjugations`, `noun_plurals`) and backfilled onto the `words` rows. Nouns flagged `onlypl` are excluded from the plural backfill — the lemma itself is already a plural form.

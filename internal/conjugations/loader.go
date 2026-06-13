@@ -19,9 +19,10 @@ const corpusFile = "de_verb_conjugations.jsonl"
 // stored as-is in verb_conjugations.payload so the runtime never re-parses
 // the original kaikki dump.
 type Entry struct {
-	Infinitive string            `json:"infinitive"`
-	Praesens   map[string]string `json:"praesens"`
-	Perfekt    Perfekt           `json:"perfekt"`
+	Infinitive  string            `json:"infinitive"`
+	Praesens    map[string]string `json:"praesens"`
+	Praeteritum map[string]string `json:"praeteritum,omitempty"`
+	Perfekt     Perfekt           `json:"perfekt"`
 }
 
 // Perfekt holds the compound-past auxiliary ("haben"/"sein") and Partizip II.
@@ -84,9 +85,10 @@ func EnsureCorpus(db *sql.DB, seedDir string) error {
 			continue
 		}
 		payload, err := json.Marshal(struct {
-			Praesens map[string]string `json:"praesens"`
-			Perfekt  Perfekt           `json:"perfekt"`
-		}{e.Praesens, e.Perfekt})
+			Praesens    map[string]string `json:"praesens"`
+			Praeteritum map[string]string `json:"praeteritum,omitempty"`
+			Perfekt     Perfekt           `json:"perfekt"`
+		}{e.Praesens, e.Praeteritum, e.Perfekt})
 		if err != nil {
 			return err
 		}

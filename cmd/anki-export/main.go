@@ -311,8 +311,9 @@ func renderConjugations(b *strings.Builder, raw string) {
 		return
 	}
 	var p struct {
-		Praesens map[string]string `json:"praesens"`
-		Perfekt  struct {
+		Praesens    map[string]string `json:"praesens"`
+		Praeteritum map[string]string `json:"praeteritum"`
+		Perfekt     struct {
 			Aux       string `json:"aux"`
 			Partizip2 string `json:"partizip2"`
 		} `json:"perfekt"`
@@ -320,7 +321,7 @@ func renderConjugations(b *strings.Builder, raw string) {
 	if err := json.Unmarshal([]byte(raw), &p); err != nil {
 		return
 	}
-	if len(p.Praesens) == 0 && p.Perfekt.Partizip2 == "" {
+	if len(p.Praesens) == 0 && len(p.Praeteritum) == 0 && p.Perfekt.Partizip2 == "" {
 		return
 	}
 
@@ -328,6 +329,17 @@ func renderConjugations(b *strings.Builder, raw string) {
 		b.WriteString(`<div class="tense"><div class="tense-label">Pr&auml;sens</div><table class="conj-table">`)
 		for _, r := range praesensOrder {
 			form := p.Praesens[r.key]
+			if form == "" {
+				continue
+			}
+			fmt.Fprintf(b, `<tr><th>%s</th><td>%s</td></tr>`, html.EscapeString(r.label), html.EscapeString(form))
+		}
+		b.WriteString(`</table></div>`)
+	}
+	if len(p.Praeteritum) > 0 {
+		b.WriteString(`<div class="tense"><div class="tense-label">Pr&auml;teritum</div><table class="conj-table">`)
+		for _, r := range praesensOrder {
+			form := p.Praeteritum[r.key]
 			if form == "" {
 				continue
 			}

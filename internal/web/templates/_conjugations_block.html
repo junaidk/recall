@@ -11,6 +11,16 @@
         </table>
       </div>
     {{end}}
+    {{if .Conjugations.Praeteritum}}
+      <div class="tense">
+        <div class="tense-label">Präteritum</div>
+        <table class="conj-table">
+          {{range .Conjugations.Praeteritum}}
+          <tr><th>{{.Pronoun}}</th><td>{{.Form}}</td></tr>
+          {{end}}
+        </table>
+      </div>
+    {{end}}
     {{if .Conjugations.Perfekt}}
       <div class="tense">
         <div class="tense-label">Perfekt</div>

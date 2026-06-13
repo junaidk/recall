@@ -95,8 +95,9 @@ func trimTrailingZero(s string) string {
 // Nil unless the word is a Verb and a non-empty payload was loaded. Both
 // tables are rendered the same way — six rows of (pronoun, form).
 type conjugationView struct {
-	Praesens []personForm // ich, du, er/sie/es, wir, ihr, sie
-	Perfekt  []personForm // same order, e.g. "bin gelaufen" / "habe gemacht"
+	Praesens    []personForm // ich, du, er/sie/es, wir, ihr, sie
+	Praeteritum []personForm // same order, simple past, e.g. "lief" / "machte"
+	Perfekt     []personForm // same order, e.g. "bin gelaufen" / "habe gemacht"
 }
 
 type personForm struct {
@@ -284,8 +285,9 @@ func parseConjugations(raw string) *conjugationView {
 		return nil
 	}
 	var p struct {
-		Praesens map[string]string `json:"praesens"`
-		Perfekt  struct {
+		Praesens    map[string]string `json:"praesens"`
+		Praeteritum map[string]string `json:"praeteritum"`
+		Perfekt     struct {
 			Aux       string `json:"aux"`
 			Partizip2 string `json:"partizip2"`
 		} `json:"perfekt"`
@@ -293,13 +295,18 @@ func parseConjugations(raw string) *conjugationView {
 	if err := json.Unmarshal([]byte(raw), &p); err != nil {
 		return nil
 	}
-	if len(p.Praesens) == 0 && p.Perfekt.Partizip2 == "" {
+	if len(p.Praesens) == 0 && len(p.Praeteritum) == 0 && p.Perfekt.Partizip2 == "" {
 		return nil
 	}
 	cv := &conjugationView{}
 	for _, row := range praesensOrder {
 		if form, ok := p.Praesens[row.Key]; ok && form != "" {
 			cv.Praesens = append(cv.Praesens, personForm{Pronoun: row.Label, Form: form})
+		}
+	}
+	for _, row := range praesensOrder {
+		if form, ok := p.Praeteritum[row.Key]; ok && form != "" {
+			cv.Praeteritum = append(cv.Praeteritum, personForm{Pronoun: row.Label, Form: form})
 		}
 	}
 	if aux, ok := auxPraesens[p.Perfekt.Aux]; ok && p.Perfekt.Partizip2 != "" {
