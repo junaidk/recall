@@ -596,3 +596,25 @@ a { color: #2d62b8; }
 }
 .browse-table td { padding: 0.4rem 0.5rem; border-bottom: 1px solid #f0f3f8; }
 .browse-pos { color: #888; font-size: 0.8rem; }
+
+/* Mobile: stack the deck row so the name, counts, and actions no longer
+   compete for one cramped flex line. Actions become full-width tap targets. */
+@media (max-width: 600px) {
+  body { padding: 1.25rem 0.75rem; }
+
+  .deck-list li {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  /* Let the " · "-separated counts wrap legibly instead of overflowing. */
+  .deck-list .counts { font-size: 0.8rem; line-height: 1.6; }
+
+  .deck-actions { width: 100%; }
+  .deck-actions a {
+    flex: 1;
+    text-align: center;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+  }
+}
