@@ -11,6 +11,8 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+
+	"github.com/junaidk/recall/internal/seedmeta"
 )
 
 const corpusFile = "de_verb_conjugations.jsonl"
@@ -32,40 +34,59 @@ type Perfekt struct {
 }
 
 // EnsureCorpus loads the checked-in seed/de_verb_conjugations.jsonl file into
-// the verb_conjugations table when the table is empty. Idempotent — once
-// loaded, subsequent boots are no-ops. Missing seed file is logged and
-// skipped, not an error: a deployment may legitimately ship without it
-// (e.g. when the corpus has not been built yet).
-func EnsureCorpus(db *sql.DB, seedDir string) error {
-	var n int
-	if err := db.QueryRow(`SELECT COUNT(*) FROM verb_conjugations`).Scan(&n); err != nil {
-		return fmt.Errorf("count verb_conjugations: %w", err)
+// the verb_conjugations table. The table's content hash is tracked in meta:
+// the load is a no-op when the table is populated and the seed is unchanged,
+// but a rebuilt seed (different hash) triggers a full reload so updates
+// propagate on the next boot. Returns changed=true when the table was
+// (re)loaded, signalling the caller to force a full re-backfill.
+//
+// A missing seed file is logged and skipped, not an error: a deployment may
+// legitimately ship without it (e.g. when the corpus has not been built yet).
+func EnsureCorpus(db *sql.DB, seedDir string) (changed bool, err error) {
+	path := filepath.Join(seedDir, corpusFile)
+	hash, exists, err := seedmeta.FileHash(path)
+	if err != nil {
+		return false, fmt.Errorf("hash %s: %w", path, err)
 	}
-	if n > 0 {
-		log.Printf("conjugations: corpus already loaded (%d entries)", n)
-		return nil
+	if !exists {
+		log.Printf("conjugations: %s missing, skipping corpus load", path)
+		return false, nil
 	}
 
-	path := filepath.Join(seedDir, corpusFile)
+	var n int
+	if err := db.QueryRow(`SELECT COUNT(*) FROM verb_conjugations`).Scan(&n); err != nil {
+		return false, fmt.Errorf("count verb_conjugations: %w", err)
+	}
+	hashKey := seedmeta.CorpusHashKey(corpusFile)
+	stored, err := seedmeta.Get(db, hashKey)
+	if err != nil {
+		return false, fmt.Errorf("read corpus hash: %w", err)
+	}
+	if n > 0 && stored == hash {
+		log.Printf("conjugations: corpus up to date (%d entries)", n)
+		return false, nil
+	}
+
 	f, err := os.Open(path)
 	if err != nil {
-		if os.IsNotExist(err) {
-			log.Printf("conjugations: %s missing, skipping corpus load", path)
-			return nil
-		}
-		return fmt.Errorf("open %s: %w", path, err)
+		return false, fmt.Errorf("open %s: %w", path, err)
 	}
 	defer f.Close()
 
 	tx, err := db.Begin()
 	if err != nil {
-		return err
+		return false, err
 	}
 	defer tx.Rollback()
 
+	// Clear first so infinitives dropped from a rebuilt seed don't linger.
+	if _, err := tx.Exec(`DELETE FROM verb_conjugations`); err != nil {
+		return false, err
+	}
+
 	stmt, err := tx.Prepare(`INSERT OR REPLACE INTO verb_conjugations (infinitive, payload) VALUES (?, ?)`)
 	if err != nil {
-		return err
+		return false, err
 	}
 	defer stmt.Close()
 
@@ -79,7 +100,7 @@ func EnsureCorpus(db *sql.DB, seedDir string) error {
 		}
 		var e Entry
 		if err := json.Unmarshal(line, &e); err != nil {
-			return fmt.Errorf("parse %s line %d: %w", path, inserted+1, err)
+			return false, fmt.Errorf("parse %s line %d: %w", path, inserted+1, err)
 		}
 		if e.Infinitive == "" {
 			continue
@@ -90,19 +111,26 @@ func EnsureCorpus(db *sql.DB, seedDir string) error {
 			Perfekt     Perfekt           `json:"perfekt"`
 		}{e.Praesens, e.Praeteritum, e.Perfekt})
 		if err != nil {
-			return err
+			return false, err
 		}
 		if _, err := stmt.Exec(e.Infinitive, string(payload)); err != nil {
-			return fmt.Errorf("insert %q: %w", e.Infinitive, err)
+			return false, fmt.Errorf("insert %q: %w", e.Infinitive, err)
 		}
 		inserted++
 	}
 	if err := scanner.Err(); err != nil {
-		return fmt.Errorf("scan %s: %w", path, err)
+		return false, fmt.Errorf("scan %s: %w", path, err)
+	}
+	if err := seedmeta.Set(tx, hashKey, hash); err != nil {
+		return false, fmt.Errorf("store corpus hash: %w", err)
 	}
 	if err := tx.Commit(); err != nil {
-		return err
+		return false, err
 	}
-	log.Printf("conjugations: corpus loaded %d entries from %s", inserted, path)
-	return nil
+	if stored == "" {
+		log.Printf("conjugations: corpus loaded %d entries from %s", inserted, path)
+	} else {
+		log.Printf("conjugations: corpus reloaded %d entries from %s (seed changed)", inserted, path)
+	}
+	return true, nil
 }

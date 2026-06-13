@@ -12,16 +12,20 @@ import (
 // gate (Plurals != nil) prevents this from rendering an empty panel.
 const emptyPayload = "{}"
 
-// Backfill populates words.plurals for every noun (pos='Substantiv' and not
-// plural-only) that does not yet have it. Joins by lemma against the
-// noun_plurals corpus loaded by EnsureCorpus. Nouns with no corpus match get
-// an empty JSON object so they are not re-attempted on later boots. Returns
-// (matched, missed).
+// Backfill populates words.plurals for nouns (pos='Substantiv' and not
+// plural-only) by joining by lemma against the noun_plurals corpus loaded by
+// EnsureCorpus. Nouns with no corpus match get an empty JSON object so they
+// are not re-attempted on later boots. Returns (matched, missed).
+//
+// When force is false, only nouns missing a payload (plurals IS NULL) are
+// filled — the cheap incremental path for newly imported words. When force is
+// true (the seed corpus changed this boot), every noun is re-derived so the
+// new data — and any previously missed lemma now present — propagates.
 //
 // If the corpus is empty (no seed file shipped yet), backfill is a no-op so
 // that the next boot — once the corpus is populated — still gets a chance at
 // every noun.
-func Backfill(db *sql.DB) (int, int, error) {
+func Backfill(db *sql.DB, force bool) (int, int, error) {
 	var corpus int
 	if err := db.QueryRow(`SELECT COUNT(*) FROM noun_plurals`).Scan(&corpus); err != nil {
 		return 0, 0, fmt.Errorf("count noun_plurals: %w", err)
@@ -31,12 +35,15 @@ func Backfill(db *sql.DB) (int, int, error) {
 		return 0, 0, nil
 	}
 
-	rows, err := db.Query(`
+	query := `
 		SELECT w.id, w.lemma, np.payload
 		FROM words w
 		LEFT JOIN noun_plurals np ON np.lemma = w.lemma
-		WHERE w.pos = 'Substantiv' AND w.only_plural = 0 AND w.plurals IS NULL
-	`)
+		WHERE w.pos = 'Substantiv' AND w.only_plural = 0`
+	if !force {
+		query += ` AND w.plurals IS NULL`
+	}
+	rows, err := db.Query(query)
 	if err != nil {
 		return 0, 0, fmt.Errorf("select nouns: %w", err)
 	}

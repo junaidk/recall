@@ -12,15 +12,20 @@ import (
 // gate (Conjugations != nil) prevents this from rendering an empty panel.
 const emptyPayload = "{}"
 
-// Backfill populates words.conjugations for every verb that does not yet
-// have it. It joins by lemma against the verb_conjugations corpus loaded
-// by EnsureCorpus. Words with no corpus match get an empty JSON object so
-// they are not re-attempted on later boots. Returns (matched, missed).
+// Backfill populates words.conjugations for verbs by joining by lemma against
+// the verb_conjugations corpus loaded by EnsureCorpus. Words with no corpus
+// match get an empty JSON object so they are not re-attempted on later boots.
+// Returns (matched, missed).
+//
+// When force is false, only verbs missing a payload (conjugations IS NULL) are
+// filled — the cheap incremental path for newly imported words. When force is
+// true (the seed corpus changed this boot), every verb is re-derived so the
+// new data — and any previously missed lemma now present — propagates.
 //
 // If the corpus is empty (no seed file shipped yet), backfill is a no-op so
 // that the next boot — once the corpus is populated — still gets a chance
 // at every verb.
-func Backfill(db *sql.DB) (int, int, error) {
+func Backfill(db *sql.DB, force bool) (int, int, error) {
 	var corpus int
 	if err := db.QueryRow(`SELECT COUNT(*) FROM verb_conjugations`).Scan(&corpus); err != nil {
 		return 0, 0, fmt.Errorf("count verb_conjugations: %w", err)
@@ -30,12 +35,15 @@ func Backfill(db *sql.DB) (int, int, error) {
 		return 0, 0, nil
 	}
 
-	rows, err := db.Query(`
+	query := `
 		SELECT w.id, w.lemma, vc.payload
 		FROM words w
 		LEFT JOIN verb_conjugations vc ON vc.infinitive = w.lemma
-		WHERE w.pos = 'Verb' AND w.conjugations IS NULL
-	`)
+		WHERE w.pos = 'Verb'`
+	if !force {
+		query += ` AND w.conjugations IS NULL`
+	}
+	rows, err := db.Query(query)
 	if err != nil {
 		return 0, 0, fmt.Errorf("select verbs: %w", err)
 	}

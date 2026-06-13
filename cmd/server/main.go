@@ -59,15 +59,15 @@ func main() {
 		log.Printf("sentences: backfill failed: %v", err)
 	}
 
-	if err := conjugations.EnsureCorpus(dbConn, cfg.Import.SeedDir); err != nil {
+	if changed, err := conjugations.EnsureCorpus(dbConn, cfg.Import.SeedDir); err != nil {
 		log.Printf("conjugations: corpus load failed: %v", err)
-	} else if _, _, err := conjugations.Backfill(dbConn); err != nil {
+	} else if _, _, err := conjugations.Backfill(dbConn, changed); err != nil {
 		log.Printf("conjugations: backfill failed: %v", err)
 	}
 
-	if err := plurals.EnsureCorpus(dbConn, cfg.Import.SeedDir); err != nil {
+	if changed, err := plurals.EnsureCorpus(dbConn, cfg.Import.SeedDir); err != nil {
 		log.Printf("plurals: corpus load failed: %v", err)
-	} else if _, _, err := plurals.Backfill(dbConn); err != nil {
+	} else if _, _, err := plurals.Backfill(dbConn, changed); err != nil {
 		log.Printf("plurals: backfill failed: %v", err)
 	}
 

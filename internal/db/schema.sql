@@ -112,3 +112,11 @@ CREATE TABLE IF NOT EXISTS noun_plurals (
   lemma TEXT PRIMARY KEY,
   payload TEXT NOT NULL
 );
+
+-- Key/value store for boot-time bookkeeping. Used to record the content hash
+-- of each loaded seed corpus so a rebuilt seed reloads automatically (see
+-- internal/seedmeta).
+CREATE TABLE IF NOT EXISTS meta (
+  key   TEXT PRIMARY KEY,
+  value TEXT NOT NULL
+);
