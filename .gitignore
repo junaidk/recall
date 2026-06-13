@@ -9,6 +9,9 @@ data/
 *.db-shm
 extra/
 
+# Generated Anki export packages (cmd/anki-export -> exports/<deck>.apkg)
+exports/
+
 # Build output (anchored to repo root so cmd/seed-export/ source dir isn't matched)
 /recall
 /recall-server
