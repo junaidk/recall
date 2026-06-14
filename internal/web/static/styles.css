@@ -617,4 +617,19 @@ a { color: #2d62b8; }
     padding-top: 0.55rem;
     padding-bottom: 0.55rem;
   }
+
+  /* Stack the tense tables in a single column. flex-wrap + justify-center
+     centers each block on its own row, so the differently-sized Präsens/
+     Präteritum/Perfekt blocks end up with ragged left edges. Force a column
+     with a shared left edge, then center the whole group in the card. */
+  .conjugations-card { padding: 1.25rem 1rem; }
+  .conjugations-card .conjugations {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 1.25rem;
+    width: max-content;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
