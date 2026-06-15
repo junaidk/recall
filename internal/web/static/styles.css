@@ -564,7 +564,7 @@ a { color: #2d62b8; }
 }
 .day-bar-fill.forecast { background: #d6863a; }
 
-.browse-search { display: flex; gap: 0.5rem; align-items: center; margin: 1rem 0; }
+.browse-search { display: flex; flex-direction: row; gap: 0.5rem; align-items: center; margin: 1rem 0; max-width: none; }
 .browse-search input[type="search"] {
   flex: 1;
   max-width: 22rem;
