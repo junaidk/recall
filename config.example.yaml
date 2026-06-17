@@ -14,7 +14,10 @@ deepl:
 import:
   seed_dir: "seed"
 
-# FSRS spaced-repetition tuning. Omit any field to keep the library default.
+# FSRS spaced-repetition tuning. These values seed each new user's settings at
+# registration (and backfill existing users once on first boot). Thereafter each
+# user edits their own values from the /settings page, independent of this file —
+# changing these later only affects users created afterward.
 fsrs:
   # Target probability of recall at next review. Lower → longer intervals,
   # fewer reviews, more forgetting. Typical range: 0.80–0.97.

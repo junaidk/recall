@@ -120,3 +120,14 @@ CREATE TABLE IF NOT EXISTS meta (
   key   TEXT PRIMARY KEY,
   value TEXT NOT NULL
 );
+
+-- Per-user FSRS tuning. One row per user, seeded from config.yaml at
+-- registration; thereafter editable from the /settings page and independent
+-- of config.yaml. See internal/settings.
+CREATE TABLE IF NOT EXISTS user_settings (
+  user_id           INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  request_retention REAL    NOT NULL,
+  maximum_interval  REAL    NOT NULL,
+  enable_fuzz       INTEGER NOT NULL,
+  new_cards_per_day INTEGER NOT NULL
+);

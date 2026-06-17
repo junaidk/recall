@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"github.com/junaidk/recall/internal/auth"
+	"github.com/junaidk/recall/internal/settings"
 )
 
 type authPage struct {
@@ -67,6 +68,10 @@ func (s *Server) handleRegister(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	id, _ := res.LastInsertId()
+	if err := settings.InsertForUser(s.DB, id, s.DefaultSettings); err != nil {
+		http.Error(w, "internal error", http.StatusInternalServerError)
+		return
+	}
 	if err := s.Sessions.Create(w, id); err != nil {
 		http.Error(w, "internal error", http.StatusInternalServerError)
 		return

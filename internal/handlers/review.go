@@ -411,7 +411,12 @@ func (s *Server) handleGrade(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	updated, log := s.Scheduler.Grade(card, rating, time.Now())
+	sch, err := s.schedulerFor(u.ID)
+	if err != nil {
+		http.Error(w, "load settings: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	updated, log := sch.Grade(card, rating, time.Now())
 
 	tx, err := s.DB.Begin()
 	if err != nil {
@@ -578,7 +583,11 @@ func (s *Server) buildDoneView(userID, deckID int64) (doneView, error) {
 	if err != nil {
 		return dv, err
 	}
-	if s.NewCardsPerDay-introducedToday <= 0 {
+	set, err := s.settingsFor(userID)
+	if err != nil {
+		return dv, err
+	}
+	if set.NewCardsPerDay-introducedToday <= 0 {
 		var waiting int
 		err := s.DB.QueryRow(`
 			SELECT COUNT(*) FROM cards c
@@ -713,7 +722,11 @@ func (s *Server) loadCardView(userID, cardID int64) (cardView, error) {
 	if cv.Pos == "Substantiv" && plur.Valid {
 		cv.Plurals = parsePlurals(plur.String, lemma, articles.String, genera.String)
 	}
-	p := s.Scheduler.Preview(cv.Card, time.Now())
+	sch, err := s.schedulerFor(userID)
+	if err != nil {
+		return cv, err
+	}
+	p := sch.Preview(cv.Card, time.Now())
 	cv.IvlAgain = formatInterval(p.Again)
 	cv.IvlHard = formatInterval(p.Hard)
 	cv.IvlGood = formatInterval(p.Good)
@@ -746,7 +759,11 @@ func (s *Server) fetchNextCardView(userID, deckID int64) (cardView, error) {
 	if err != nil {
 		return cv, err
 	}
-	remainingNew := max(s.NewCardsPerDay-introducedToday, 0)
+	set, err := s.settingsFor(userID)
+	if err != nil {
+		return cv, err
+	}
+	remainingNew := max(set.NewCardsPerDay-introducedToday, 0)
 
 	var newDue, reviewDue int
 	err = s.DB.QueryRow(`

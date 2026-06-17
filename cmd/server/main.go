@@ -10,11 +10,11 @@ import (
 	"github.com/junaidk/recall/internal/config"
 	"github.com/junaidk/recall/internal/conjugations"
 	"github.com/junaidk/recall/internal/db"
-	"github.com/junaidk/recall/internal/fsrs"
 	"github.com/junaidk/recall/internal/handlers"
 	"github.com/junaidk/recall/internal/importer"
 	"github.com/junaidk/recall/internal/plurals"
 	"github.com/junaidk/recall/internal/seed"
+	"github.com/junaidk/recall/internal/settings"
 	"github.com/junaidk/recall/internal/sentences"
 	"github.com/junaidk/recall/internal/translator"
 	"github.com/junaidk/recall/internal/web"
@@ -84,12 +84,19 @@ func main() {
 
 	templates := web.MustLoadTemplates()
 	sessions := auth.NewStore(dbConn)
-	scheduler := fsrs.New(fsrs.Options{
+
+	// FSRS settings are per-user; config.yaml provides the defaults that seed
+	// each new user (and any pre-existing users, backfilled here once).
+	defaultSettings := settings.Settings{
 		RequestRetention: cfg.FSRS.RequestRetention,
 		MaximumInterval:  cfg.FSRS.MaximumInterval,
 		EnableFuzz:       cfg.FSRS.FuzzEnabled(),
-	})
-	server := handlers.New(dbConn, sessions, templates, scheduler, audioCache, cfg.FSRS.NewCardsPerDay)
+		NewCardsPerDay:   cfg.FSRS.NewCardsPerDay,
+	}.Sanitize()
+	if err := settings.BackfillAll(dbConn, defaultSettings); err != nil {
+		log.Fatalf("settings backfill: %v", err)
+	}
+	server := handlers.New(dbConn, sessions, templates, audioCache, defaultSettings)
 
 	mux := http.NewServeMux()
 	server.Register(mux)

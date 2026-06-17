@@ -16,7 +16,7 @@ import (
 //go:embed schema.sql
 var schemaSQL string
 
-const currentSchemaVersion = 6
+const currentSchemaVersion = 7
 
 func Open(path string) (*sql.DB, error) {
 	if dir := filepath.Dir(path); dir != "" && dir != "." {
@@ -130,6 +130,21 @@ func migrate(db *sql.DB) error {
 			if _, err := db.Exec(stmt); err != nil && !strings.Contains(err.Error(), "duplicate column") {
 				return fmt.Errorf("%s: %w", stmt, err)
 			}
+		}
+	}
+
+	if version < 7 {
+		// Per-user FSRS settings. Rows are seeded from config defaults at boot
+		// (see settings.BackfillAll), not here — the db package has no config.
+		if _, err := db.Exec(`
+			CREATE TABLE IF NOT EXISTS user_settings (
+			  user_id           INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+			  request_retention REAL    NOT NULL,
+			  maximum_interval  REAL    NOT NULL,
+			  enable_fuzz       INTEGER NOT NULL,
+			  new_cards_per_day INTEGER NOT NULL
+			)`); err != nil {
+			return fmt.Errorf("v7 create user_settings: %w", err)
 		}
 	}
 
