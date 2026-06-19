@@ -1,0 +1,57 @@
+{{define "title"}}Test {{.Deck.Name}}{{end}}
+{{define "body"}}
+<div class="study-header">
+  <h2>Test: {{.Deck.Name}}</h2>
+  <a class="navbtn" href="/decks">← Decks</a>
+</div>
+<p class="hint">Quiz yourself without affecting your review schedule.</p>
+
+<div id="exam-slot">
+  <form class="card exam-setup" hx-post="/decks/{{.Deck.ID}}/exam/start" hx-target="#exam-slot" hx-swap="innerHTML">
+    <div class="settings-field">
+      <span class="exam-legend">What to test</span>
+      <label class="exam-radio"><input type="radio" name="kind" value="article" checked> Noun articles <span class="muted">(der / die / das)</span></label>
+      <label class="exam-radio"><input type="radio" name="kind" value="conjugation"> Verb conjugation <span class="muted">(fill in a form)</span></label>
+    </div>
+    <div class="settings-field">
+      <label for="exam-count">Number of questions</label>
+      <select id="exam-count" name="count">
+        <option value="10">10</option>
+        <option value="20" selected>20</option>
+        <option value="50">50</option>
+        <option value="all">All</option>
+      </select>
+    </div>
+    <div class="settings-actions">
+      <button type="submit" class="primary">Start test</button>
+    </div>
+  </form>
+</div>
+
+{{if .History}}
+<section class="exam-history">
+  <h3>Recent results</h3>
+  <ul>
+    {{range .History}}
+    <li>
+      <span class="ex-kind">{{.KindLabel}}</span>
+      <strong>{{.Correct}}/{{.Total}}</strong>
+      <span class="ex-pct">({{.Percent}}%)</span>
+      <span class="ex-when">{{.When}}</span>
+    </li>
+    {{end}}
+  </ul>
+</section>
+{{end}}
+
+<script>
+document.addEventListener('keydown', function(e) {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+  if (e.code === 'Space' || e.code === 'Enter') {
+    const nb = document.querySelector('#exam-slot .exam-next');
+    if (nb) { e.preventDefault(); nb.click(); }
+  }
+});
+</script>
+{{end}}
+{{template "base" .}}

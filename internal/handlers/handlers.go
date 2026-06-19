@@ -21,10 +21,12 @@ type Server struct {
 	// DefaultSettings seed new users at registration and act as a fallback when
 	// a user has no user_settings row. FSRS scheduling is otherwise per-user.
 	DefaultSettings settings.Settings
+	// Exams holds transient test/exam session state. See exam.go.
+	Exams *examStore
 }
 
 func New(db *sql.DB, sessions *auth.Store, t *web.Templates, audioCache *audio.Cache, defaults settings.Settings) *Server {
-	return &Server{DB: db, Sessions: sessions, Templates: t, AudioCache: audioCache, DefaultSettings: defaults}
+	return &Server{DB: db, Sessions: sessions, Templates: t, AudioCache: audioCache, DefaultSettings: defaults, Exams: newExamStore()}
 }
 
 // settingsFor loads a user's FSRS settings, falling back to DefaultSettings if
@@ -71,6 +73,10 @@ func (s *Server) Register(mux *http.ServeMux) {
 	mux.Handle("GET /decks/{id}/study", s.Sessions.RequireUser(http.HandlerFunc(s.handleStudyPage)))
 	mux.Handle("GET /decks/{id}/stats", s.Sessions.RequireUser(http.HandlerFunc(s.handleDeckStats)))
 	mux.Handle("GET /decks/{id}/cards", s.Sessions.RequireUser(http.HandlerFunc(s.handleBrowse)))
+	mux.Handle("GET /decks/{id}/exam", s.Sessions.RequireUser(http.HandlerFunc(s.handleExamPage)))
+	mux.Handle("POST /decks/{id}/exam/start", s.Sessions.RequireUser(http.HandlerFunc(s.handleExamStart)))
+	mux.Handle("POST /exam/{examID}/answer", s.Sessions.RequireUser(http.HandlerFunc(s.handleExamAnswer)))
+	mux.Handle("GET /exam/{examID}/next", s.Sessions.RequireUser(http.HandlerFunc(s.handleExamNext)))
 	mux.Handle("GET /review/{deckID}/next", s.Sessions.RequireUser(http.HandlerFunc(s.handleNextCard)))
 	mux.Handle("GET /review/{deckID}/card/{cardID}", s.Sessions.RequireUser(http.HandlerFunc(s.handleRevealCard)))
 	mux.Handle("POST /review/{cardID}/grade", s.Sessions.RequireUser(http.HandlerFunc(s.handleGrade)))

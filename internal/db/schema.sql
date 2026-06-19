@@ -121,6 +121,21 @@ CREATE TABLE IF NOT EXISTS meta (
   value TEXT NOT NULL
 );
 
+-- Self-paced test/exam results. One row per completed exam session, written
+-- only when a session finishes. Fully independent of the FSRS workflow (never
+-- touches cards/review_logs). See internal/handlers/exam.go.
+CREATE TABLE IF NOT EXISTS exam_results (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  deck_id INTEGER NOT NULL REFERENCES decks(id) ON DELETE CASCADE,
+  kind TEXT NOT NULL,            -- 'article' | 'conjugation'
+  total INTEGER NOT NULL,
+  correct INTEGER NOT NULL,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_exam_results_user_deck
+  ON exam_results(user_id, deck_id, created_at);
+
 -- Per-user FSRS tuning. One row per user, seeded from config.yaml at
 -- registration; thereafter editable from the /settings page and independent
 -- of config.yaml. See internal/settings.

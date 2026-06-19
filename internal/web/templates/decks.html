@@ -10,12 +10,13 @@
     <div>
       <div><strong>{{.Deck.Name}}</strong></div>
       <div class="counts">
-        {{.New}} new · {{.Learning}} learning · {{.Review}} review · <strong>{{.DueNow}} due now</strong> · {{.Total}} total
+        {{.New}} new · {{.Learning}} learning · {{.Review}} review · <strong>{{.DueNow}} due now</strong><br>{{.Total}} total
       </div>
     </div>
     <div class="deck-actions">
       <a class="stats" href="/decks/{{.Deck.ID}}/cards">Cards</a>
       <a class="stats" href="/decks/{{.Deck.ID}}/stats">Stats</a>
+      <a class="stats" href="/decks/{{.Deck.ID}}/exam">Test</a>
       <a class="study" href="/decks/{{.Deck.ID}}/study">Study →</a>
     </div>
   </li>
