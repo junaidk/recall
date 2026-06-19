@@ -1,0 +1,19 @@
+{{define "exam_feedback"}}
+<div class="card exam-card exam-result {{if .Correct}}is-correct{{else}}is-wrong{{end}}">
+  <div class="exam-progress">Question {{.Index}} / {{.Total}}</div>
+  <div class="exam-blank">
+    {{if .Before}}<div class="exam-prompt-text">{{.Before}}</div>{{end}}
+    <div class="exam-answer-row">
+      <span class="exam-answer-shown">{{.Answer}}</span>
+      {{if .After}}<span class="exam-fixed">{{.After}}</span>{{end}}
+    </div>
+    {{if .Translation}}<div class="exam-translation">{{.Translation}}</div>{{end}}
+  </div>
+  <div class="exam-verdict">
+    {{if .Correct}}✓ Correct{{else}}✗ You answered “{{.Your}}”{{end}}
+  </div>
+  <button class="primary exam-next" hx-get="/exam/{{.ExamID}}/next" hx-target="#exam-slot" hx-swap="innerHTML">
+    {{if .Last}}See results{{else}}Next{{end}} <span class="kbd">(space)</span>
+  </button>
+</div>
+{{end}}

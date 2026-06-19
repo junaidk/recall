@@ -1,0 +1,18 @@
+{{define "exam_done"}}
+<div class="card exam-card">
+  {{if .Empty}}
+    <p class="exam-empty">No {{if eq .Kind "article"}}nouns with articles{{else}}verbs with conjugations{{end}} available to test in this deck.</p>
+  {{else}}
+    <div class="exam-score">{{.Correct}} / {{.Total}}</div>
+    <div class="exam-score-pct">{{.Percent}}% correct · {{.KindLabel}}</div>
+  {{end}}
+  <div class="exam-done-actions">
+    <form hx-post="/decks/{{.DeckID}}/exam/start" hx-target="#exam-slot" hx-swap="innerHTML" style="display:inline">
+      <input type="hidden" name="kind" value="{{.Kind}}">
+      <input type="hidden" name="count" value="{{if .Count}}{{.Count}}{{else}}all{{end}}">
+      <button type="submit" class="primary">{{if .Empty}}Try another{{else}}Retry{{end}}</button>
+    </form>
+    <a class="navbtn" href="/decks">Back to decks</a>
+  </div>
+</div>
+{{end}}

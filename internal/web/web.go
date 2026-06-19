@@ -25,7 +25,7 @@ func MustLoadTemplates() *Templates {
 
 	// Pages: parse base.html + the page file together so the page can
 	// override "title" and "body" blocks defined in base.
-	pages := []string{"login.html", "register.html", "decks.html", "review.html", "stats.html", "card_edit.html", "browse.html", "settings.html"}
+	pages := []string{"login.html", "register.html", "decks.html", "review.html", "stats.html", "card_edit.html", "browse.html", "settings.html", "exam.html"}
 	for _, name := range pages {
 		ts, err := template.ParseFS(templateFS, "templates/base.html", "templates/"+name)
 		if err != nil {
@@ -36,7 +36,7 @@ func MustLoadTemplates() *Templates {
 
 	// Partials returned by HTMX endpoints. Each is a single named template
 	// (no base layout); we invoke them via ExecuteTemplate.
-	partials := []string{"_card_front.html", "_card_back.html", "_done.html", "_example_block.html", "_example_choices.html", "_conjugations_block.html", "_plurals_block.html", "_edit_candidates.html"}
+	partials := []string{"_card_front.html", "_card_back.html", "_done.html", "_example_block.html", "_example_choices.html", "_conjugations_block.html", "_plurals_block.html", "_edit_candidates.html", "_exam_question.html", "_exam_feedback.html", "_exam_done.html"}
 	partialSet, err := template.ParseFS(templateFS, partialNames(partials)...)
 	if err != nil {
 		panic(fmt.Errorf("parse partials: %w", err))

@@ -1,0 +1,18 @@
+{{define "exam_question"}}
+<div class="card exam-card">
+  <div class="exam-progress">Question {{.Index}} / {{.Total}}</div>
+  <form class="exam-answer-form" hx-post="/exam/{{.ExamID}}/answer" hx-target="#exam-slot" hx-swap="innerHTML">
+    <div class="exam-blank">
+      {{if .Before}}<div class="exam-prompt-text">{{.Before}}</div>{{end}}
+      <div class="exam-answer-row">
+        <input type="text" name="answer" class="exam-input" placeholder="{{.Placeholder}}"
+               autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" autofocus>
+        {{if .After}}<span class="exam-fixed">{{.After}}</span>{{end}}
+      </div>
+    </div>
+    {{if .Translation}}<div class="exam-translation">{{.Translation}}</div>{{end}}
+    {{if .Hint}}<div class="exam-hint">{{.Hint}}</div>{{end}}
+    <button type="submit" class="primary">Check</button>
+  </form>
+</div>
+{{end}}
