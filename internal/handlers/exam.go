@@ -27,6 +27,14 @@ import (
 const (
 	examKindArticle     = "article"
 	examKindConjugation = "conjugation"
+	examKindTranslation = "translation"
+)
+
+// scope selects which words a test draws from: scopeAll uses the whole deck,
+// scopeSeen only cards the user has reviewed at least once (FSRS state != 0).
+const (
+	scopeAll  = "all"
+	scopeSeen = "seen"
 )
 
 // examQuestion is one prompt the user must answer. The answer input is rendered
@@ -38,7 +46,27 @@ type examQuestion struct {
 	After       string // text shown after the answer blank
 	Hint        string // optional supporting text (e.g. the Perfekt auxiliary)
 	Translation string // English translation, shown as context
-	Answer      string
+	Answer      string // the answer revealed in feedback (and graded if Accept is empty)
+	// Accept lists every acceptable response; empty means just Answer. Used so a
+	// noun's answer can be shown with its article ("der Abend") while the bare
+	// lemma ("Abend") still grades as correct.
+	Accept []string
+}
+
+// isCorrect reports whether the user's response matches any acceptable answer,
+// using normalizeAnswer (case-insensitive, whitespace-collapsed).
+func (q examQuestion) isCorrect(user string) bool {
+	want := q.Accept
+	if len(want) == 0 {
+		want = []string{q.Answer}
+	}
+	nu := normalizeAnswer(user)
+	for _, a := range want {
+		if normalizeAnswer(a) == nu {
+			return true
+		}
+	}
+	return false
 }
 
 // examSession holds the transient progress of one in-flight exam. It lives only
@@ -47,7 +75,8 @@ type examSession struct {
 	UserID    int64
 	DeckID    int64
 	Kind      string
-	Count     int // requested count, carried so the done screen can offer a retry
+	Scope     string // scopeAll or scopeSeen, carried so the done screen can retry
+	Count     int    // requested count, carried so the done screen can offer a retry
 	Questions []examQuestion
 	Index     int // index of the next unanswered question
 	Correct   int
@@ -143,6 +172,7 @@ type examFeedbackView struct {
 type examDoneView struct {
 	DeckID    int64
 	Kind      string // raw kind, for the retry form
+	Scope     string // raw scope, for the retry form
 	KindLabel string
 	Count     int
 	Correct   int
@@ -158,6 +188,8 @@ func kindLabel(kind string) string {
 		return "Articles"
 	case examKindConjugation:
 		return "Verb conjugation"
+	case examKindTranslation:
+		return "Translation"
 	default:
 		return kind
 	}
@@ -235,18 +267,24 @@ func (s *Server) handleExamStart(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	kind := r.FormValue("kind")
-	if kind != examKindArticle && kind != examKindConjugation {
+	if kind != examKindArticle && kind != examKindConjugation && kind != examKindTranslation {
 		http.Error(w, "bad kind", http.StatusBadRequest)
 		return
+	}
+	scope := scopeAll
+	if r.FormValue("scope") == scopeSeen {
+		scope = scopeSeen
 	}
 	count := parseCount(r.FormValue("count"))
 
 	var questions []examQuestion
 	switch kind {
 	case examKindArticle:
-		questions, err = s.buildArticleQuestions(deckID, count)
+		questions, err = s.buildArticleQuestions(deckID, u.ID, scope, count)
 	case examKindConjugation:
-		questions, err = s.buildConjugationQuestions(deckID, count)
+		questions, err = s.buildConjugationQuestions(deckID, u.ID, scope, count)
+	case examKindTranslation:
+		questions, err = s.buildTranslationQuestions(deckID, u.ID, scope, count)
 	}
 	if err != nil {
 		http.Error(w, "build questions: "+err.Error(), http.StatusInternalServerError)
@@ -255,13 +293,13 @@ func (s *Server) handleExamStart(w http.ResponseWriter, r *http.Request) {
 
 	if len(questions) == 0 {
 		s.Templates.RenderPartial(w, "exam_done", examDoneView{
-			DeckID: deckID, Kind: kind, KindLabel: kindLabel(kind), Count: count, Empty: true,
+			DeckID: deckID, Kind: kind, Scope: scope, KindLabel: kindLabel(kind), Count: count, Empty: true,
 		})
 		return
 	}
 
 	sess := &examSession{
-		UserID: u.ID, DeckID: deckID, Kind: kind, Count: count,
+		UserID: u.ID, DeckID: deckID, Kind: kind, Scope: scope, Count: count,
 		Questions: questions, Created: time.Now(),
 	}
 	id := s.Exams.create(sess)
@@ -307,7 +345,7 @@ func (s *Server) handleExamAnswer(w http.ResponseWriter, r *http.Request) {
 
 	q := sess.Questions[sess.Index]
 	answer := r.FormValue("answer")
-	correct := normalizeAnswer(answer) == normalizeAnswer(q.Answer)
+	correct := q.isCorrect(answer)
 	if correct {
 		sess.Correct++
 	}
@@ -357,6 +395,7 @@ func (s *Server) handleExamNext(w http.ResponseWriter, r *http.Request) {
 	s.Templates.RenderPartial(w, "exam_done", examDoneView{
 		DeckID:    sess.DeckID,
 		Kind:      sess.Kind,
+		Scope:     sess.Scope,
 		KindLabel: kindLabel(sess.Kind),
 		Count:     sess.Count,
 		Correct:   sess.Correct,
@@ -386,23 +425,40 @@ func limitFor(count int) int {
 	return count
 }
 
-func placeholderFor(kind string) string {
-	if kind == examKindArticle {
-		return "der/die/das"
+// scopeJoin returns the JOIN/WHERE fragments (and the user-id arg) that restrict a
+// question query to "seen" cards (FSRS state != 0). For scopeAll it returns empty
+// fragments. The words table must be aliased "w" in the caller's query, and the
+// returned args (if any) precede the query's other placeholders.
+func scopeJoin(scope string, userID int64) (join, where string, args []any) {
+	if scope == scopeSeen {
+		return " JOIN cards c ON c.word_id = w.id AND c.user_id = ?", " AND c.state != 0", []any{userID}
 	}
-	return "answer"
+	return "", "", nil
+}
+
+func placeholderFor(kind string) string {
+	switch kind {
+	case examKindArticle:
+		return "der/die/das"
+	case examKindTranslation:
+		return "German word"
+	default:
+		return "answer"
+	}
 }
 
 // buildArticleQuestions samples nouns with a clear nominative article and asks
 // the user to supply der/die/das. Plural-only and article-less nouns are
 // excluded by the query, and any noun whose first article is not der/die/das
 // is skipped by the parse guard below.
-func (s *Server) buildArticleQuestions(deckID int64, count int) ([]examQuestion, error) {
-	rows, err := s.DB.Query(`
-		SELECT lemma, articles, translation_en FROM words
-		WHERE deck_id = ? AND pos = 'Substantiv' AND only_plural = 0
-		  AND articles IS NOT NULL AND articles NOT IN ('', '[]')
-		ORDER BY RANDOM() LIMIT ?`, deckID, limitFor(count))
+func (s *Server) buildArticleQuestions(deckID, userID int64, scope string, count int) ([]examQuestion, error) {
+	join, where, args := scopeJoin(scope, userID)
+	q := `SELECT w.lemma, w.articles, w.translation_en FROM words w` + join + `
+		WHERE w.deck_id = ? AND w.pos = 'Substantiv' AND w.only_plural = 0
+		  AND w.articles IS NOT NULL AND w.articles NOT IN ('', '[]')` + where + `
+		ORDER BY RANDOM() LIMIT ?`
+	args = append(args, deckID, limitFor(count))
+	rows, err := s.DB.Query(q, args...)
 	if err != nil {
 		return nil, err
 	}
@@ -444,12 +500,14 @@ func firstArticle(articlesJSON string) string {
 // buildConjugationQuestions samples verbs and, for each, picks one random target
 // form to fill in. Präsens/Präteritum questions ask for a specific pronoun's
 // form; Perfekt questions ask for the Partizip II (with the auxiliary as a hint).
-func (s *Server) buildConjugationQuestions(deckID int64, count int) ([]examQuestion, error) {
-	rows, err := s.DB.Query(`
-		SELECT lemma, conjugations, translation_en FROM words
-		WHERE deck_id = ? AND pos = 'Verb'
-		  AND conjugations IS NOT NULL AND conjugations NOT IN ('', '{}')
-		ORDER BY RANDOM() LIMIT ?`, deckID, limitFor(count))
+func (s *Server) buildConjugationQuestions(deckID, userID int64, scope string, count int) ([]examQuestion, error) {
+	join, where, args := scopeJoin(scope, userID)
+	q := `SELECT w.lemma, w.conjugations, w.translation_en FROM words w` + join + `
+		WHERE w.deck_id = ? AND w.pos = 'Verb'
+		  AND w.conjugations IS NOT NULL AND w.conjugations NOT IN ('', '{}')` + where + `
+		ORDER BY RANDOM() LIMIT ?`
+	args = append(args, deckID, limitFor(count))
+	rows, err := s.DB.Query(q, args...)
 	if err != nil {
 		return nil, err
 	}
@@ -466,6 +524,49 @@ func (s *Server) buildConjugationQuestions(deckID int64, count int) ([]examQuest
 			q.Translation = translation.String
 			qs = append(qs, q)
 		}
+	}
+	return qs, rows.Err()
+}
+
+// buildTranslationQuestions samples words that have an English translation and asks
+// the user to supply the German lemma. The English translation is the prompt (line 1,
+// via Before) with the part of speech (pos, e.g. "Substantiv"/"Verb") as a hint; the
+// input is on line 2. For nouns with a clear article the revealed answer includes it
+// ("der Abend"), but the bare lemma is also accepted. Matching is case-insensitive via
+// normalizeAnswer.
+func (s *Server) buildTranslationQuestions(deckID, userID int64, scope string, count int) ([]examQuestion, error) {
+	join, where, args := scopeJoin(scope, userID)
+	q := `SELECT w.lemma, w.pos, w.articles, w.translation_en FROM words w` + join + `
+		WHERE w.deck_id = ? AND w.translation_en IS NOT NULL AND w.translation_en != ''` + where + `
+		ORDER BY RANDOM() LIMIT ?`
+	args = append(args, deckID, limitFor(count))
+	rows, err := s.DB.Query(q, args...)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var qs []examQuestion
+	for rows.Next() {
+		var lemma string
+		var pos, articles, translation sql.NullString
+		if err := rows.Scan(&lemma, &pos, &articles, &translation); err != nil {
+			return nil, err
+		}
+		eq := examQuestion{
+			Before: translation.String, // English prompt on line 1, input on line 2
+			Hint:   pos.String,          // part of speech, e.g. "Substantiv" / "Verb"
+			Answer: lemma,
+		}
+		// Nouns: show the article with the answer; still accept the bare lemma.
+		if pos.String == "Substantiv" {
+			if art := firstArticle(articles.String); articleByNominative[art] != "" {
+				withArticle := art + " " + lemma
+				eq.Answer = withArticle
+				eq.Accept = []string{withArticle, lemma}
+			}
+		}
+		qs = append(qs, eq)
 	}
 	return qs, rows.Err()
 }

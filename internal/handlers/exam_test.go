@@ -102,7 +102,7 @@ func TestBuildArticleQuestions(t *testing.T) {
 	insertWord(t, conn, deckID, "gehen", "Verb", `[]`, 0, gehenJSON)        // not a noun: excluded
 
 	s := &Server{DB: conn}
-	qs, err := s.buildArticleQuestions(deckID, 0)
+	qs, err := s.buildArticleQuestions(deckID, 0, scopeAll, 0)
 	if err != nil {
 		t.Fatalf("build: %v", err)
 	}
@@ -114,6 +114,80 @@ func TestBuildArticleQuestions(t *testing.T) {
 	}
 	if qs[0].After != "Abend" {
 		t.Errorf("After = %q, want Abend (blank renders before the noun)", qs[0].After)
+	}
+}
+
+func TestBuildTranslationQuestions(t *testing.T) {
+	conn, err := db.Open(filepath.Join(t.TempDir(), "test.db"))
+	if err != nil {
+		t.Fatalf("open db: %v", err)
+	}
+	defer conn.Close()
+
+	deckID := insertDeck(t, conn, "A1")
+	w := insertWord(t, conn, deckID, "Abend", "Substantiv", `["der"]`, 0, "")
+	setTranslation(t, conn, w, "evening")
+	insertWord(t, conn, deckID, "Etwas", "Substantiv", `[]`, 0, "") // no translation: excluded
+
+	s := &Server{DB: conn}
+	qs, err := s.buildTranslationQuestions(deckID, 0, scopeAll, 0)
+	if err != nil {
+		t.Fatalf("build: %v", err)
+	}
+	if len(qs) != 1 {
+		t.Fatalf("got %d questions, want 1 (only the translated word)", len(qs))
+	}
+	if qs[0].Answer != "der Abend" {
+		t.Errorf("answer = %q, want \"der Abend\" (noun answer includes the article)", qs[0].Answer)
+	}
+	if qs[0].Before != "evening" {
+		t.Errorf("Before = %q, want evening (English prompt on line 1)", qs[0].Before)
+	}
+	if qs[0].Hint != "Substantiv" {
+		t.Errorf("Hint = %q, want Substantiv (the actual pos shown in the prompt)", qs[0].Hint)
+	}
+	// The bare lemma must still grade as correct alongside the article form.
+	if !qs[0].isCorrect("abend") || !qs[0].isCorrect("der abend") {
+		t.Errorf("expected both %q and %q to grade correct", "abend", "der abend")
+	}
+}
+
+func TestBuildQuestionsScopeSeenOnly(t *testing.T) {
+	conn, err := db.Open(filepath.Join(t.TempDir(), "test.db"))
+	if err != nil {
+		t.Fatalf("open db: %v", err)
+	}
+	defer conn.Close()
+
+	userID := insertUser(t, conn, "tester")
+	deckID := insertDeck(t, conn, "A1")
+	seen := insertWord(t, conn, deckID, "Abend", "Substantiv", `["der"]`, 0, "")
+	setTranslation(t, conn, seen, "evening")
+	fresh := insertWord(t, conn, deckID, "Morgen", "Substantiv", `["der"]`, 0, "")
+	setTranslation(t, conn, fresh, "morning")
+
+	insertCard(t, conn, userID, seen, 2)  // reviewed (Review state) → in scope
+	insertCard(t, conn, userID, fresh, 0) // still New → out of scope
+
+	s := &Server{DB: conn}
+	qs, err := s.buildTranslationQuestions(deckID, userID, scopeSeen, 0)
+	if err != nil {
+		t.Fatalf("build: %v", err)
+	}
+	if len(qs) != 1 {
+		t.Fatalf("got %d questions, want 1 (only the seen card)", len(qs))
+	}
+	if qs[0].Answer != "der Abend" {
+		t.Errorf("answer = %q, want \"der Abend\" (the seen word)", qs[0].Answer)
+	}
+
+	// scopeAll ignores card state and includes both words.
+	all, err := s.buildTranslationQuestions(deckID, userID, scopeAll, 0)
+	if err != nil {
+		t.Fatalf("build all: %v", err)
+	}
+	if len(all) != 2 {
+		t.Fatalf("scopeAll got %d questions, want 2", len(all))
 	}
 }
 
@@ -197,6 +271,70 @@ func TestExamFlowPersistsResultAndLeavesFSRSUntouched(t *testing.T) {
 	}
 }
 
+func TestTranslationExamFlowViaHTTP(t *testing.T) {
+	conn, err := db.Open(filepath.Join(t.TempDir(), "test.db"))
+	if err != nil {
+		t.Fatalf("open db: %v", err)
+	}
+	defer conn.Close()
+
+	userID := insertUser(t, conn, "tester")
+	deckID := insertDeck(t, conn, "A1")
+	w := insertWord(t, conn, deckID, "Abend", "Substantiv", `["der"]`, 0, "")
+	setTranslation(t, conn, w, "evening")
+
+	store := auth.NewStore(conn)
+	s := New(conn, store, web.MustLoadTemplates(), nil, settings.Settings{})
+	mux := http.NewServeMux()
+	s.Register(mux)
+	cookie := sessionCookie(t, store, userID)
+
+	// The setup page renders the new translation kind and scope selector.
+	page := doGet(t, mux, cookie, "/decks/1/exam")
+	for _, want := range []string{`value="translation"`, `name="scope"`, "Only cards I've seen"} {
+		if !strings.Contains(page, want) {
+			t.Errorf("exam setup page missing %q: %s", want, page)
+		}
+	}
+
+	// Start a whole-deck translation test (one eligible word) and answer correctly.
+	startForm := url.Values{"kind": {"translation"}, "scope": {"all"}, "count": {"all"}}
+	startResp := doPost(t, mux, cookie, "/decks/1/exam/start", startForm)
+	if !strings.Contains(startResp, "evening") {
+		t.Errorf("first question should prompt with the English translation: %s", startResp)
+	}
+	if !strings.Contains(startResp, "Substantiv") {
+		t.Errorf("first question should show the part of speech (Substantiv): %s", startResp)
+	}
+	examID := regexp.MustCompile(`/exam/([0-9a-f]+)/answer`).FindStringSubmatch(startResp)
+	if examID == nil {
+		t.Fatalf("no exam id in start response: %s", startResp)
+	}
+
+	// "abend" (lowercase, no article) must grade as correct, and the revealed
+	// answer includes the article ("der Abend").
+	fbResp := doPost(t, mux, cookie, "/exam/"+examID[1]+"/answer", url.Values{"answer": {"abend"}})
+	if !strings.Contains(fbResp, "Correct") {
+		t.Errorf("lowercase answer should grade correct: %s", fbResp)
+	}
+	if !strings.Contains(fbResp, "der Abend") {
+		t.Errorf("feedback should reveal the answer with its article: %s", fbResp)
+	}
+
+	doneResp := doGet(t, mux, cookie, "/exam/"+examID[1]+"/next")
+	if !strings.Contains(doneResp, "1 / 1") {
+		t.Errorf("done response missing score 1/1: %s", doneResp)
+	}
+
+	var kind string
+	if err := conn.QueryRow(`SELECT kind FROM exam_results`).Scan(&kind); err != nil {
+		t.Fatal(err)
+	}
+	if kind != "translation" {
+		t.Errorf("persisted kind = %q, want translation", kind)
+	}
+}
+
 // --- test helpers ---
 
 func insertUser(t *testing.T, conn *sql.DB, name string) int64 {
@@ -229,6 +367,24 @@ func insertWord(t *testing.T, conn *sql.DB, deckID int64, lemma, pos, articles s
 	}
 	id, _ := res.LastInsertId()
 	return id
+}
+
+// setTranslation sets a word's English translation.
+func setTranslation(t *testing.T, conn *sql.DB, wordID int64, tr string) {
+	t.Helper()
+	if _, err := conn.Exec(`UPDATE words SET translation_en = ? WHERE id = ?`, tr, wordID); err != nil {
+		t.Fatalf("set translation: %v", err)
+	}
+}
+
+// insertCard creates a card for the user/word in the given FSRS state (0 = New).
+func insertCard(t *testing.T, conn *sql.DB, userID, wordID int64, state int) {
+	t.Helper()
+	if _, err := conn.Exec(
+		`INSERT INTO cards (user_id, word_id, due, state) VALUES (?, ?, CURRENT_TIMESTAMP, ?)`,
+		userID, wordID, state); err != nil {
+		t.Fatalf("insert card: %v", err)
+	}
 }
 
 // sessionCookie creates a session for userID and returns the cookie that
