@@ -207,8 +207,8 @@
     "url": "https://www.dwds.de/wb/%C3%BCberqueren",
     "translation_en": "cross",
     "audio_url": "https://www.dwds.de/audio/007/ueberqueren.mp3",
-    "example_de": "Überqueren Sie die Brücke.",
-    "example_en": "Cross the bridge.",
+    "example_de": "Diese Brücke nicht überqueren!",
+    "example_en": "Don't cross this bridge.",
     "example_source": "tatoeba"
   },
   {
@@ -1172,7 +1172,7 @@
     "translation_en": "Lightning",
     "audio_url": "https://www.dwds.de/audio/006/der_Blitz.mp3",
     "example_de": "Ich rannte wie der Blitz.",
-    "example_en": "I ran like the wind.",
+    "example_en": "I ran like lightning.",
     "example_source": "tatoeba"
   },
   {
@@ -1301,8 +1301,8 @@
     "url": "https://www.dwds.de/wb/Burg",
     "translation_en": "Castle",
     "audio_url": "https://www.dwds.de/audio/108/die_Burg.mp3",
-    "example_de": "Mein Heim ist meine Burg.",
-    "example_en": "My home is my castle.",
+    "example_de": "Leute rannten aus der Burg.",
+    "example_en": "People ran out of the castle.",
     "example_source": "tatoeba"
   },
   {
@@ -1659,7 +1659,7 @@
     "url": "https://www.dwds.de/wb/Einfahrt",
     "translation_en": "Driveway",
     "audio_url": "https://www.dwds.de/audio/009/die_Einfahrt.mp3",
-    "example_de": "Hast du in der Einfahrt geparkt?",
+    "example_de": "Habt ihr in der Einfahrt geparkt?",
     "example_en": "Did you park in the driveway?",
     "example_source": "tatoeba"
   },
@@ -3115,8 +3115,8 @@
     "url": "https://www.dwds.de/wb/Hinweis",
     "translation_en": "Note",
     "audio_url": "https://www.dwds.de/audio/001/der_Hinweis.mp3",
-    "example_de": "Der Hinweis galt dir.",
-    "example_en": "The remark was aimed at you.",
+    "example_de": "Danke für den Hinweis!",
+    "example_en": "Thanks for the hint.",
     "example_source": "tatoeba"
   },
   {
@@ -3500,8 +3500,8 @@
     "url": "https://www.dwds.de/wb/Kauf",
     "translation_en": "Purchase",
     "audio_url": "https://www.dwds.de/audio/111/der_Kauf.mp3",
-    "example_de": "Kauf’s!",
-    "example_en": "Buy it.",
+    "example_de": "Das ist ein guter Kauf.",
+    "example_en": "That's a good buy.",
     "example_source": "tatoeba"
   },
   {
@@ -3561,8 +3561,8 @@
     "url": "https://www.dwds.de/wb/Klassenarbeit",
     "translation_en": "Class work",
     "audio_url": "https://www.dwds.de/audio/039/die_Klassenarbeit.mp3",
-    "example_de": "Kommt das in der Klassenarbeit vor?",
-    "example_en": "Will it be on the test?",
+    "example_de": "Wir schreiben heute eine Klassenarbeit.",
+    "example_en": "We're going to have a test today.",
     "example_source": "tatoeba"
   },
   {
@@ -4457,8 +4457,8 @@
     "url": "https://www.dwds.de/wb/Mensa",
     "translation_en": "Canteen",
     "audio_url": "https://www.dwds.de/audio/012/die_Mensa.mp3",
-    "example_de": "Die Universität hat eine Mensa.",
-    "example_en": "The university has a cafeteria.",
+    "example_de": "Ich habe gerade Tom in der Mensa getroffen.",
+    "example_en": "I just ran into Tom in the cafeteria.",
     "example_source": "tatoeba"
   },
   {
@@ -4918,8 +4918,8 @@
     "url": "https://www.dwds.de/wb/Panne",
     "translation_en": "Breakdown",
     "audio_url": "https://www.dwds.de/audio/008/die_Panne.mp3",
-    "example_de": "Der Bus hat eine Panne.",
-    "example_en": "The bus has broken down.",
+    "example_de": "Mein Auto hatte eine Panne.",
+    "example_en": "My car broke down.",
     "example_source": "tatoeba"
   },
   {
@@ -5426,8 +5426,8 @@
     "url": "https://www.dwds.de/wb/Rede",
     "translation_en": "Speech",
     "audio_url": "https://www.dwds.de/audio/001/die_Rede.mp3",
-    "example_de": "Meine Rede!",
-    "example_en": "That's what I've always said.",
+    "example_de": "Toms Rede war zu lang.",
+    "example_en": "Tom's speech was too long.",
     "example_source": "tatoeba"
   },
   {
@@ -7032,10 +7032,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/Unterhaltung",
-    "translation_en": "Entertainment",
+    "translation_en": "Entertainment/Conversation",
     "audio_url": "https://www.dwds.de/audio/004/die_Unterhaltung.mp3",
-    "example_de": "Er störte unsere Unterhaltung.",
-    "example_en": "He broke in on our conversation.",
+    "example_de": "Die Unterhaltung wurde kurz unterbrochen.",
+    "example_en": "The conversation was interrupted momentarily.",
     "example_source": "tatoeba"
   },
   {
@@ -7209,8 +7209,8 @@
     "url": "https://www.dwds.de/wb/Verk%C3%A4uferin",
     "translation_en": "Saleswoman",
     "audio_url": "https://www.dwds.de/audio/008/die_Verkaeuferin.mp3",
-    "example_de": "Ich bin Verkäuferin.",
-    "example_en": "I'm an assistant.",
+    "example_de": "Du bist doch noch Verkäuferin, oder?",
+    "example_en": "You're still a salesman, aren't you?",
     "example_source": "tatoeba"
   },
   {
@@ -7341,8 +7341,8 @@
     "url": "https://www.dwds.de/wb/Verzeihung",
     "translation_en": "Pardon",
     "audio_url": "https://www.dwds.de/audio/011/die_Verzeihung.mp3",
-    "example_de": "Verzeihung.",
-    "example_en": "Excuse me.",
+    "example_de": "Verzeihung?",
+    "example_en": "Did you say something?",
     "example_source": "tatoeba"
   },
   {
@@ -7418,8 +7418,8 @@
     "url": "https://www.dwds.de/wb/Vorort",
     "translation_en": "On site",
     "audio_url": "https://www.dwds.de/audio/006/der_Vorort.mp3",
-    "example_de": "Mein Haus liegt in einem Vorort.",
-    "example_en": "My house is in the suburbs.",
+    "example_de": "Ich wohne in einem Vorort von Tōkyō.",
+    "example_en": "I live on the outskirts of Tokyo.",
     "example_source": "tatoeba"
   },
   {
@@ -8503,8 +8503,8 @@
     "url": "https://www.dwds.de/wb/ausgezeichnet",
     "translation_en": "excellent",
     "audio_url": "https://www.dwds.de/audio/002/ausgezeichnet_1.mp3",
-    "example_de": "Tom ist ausgezeichnet.",
-    "example_en": "Tom is excellent.",
+    "example_de": "Sie sind ausgezeichnet.",
+    "example_en": "They're excellent.",
     "example_source": "tatoeba"
   },
   {
@@ -9349,8 +9349,8 @@
     "url": "https://www.dwds.de/wb/eilen",
     "translation_en": "hurry",
     "audio_url": "https://www.dwds.de/audio/009/eilen.mp3",
-    "example_de": "Wir sollten besser eilen!",
-    "example_en": "We'd better hurry.",
+    "example_de": "Ich muss in den Unterricht eilen.",
+    "example_en": "I must hurry to class.",
     "example_source": "tatoeba"
   },
   {
@@ -9469,10 +9469,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/einstellen",
-    "translation_en": "set",
+    "translation_en": "set/hire",
     "audio_url": "https://www.dwds.de/audio/004/einstellen.mp3",
-    "example_de": "Wir müssen das einstellen.",
-    "example_en": "We have to stop it.",
+    "example_de": "Wer würde Tom einstellen wollen?",
+    "example_en": "Who would want to hire Tom?",
     "example_source": "tatoeba"
   },
   {
@@ -9828,7 +9828,7 @@
     "translation_en": "serious",
     "audio_url": "https://www.dwds.de/audio/001/ernst.mp3",
     "example_de": "Im Ernst?",
-    "example_en": "Really?",
+    "example_en": "Seriously?",
     "example_source": "tatoeba"
   },
   {
@@ -9974,7 +9974,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/f%C3%BCrchten",
-    "translation_en": "fear",
+    "translation_en": "be afraid",
     "audio_url": "https://www.dwds.de/audio/002/fuerchten.mp3",
     "example_de": "Wir fürchten uns.",
     "example_en": "We're afraid.",
@@ -9992,8 +9992,8 @@
     "url": "https://www.dwds.de/wb/fair",
     "translation_en": "fair",
     "audio_url": "https://www.dwds.de/audio/006/fair.mp3",
-    "example_de": "Sei fair!",
-    "example_en": "Be fair.",
+    "example_de": "Tom ist fair.",
+    "example_en": "Tom is fair.",
     "example_source": "tatoeba"
   },
   {
@@ -10047,8 +10047,8 @@
     "url": "https://www.dwds.de/wb/festhalten",
     "translation_en": "hold on",
     "audio_url": "",
-    "example_de": "Du kannst uns hier nicht festhalten.",
-    "example_en": "You can't keep us here.",
+    "example_de": "Du kannst mich hier nicht festhalten.",
+    "example_en": "You can't keep me here.",
     "example_source": "tatoeba"
   },
   {
@@ -10176,8 +10176,8 @@
     "url": "https://www.dwds.de/wb/fortsetzen",
     "translation_en": "continue",
     "audio_url": "https://www.dwds.de/audio/004/fortsetzen.mp3",
-    "example_de": "Er musste seine Reise heimlich fortsetzen.",
-    "example_en": "He had to continue his trip in secret.",
+    "example_de": "Der Unternehmens-Wettbewerbsvorteil wird ausgehöhlt, wenn die System-Ingenieure ihre Kündigungen fortsetzen.",
+    "example_en": "The company's competitive edge will be eroded if system engineers continue to leave.",
     "example_source": "tatoeba"
   },
   {
@@ -10309,8 +10309,8 @@
     "url": "https://www.dwds.de/wb/genauso",
     "translation_en": "just as",
     "audio_url": "https://www.dwds.de/audio/002/genauso.mp3",
-    "example_de": "Mir geht es genauso.",
-    "example_en": "I feel the same.",
+    "example_de": "Ich empfinde genauso.",
+    "example_en": "I feel the same way.",
     "example_source": "tatoeba"
   },
   {
@@ -10408,7 +10408,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/gie%C3%9Fen",
-    "translation_en": "pour",
+    "translation_en": "pour / water",
     "audio_url": "https://www.dwds.de/audio/010/giessen.mp3",
     "example_de": "Ich muss die Blumen gießen.",
     "example_en": "I have to water the flowers.",
@@ -11993,7 +11993,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/regeln",
-    "translation_en": "regulate",
+    "translation_en": "regulate / control",
     "audio_url": "https://www.dwds.de/audio/003/regeln.mp3",
     "example_de": "Lass das Tom regeln.",
     "example_en": "Let's let Tom handle that.",
@@ -12130,8 +12130,8 @@
     "url": "https://www.dwds.de/wb/schaden",
     "translation_en": "damage",
     "audio_url": "https://www.dwds.de/audio/001/schaden.mp3",
-    "example_de": "Es wird nicht schaden.",
-    "example_en": "It won't hurt.",
+    "example_de": "Was könnte es schaden?",
+    "example_en": "What possible harm could it do?",
     "example_source": "tatoeba"
   },
   {
@@ -12218,8 +12218,8 @@
     "url": "https://www.dwds.de/wb/schminken",
     "translation_en": "make up",
     "audio_url": "https://www.dwds.de/audio/120/schminken.mp3",
-    "example_de": "Brauchst du Hilfe beim Schminken?",
-    "example_en": "Do you need help with your makeup?",
+    "example_de": "Manche asiatischen Männer schminken sich.",
+    "example_en": "Some Asian men wear makeup.",
     "example_source": "tatoeba"
   },
   {
@@ -13105,8 +13105,8 @@
     "url": "https://www.dwds.de/wb/ver%C3%A4ndern",
     "translation_en": "change",
     "audio_url": "https://www.dwds.de/audio/002/veraendern.mp3",
-    "example_de": "Wir alle verändern uns.",
-    "example_en": "We all change.",
+    "example_de": "Menschen verändern sich.",
+    "example_en": "People change.",
     "example_source": "tatoeba"
   },
   {
@@ -13517,8 +13517,8 @@
     "url": "https://www.dwds.de/wb/vor%20allem",
     "translation_en": "above all",
     "audio_url": "https://www.dwds.de/audio/128/vor_allem.mp3",
-    "example_de": "Ich habe vor allem Angst.",
-    "example_en": "I'm afraid of everything.",
+    "example_de": "Es waren vor allem Frauen.",
+    "example_en": "They were mostly women.",
     "example_source": "tatoeba"
   },
   {

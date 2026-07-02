@@ -19,8 +19,8 @@
     "url": "https://www.dwds.de/wb/%C3%A4rgern",
     "translation_en": "annoy",
     "audio_url": "https://www.dwds.de/audio/007/aergern.mp3",
-    "example_de": "Hör auf, Tom zu ärgern!",
-    "example_en": "Stop bullying Tom.",
+    "example_de": "Ich möchte dich nicht ärgern.",
+    "example_en": "I don't want to make you angry.",
     "example_source": "tatoeba"
   },
   {
@@ -35,8 +35,8 @@
     "url": "https://www.dwds.de/wb/%C3%BCberall",
     "translation_en": "everywhere",
     "audio_url": "https://www.dwds.de/audio/001/ueberall.mp3",
-    "example_de": "Wir sind überall.",
-    "example_en": "We're everywhere.",
+    "example_de": "Überall in der Stadt gab es an dem Tag Musik.",
+    "example_en": "Everywhere in the city there was music that day.",
     "example_source": "tatoeba"
   },
   {
@@ -153,10 +153,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/Band#3",
-    "translation_en": "Ribbon",
+    "translation_en": "Band",
     "audio_url": "https://www.dwds.de/audio/001/das_Band.mp3",
-    "example_de": "Wir haben eine Band.",
-    "example_en": "We have a band.",
+    "example_de": "Unsere Band trennt sich.",
+    "example_en": "Our band is splitting up.",
     "example_source": "tatoeba"
   },
   {
@@ -241,10 +241,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/Bohne",
-    "translation_en": "Bean",
+    "translation_en": "Bean / not in the slightest!",
     "audio_url": "https://www.dwds.de/audio/018/die_Bohne.mp3",
-    "example_de": "Es ist interessiert mich nicht die Bohne, wer das ist.",
-    "example_en": "I don't mind in the slightest who he is.",
+    "example_de": "1. Ich esse gerne grüne Bohnen mit Kartoffeln zum Abendessen.\r\n\r\n2. Das interessiert mich nicht die Bohne.",
+    "example_en": "1. I like to eat green beans with potatoes for dinner.\r\n\r\n2. I don't care about that one bit.",
     "example_source": "tatoeba"
   },
   {
@@ -295,10 +295,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/Dame",
-    "translation_en": "Checkers",
+    "translation_en": "Lady",
     "audio_url": "https://www.dwds.de/audio/002/die_Dame.mp3",
-    "example_de": "Wer ist diese Dame?",
-    "example_en": "Who is this lady?",
+    "example_de": "Eine ältere Dame saß allein auf der Bank im Park.",
+    "example_en": "An elderly lady sat alone on the bench in the park.",
     "example_source": "tatoeba"
   },
   {
@@ -393,10 +393,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/Fach#2",
-    "translation_en": "Subject",
+    "translation_en": "Subject / Drawer",
     "audio_url": "https://www.dwds.de/audio/004/das_Fach.mp3",
-    "example_de": "Ich bin vom Fach.",
-    "example_en": "I'm the expert.",
+    "example_de": "Tom ist nicht vom Fach. (vom Fach -  idiom - to be an expert)",
+    "example_en": "Tom is no expert.",
     "example_source": "tatoeba"
   },
   {
@@ -433,7 +433,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/Ferien",
-    "translation_en": "Vacation",
+    "translation_en": "Vacation, Holidays",
     "audio_url": "https://www.dwds.de/audio/003/die_Ferien.mp3",
     "example_de": "Schöne Ferien!",
     "example_en": "Enjoy your holidays.",
@@ -490,7 +490,9 @@
   {
     "url": "https://www.dwds.de/wb/Fundsache",
     "translation_en": "Lost property",
-    "audio_url": ""
+    "audio_url": "",
+    "example_de": "Ich habe meinen Schlüssel im Fundbüro abgeholt – er war als Fundsache abgegeben worden.",
+    "example_en": "I picked up my key at the lost-and-found office – it had been turned in as a found item"
   },
   {
     "url": "https://www.dwds.de/wb/Gabel",
@@ -550,7 +552,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/Geschichte",
-    "translation_en": "History",
+    "translation_en": "History, Story",
     "audio_url": "https://www.dwds.de/audio/001/die_Geschichte.mp3",
     "example_de": "Tom ist Geschichte.",
     "example_en": "Tom is history.",
@@ -611,7 +613,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/Hamburger#3",
-    "translation_en": "Hamburg",
+    "translation_en": "Hamburger",
     "audio_url": "https://www.dwds.de/audio/099/der_Hamburger_2.mp3",
     "example_de": "Ich liebe Hamburger.",
     "example_en": "I love hamburgers.",
@@ -948,8 +950,8 @@
     "url": "https://www.dwds.de/wb/L%C3%BCge",
     "translation_en": "Lie",
     "audio_url": "https://www.dwds.de/audio/003/die_Luege.mp3",
-    "example_de": "Lüge nicht!",
-    "example_en": "Don't lie.",
+    "example_de": "Das war eine Lüge, oder?",
+    "example_en": "That was a lie, wasn't it?",
     "example_source": "tatoeba"
   },
   {
@@ -1084,16 +1086,16 @@
     "url": "https://www.dwds.de/wb/Menge",
     "translation_en": "Quantity",
     "audio_url": "https://www.dwds.de/audio/001/die_Menge.mp3",
-    "example_de": "Die Menge jubelte.",
-    "example_en": "The crowd cheered.",
+    "example_de": "Tom wusste eine Menge.",
+    "example_en": "Tom knew a lot.",
     "example_source": "tatoeba"
   },
   {
     "url": "https://www.dwds.de/wb/Messe#1",
     "translation_en": "Trade fair",
     "audio_url": "https://www.dwds.de/audio/002/die_Messe.mp3",
-    "example_de": "Tom ist in der Messe.",
-    "example_en": "Tom is in the mess hall.",
+    "example_de": "Auf der Messe gab es eine Reihe von etwa 20 Ständen.",
+    "example_en": "There was a row of about 20 stalls at the fair.",
     "example_source": "tatoeba"
   },
   {
@@ -1345,8 +1347,8 @@
     "url": "https://www.dwds.de/wb/Plakat",
     "translation_en": "Poster",
     "audio_url": "https://www.dwds.de/audio/005/das_Plakat.mp3",
-    "example_de": "Er hielt an, um das Plakat anzusehen.",
-    "example_en": "He paused to look at the poster.",
+    "example_de": "Tom rollte das Plakat ein und steckte es in eine Pappröhre.",
+    "example_en": "Tom rolled up the poster and put it into a cardboard tube.",
     "example_source": "tatoeba"
   },
   {
@@ -1468,10 +1470,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/Reihe",
-    "translation_en": "Series",
+    "translation_en": "Row, Series, Turn",
     "audio_url": "https://www.dwds.de/audio/001/die_Reihe.mp3",
-    "example_de": "Bin ich an der Reihe?",
-    "example_en": "Is it my turn?",
+    "example_de": "Du bist an der Reihe.",
+    "example_en": "It's your turn.",
     "example_source": "tatoeba"
   },
   {
@@ -1497,10 +1499,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/Rest",
-    "translation_en": "Rest",
+    "translation_en": "the rest, the remainder, the leftover",
     "audio_url": "https://www.dwds.de/audio/001/der_Rest.mp3",
-    "example_de": "Wo ist der Rest?",
-    "example_en": "Where's the rest?",
+    "example_de": "Den Rest des Kuchens kannst du mitnehmen.",
+    "example_en": "You can take the rest of the cake with you.",
     "example_source": "tatoeba"
   },
   {
@@ -1529,10 +1531,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/Rock#1",
-    "translation_en": "Rock",
+    "translation_en": "Skirt",
     "audio_url": "https://www.dwds.de/audio/004/der_Rock.mp3",
-    "example_de": "Ich mag Rock.",
-    "example_en": "I love rock.",
+    "example_de": "Sie trägt heute einen langen schwarzen Rock.",
+    "example_en": "She's wearing a long black skirt today.",
     "example_source": "tatoeba"
   },
   {
@@ -1562,7 +1564,9 @@
   {
     "url": "https://www.dwds.de/wb/Rundgang",
     "translation_en": "Tour",
-    "audio_url": "https://www.dwds.de/audio/006/der_Rundgang.mp3"
+    "audio_url": "https://www.dwds.de/audio/006/der_Rundgang.mp3",
+    "example_de": "Der Rundgang durch das Museum hat zwei Stunden gedauert.",
+    "example_en": "The tour through the museum lasted two hours."
   },
   {
     "url": "https://www.dwds.de/wb/S%C3%BC%C3%9Figkeit",
@@ -1630,7 +1634,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/Schloss#2",
-    "translation_en": "Castle",
+    "translation_en": "Castle / Lock",
     "audio_url": "https://www.dwds.de/audio/111/das_Schloss.mp3",
     "example_de": "Das Schloss klemmt.",
     "example_en": "The lock is jammed.",
@@ -2178,8 +2182,8 @@
     "url": "https://www.dwds.de/wb/Wettbewerb",
     "translation_en": "Competition",
     "audio_url": "https://www.dwds.de/audio/001/der_Wettbewerb.mp3",
-    "example_de": "Wettbewerb ist gut.",
-    "example_en": "Competition is good.",
+    "example_de": "Unsere Schule nimmt jedes Jahr an einem Wettbewerb für junge Wissenschaftler teil.",
+    "example_en": "Our school takes part in a competition for young scientists every year.",
     "example_source": "tatoeba"
   },
   {
@@ -2431,8 +2435,8 @@
     "url": "https://www.dwds.de/wb/aufpassen",
     "translation_en": "watch out",
     "audio_url": "https://www.dwds.de/audio/006/aufpassen.mp3",
-    "example_de": "Bitte aufpassen!",
-    "example_en": "Attention please!",
+    "example_de": "Kannst du kurz auf die Kinder aufpassen?",
+    "example_en": "Can you watch the kids for a moment?",
     "example_source": "tatoeba"
   },
   {
@@ -2514,7 +2518,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/basteln",
-    "translation_en": "tinker",
+    "translation_en": "craft",
     "audio_url": "https://www.dwds.de/audio/008/basteln.mp3",
     "example_de": "Mit einem Schuhkarton kann man eine Lochkamera basteln.",
     "example_en": "You can build a pinhole camera with a shoe box.",
@@ -2578,7 +2582,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/bequem",
-    "translation_en": "convenient",
+    "translation_en": "comfortable",
     "audio_url": "https://www.dwds.de/audio/003/bequem.mp3",
     "example_de": "Es ist bequem.",
     "example_en": "It's comfortable.",
@@ -2602,10 +2606,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/berichten",
-    "translation_en": "report",
+    "translation_en": "to report, to inform",
     "audio_url": "",
-    "example_de": "Es gibt nichts zu berichten.",
-    "example_en": "There's nothing to report.",
+    "example_de": "Der Journalist berichtet über den Unfall.",
+    "example_en": "The journalist is reporting on the accident.",
     "example_source": "tatoeba"
   },
   {
@@ -2628,8 +2632,8 @@
     "url": "https://www.dwds.de/wb/besonders",
     "translation_en": "especially",
     "audio_url": "https://www.dwds.de/audio/001/besonders.mp3",
-    "example_de": "Sei besonders leise.",
-    "example_en": "Be very quiet.",
+    "example_de": "Im Sommer schmeckt kaltes Wasser besonders gut.",
+    "example_en": "In summer, cold water tastes especially good.",
     "example_source": "tatoeba"
   },
   {
@@ -2642,18 +2646,18 @@
   },
   {
     "url": "https://www.dwds.de/wb/bestehen",
-    "translation_en": "exist",
+    "translation_en": "to exist, to pass (exam)",
     "audio_url": "https://www.dwds.de/audio/001/bestehen.mp3",
-    "example_de": "Es bestehen Bedingungen.",
-    "example_en": "There are conditions.",
+    "example_de": "Das Team besteht aus fünf Personen.",
+    "example_en": "The team consists of five people.",
     "example_source": "tatoeba"
   },
   {
     "url": "https://www.dwds.de/wb/besucht",
-    "translation_en": "visited",
+    "translation_en": "visited, attended",
     "audio_url": "https://www.dwds.de/audio/002/besucht.mp3",
-    "example_de": "Wen besucht Tom?",
-    "example_en": "Who's Tom visiting?",
+    "example_de": "Das Konzert war gestern sehr gut besucht.",
+    "example_en": "The concert was very well attended yesterday.",
     "example_source": "tatoeba"
   },
   {
@@ -2729,8 +2733,8 @@
     "url": "https://www.dwds.de/wb/d%C3%BCnn",
     "translation_en": "thin",
     "audio_url": "https://www.dwds.de/audio/005/duenn.mp3",
-    "example_de": "Bleib dünn.",
-    "example_en": "Stay thin.",
+    "example_de": "Es ist zu dünn.",
+    "example_en": "It's too thin.",
     "example_source": "tatoeba"
   },
   {
@@ -2759,10 +2763,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/damals",
-    "translation_en": "then",
+    "translation_en": "back then, at that time",
     "audio_url": "https://www.dwds.de/audio/111/damals.mp3",
-    "example_de": "So war es damals.",
-    "example_en": "That's the way things were back then.",
+    "example_de": "Damals gab es noch keine Handys.",
+    "example_en": "Back then there were no cell phones yet.",
     "example_source": "tatoeba"
   },
   {
@@ -2777,8 +2781,8 @@
     "url": "https://www.dwds.de/wb/darauf",
     "translation_en": "on it",
     "audio_url": "https://www.dwds.de/audio/001/darauf_2.mp3",
-    "example_de": "Darauf zähle ich.",
-    "example_en": "I'm counting on it.",
+    "example_de": "Reagier nicht darauf.",
+    "example_en": "Don't respond.",
     "example_source": "tatoeba"
   },
   {
@@ -2809,8 +2813,8 @@
     "url": "https://www.dwds.de/wb/deutlich",
     "translation_en": "clear",
     "audio_url": "https://www.dwds.de/audio/001/deutlich.mp3",
-    "example_de": "Sprich deutlich!",
-    "example_en": "Speak clearly.",
+    "example_de": "Sie hat mir deutlich gesagt, dass sie nicht kommt.",
+    "example_en": "She told me plainly that she isn't coming.",
     "example_source": "tatoeba"
   },
   {
@@ -2847,8 +2851,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/dorther",
-    "translation_en": "there",
-    "audio_url": "https://www.dwds.de/audio/028/dorther_1.mp3"
+    "translation_en": "from there",
+    "audio_url": "https://www.dwds.de/audio/028/dorther_1.mp3",
+    "example_de": "Ich komme gerade dorther.",
+    "example_en": "I'm just coming from there."
   },
   {
     "url": "https://www.dwds.de/wb/dorthin",
@@ -2918,8 +2924,8 @@
     "url": "https://www.dwds.de/wb/eigen",
     "translation_en": "own",
     "audio_url": "https://www.dwds.de/audio/003/eigen.mp3",
-    "example_de": "Sie ist sehr eigen mit ihrem Essen.",
-    "example_en": "She is very particular about her food.",
+    "example_de": "Sie hat jetzt ihre eigene Wohnung.",
+    "example_en": "She now has her own apartment.",
     "example_source": "tatoeba"
   },
   {
@@ -3046,8 +3052,8 @@
     "url": "https://www.dwds.de/wb/fallen",
     "translation_en": "fall",
     "audio_url": "https://www.dwds.de/audio/001/fallen.mp3",
-    "example_de": "Fallen lassen!",
-    "example_en": "Drop it!",
+    "example_de": "Im Herbst fallen die Blätter von den Bäumen.",
+    "example_en": "In autumn the leaves fall from the trees.",
     "example_source": "tatoeba"
   },
   {
@@ -3076,10 +3082,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/fett",
-    "translation_en": "bold",
+    "translation_en": "fat / greasy, bold",
     "audio_url": "",
-    "example_de": "Ich bin fett.",
-    "example_en": "I'm fat.",
+    "example_de": "Schreib das wichtige Wort bitte fett.",
+    "example_en": "Write the important word in bold please.",
     "example_source": "tatoeba"
   },
   {
@@ -3092,7 +3098,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/flei%C3%9Fig",
-    "translation_en": "diligent",
+    "translation_en": "diligent, hard working",
     "audio_url": "https://www.dwds.de/audio/006/fleissig.mp3",
     "example_de": "Tom ist fleißig.",
     "example_en": "Tom is diligent.",
@@ -3342,8 +3348,8 @@
     "url": "https://www.dwds.de/wb/husten",
     "translation_en": "cough",
     "audio_url": "https://www.dwds.de/audio/012/husten.mp3",
-    "example_de": "Tom begann zu husten.",
-    "example_en": "Tom began coughing.",
+    "example_de": "Das Kind hustet die ganze Nacht.",
+    "example_en": "The child coughs all night.",
     "example_source": "tatoeba"
   },
   {
@@ -3364,10 +3370,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/interessieren",
-    "translation_en": "interest",
+    "translation_en": "to interest / (reflexive) to be interested in",
     "audio_url": "https://www.dwds.de/audio/004/interessieren.mp3",
-    "example_de": "Wen würde das interessieren?",
-    "example_en": "Who would care?",
+    "example_de": "Ich interessiere mich für klassische Musik.",
+    "example_en": "I'm interested in classical music.",
     "example_source": "tatoeba"
   },
   {
@@ -3412,10 +3418,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/klappen",
-    "translation_en": "fold",
+    "translation_en": "to work out , to go smoothly",
     "audio_url": "https://www.dwds.de/audio/009/klappen.mp3",
-    "example_de": "Dies wird klappen.",
-    "example_en": "This'll work.",
+    "example_de": "Hat mit dem Termin alles geklappt?",
+    "example_en": "Did everything work out with the appointment?",
     "example_source": "tatoeba"
   },
   {
@@ -3430,8 +3436,8 @@
     "url": "https://www.dwds.de/wb/komisch",
     "translation_en": "funny",
     "audio_url": "https://www.dwds.de/audio/003/komisch.mp3",
-    "example_de": "Komisch, oder?",
-    "example_en": "That's weird, isn't it?",
+    "example_de": "Tom ist komisch.",
+    "example_en": "Tom's weird.",
     "example_source": "tatoeba"
   },
   {
@@ -3478,8 +3484,8 @@
     "url": "https://www.dwds.de/wb/leer",
     "translation_en": "Empty",
     "audio_url": "https://www.dwds.de/audio/002/leer.mp3",
-    "example_de": "Es war leer.",
-    "example_en": "It was empty.",
+    "example_de": "Mein Glas war leer.",
+    "example_en": "My glass was empty.",
     "example_source": "tatoeba"
   },
   {
@@ -3540,10 +3546,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/meinen",
-    "translation_en": "mine",
+    "translation_en": "mean, think, believe",
     "audio_url": "https://www.dwds.de/audio/001/meinen.mp3",
-    "example_de": "Nimm meinen.",
-    "example_en": "Take mine.",
+    "example_de": "Ich meine, wir sollten früher losfahren.",
+    "example_en": "I think we should leave earlier.",
     "example_source": "tatoeba"
   },
   {
@@ -3558,8 +3564,8 @@
     "url": "https://www.dwds.de/wb/merken",
     "translation_en": "memorize",
     "audio_url": "https://www.dwds.de/audio/003/merken.mp3",
-    "example_de": "Sie werden es merken.",
-    "example_en": "They'll know.",
+    "example_de": "Ich kann mir seinen Namen einfach nicht merken.",
+    "example_en": "I just can't remember his name.",
     "example_source": "tatoeba"
   },
   {
@@ -3670,13 +3676,13 @@
     "url": "https://www.dwds.de/wb/nirgends",
     "translation_en": "nowhere",
     "audio_url": "https://www.dwds.de/audio/131/nirgends.mp3",
-    "example_de": "Ich kann nirgends hin.",
-    "example_en": "I've got nowhere to go.",
+    "example_de": "Ich sehe sie nirgends.",
+    "example_en": "I don't see them anywhere.",
     "example_source": "tatoeba"
   },
   {
     "url": "https://www.dwds.de/wb/notieren",
-    "translation_en": "note",
+    "translation_en": "note down",
     "audio_url": "https://www.dwds.de/audio/009/notieren.mp3",
     "example_de": "Ich hätte alle Namen notieren sollen.",
     "example_en": "I should've written down everybody's names.",
@@ -3694,8 +3700,8 @@
     "url": "https://www.dwds.de/wb/offen",
     "translation_en": "open",
     "audio_url": "https://www.dwds.de/audio/001/offen.mp3",
-    "example_de": "Sag es mir offen!",
-    "example_en": "Tell me frankly.",
+    "example_de": "Sie war sehr offen über ihre Gefühle.",
+    "example_en": "She was very open about her feelings.",
     "example_source": "tatoeba"
   },
   {
@@ -3742,8 +3748,8 @@
     "url": "https://www.dwds.de/wb/passen",
     "translation_en": "fit",
     "audio_url": "https://www.dwds.de/audio/002/passen.mp3",
-    "example_de": "Passen Sie auch auf?",
-    "example_en": "Are you paying attention?",
+    "example_de": "Die Hose passt mir nicht mehr.",
+    "example_en": "The trousers don't fit me anymore.",
     "example_source": "tatoeba"
   },
   {
@@ -3852,10 +3858,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/rechnen",
-    "translation_en": "calculate",
+    "translation_en": "calculate / to count on / expect",
     "audio_url": "https://www.dwds.de/audio/001/rechnen.mp3",
-    "example_de": "Tom mag Rechnen.",
-    "example_en": "Tom likes arithmetic.",
+    "example_de": "Tom wird kaum mit uns rechnen.",
+    "example_en": "Tom won't be expecting us.",
     "example_source": "tatoeba"
   },
   {
@@ -3884,10 +3890,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/rein#2",
-    "translation_en": "pure",
+    "translation_en": "pure, as a colloquial form of herein/hinein (in, inward)",
     "audio_url": "https://www.dwds.de/audio/001/rein.mp3",
-    "example_de": "Geh rein!",
-    "example_en": "Go inside.",
+    "example_de": "Das ist reines Wasser.",
+    "example_en": "That is pure water.",
     "example_source": "tatoeba"
   },
   {
@@ -3982,24 +3988,24 @@
     "url": "https://www.dwds.de/wb/schade",
     "translation_en": "a pity",
     "audio_url": "https://www.dwds.de/audio/003/schade.mp3",
-    "example_de": "Schade.",
-    "example_en": "It's a pity.",
+    "example_de": "Es ist wirklich schade um das schöne alte Haus.",
+    "example_en": "It's really a shame about the beautiful old house.",
     "example_source": "tatoeba"
   },
   {
     "url": "https://www.dwds.de/wb/schaffen",
-    "translation_en": "create",
+    "translation_en": "create, manage",
     "audio_url": "https://www.dwds.de/audio/003/schaffen.mp3",
-    "example_de": "Wir schaffen das!",
-    "example_en": "We can do it.",
+    "example_de": "Ich habe es endlich geschafft, die Prüfung zu bestehen.",
+    "example_en": "I finally managed to pass the exam.",
     "example_source": "tatoeba"
   },
   {
     "url": "https://www.dwds.de/wb/scharf",
     "translation_en": "hot",
     "audio_url": "https://www.dwds.de/audio/002/scharf.mp3",
-    "example_de": "Tom war scharf.",
-    "example_en": "Tom was hot.",
+    "example_de": "Denkt scharf nach!",
+    "example_en": "Think hard.",
     "example_source": "tatoeba"
   },
   {
@@ -4054,8 +4060,8 @@
     "url": "https://www.dwds.de/wb/schrecklich",
     "translation_en": "terrible",
     "audio_url": "https://www.dwds.de/audio/005/schrecklich.mp3",
-    "example_de": "Schrecklich!",
-    "example_en": "How awful!",
+    "example_de": "Tom sah schrecklich aus.",
+    "example_en": "Tom looked awful.",
     "example_source": "tatoeba"
   },
   {
@@ -4100,10 +4106,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/setzen",
-    "translation_en": "set",
+    "translation_en": "to set/put, sich setzen = to sit down",
     "audio_url": "https://www.dwds.de/audio/112/setzen.mp3",
-    "example_de": "Setzen Sie sich.",
-    "example_en": "Be seated.",
+    "example_de": "Setz dich bitte, das Essen ist gleich fertig.",
+    "example_en": "Sit down please, the food is almost ready.",
     "example_source": "tatoeba"
   },
   {
@@ -4198,8 +4204,8 @@
     "url": "https://www.dwds.de/wb/sterben",
     "translation_en": "die",
     "audio_url": "https://www.dwds.de/audio/002/sterben.mp3",
-    "example_de": "Wir sterben.",
-    "example_en": "We're dying.",
+    "example_de": "Seine Großmutter ist letztes Jahr im Alter von 90 Jahren gestorben.",
+    "example_en": "His grandmother died last year at the age of 90.",
     "example_source": "tatoeba"
   },
   {
@@ -4308,10 +4314,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/tragen",
-    "translation_en": "carry",
+    "translation_en": "carry, to wear",
     "audio_url": "https://www.dwds.de/audio/001/tragen.mp3",
-    "example_de": "Lass es Tom tragen.",
-    "example_en": "Let Tom carry it.",
+    "example_de": "Kannst du bitte die Tasche tragen? Sie ist schwer.",
+    "example_en": "Can you carry the bag please? It's heavy.",
     "example_source": "tatoeba"
   },
   {
@@ -4372,18 +4378,18 @@
   },
   {
     "url": "https://www.dwds.de/wb/unterhalten#2",
-    "translation_en": "maintain",
+    "translation_en": "to talk/chat",
     "audio_url": "https://www.dwds.de/audio/004/unterhalten.mp3",
-    "example_de": "Wir unterhalten uns nur.",
-    "example_en": "We're just talking.",
+    "example_de": "Ich unterhalte mich gern mit meinen Nachbarn.",
+    "example_en": "I enjoy chatting with my neighbors.",
     "example_source": "tatoeba"
   },
   {
     "url": "https://www.dwds.de/wb/unternehmen",
-    "translation_en": "company",
+    "translation_en": "undertake / make",
     "audio_url": "https://www.dwds.de/audio/122/unternehmen.mp3",
-    "example_de": "Ich muss etwas unternehmen.",
-    "example_en": "I must do something.",
+    "example_de": "Etwas muss man unternehmen.",
+    "example_en": "Something has to be done.",
     "example_source": "tatoeba"
   },
   {
@@ -4420,10 +4426,10 @@
   },
   {
     "url": "https://www.dwds.de/wb/vereinbaren",
-    "translation_en": "agree",
+    "translation_en": "to arrange, to agree, to schedule",
     "audio_url": "https://www.dwds.de/audio/005/vereinbaren.mp3",
-    "example_de": "Vereinbaren Sie einen weiteren Termin an der Rezeption.",
-    "example_en": "Make another appointment at the front desk.",
+    "example_de": "Ich möchte einen Termin mit dem Arzt vereinbaren.",
+    "example_en": "I would like to schedule an appointment with the doctor.",
     "example_source": "tatoeba"
   },
   {
@@ -4454,8 +4460,8 @@
     "url": "https://www.dwds.de/wb/verlieben",
     "translation_en": "fall in love",
     "audio_url": "https://www.dwds.de/audio/015/verlieben.mp3",
-    "example_de": "Jeden Tag verlieben sich Menschen.",
-    "example_en": "People fall in love every day.",
+    "example_de": "Ich bin dabei, mich in dich zu verlieben.",
+    "example_en": "I'm falling in love with you.",
     "example_source": "tatoeba"
   },
   {
@@ -4470,8 +4476,8 @@
     "url": "https://www.dwds.de/wb/verpassen",
     "translation_en": "miss",
     "audio_url": "https://www.dwds.de/audio/006/verpassen.mp3",
-    "example_de": "Sie verpassen nichts.",
-    "example_en": "They don't miss a thing.",
+    "example_de": "Sie verpassen noch den Zug.",
+    "example_en": "You'll miss the train.",
     "example_source": "tatoeba"
   },
   {
@@ -4484,7 +4490,7 @@
   },
   {
     "url": "https://www.dwds.de/wb/verschieben",
-    "translation_en": "shift",
+    "translation_en": "move, shift, postpone",
     "audio_url": "https://www.dwds.de/audio/003/verschieben.mp3",
     "example_de": "Können wir das verschieben?",
     "example_en": "Can we reschedule?",
@@ -4662,8 +4668,8 @@
     "url": "https://www.dwds.de/wb/weil",
     "translation_en": "because",
     "audio_url": "https://www.dwds.de/audio/001/weil.mp3",
-    "example_de": "Ich tue es, weil ich muss.",
-    "example_en": "I do it because I have to.",
+    "example_de": "Ich gehe, weil ich gehen will.",
+    "example_en": "I'm going because I want to.",
     "example_source": "tatoeba"
   },
   {
@@ -4774,8 +4780,8 @@
     "url": "https://www.dwds.de/wb/zuletzt",
     "translation_en": "last",
     "audio_url": "https://www.dwds.de/audio/001/zuletzt.mp3",
-    "example_de": "Tom lachte zuletzt.",
-    "example_en": "Tom had the last laugh.",
+    "example_de": "Wer war zuletzt hier?",
+    "example_en": "Who was here last?",
     "example_source": "tatoeba"
   },
   {

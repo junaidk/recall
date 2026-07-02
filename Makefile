@@ -12,7 +12,7 @@ BUILD_TAGS  := sqlite_fts5
 # Override with `make CC_CROSS=aarch64-linux-musl-gcc ...` if you prefer musl-cross.
 ZIG         ?= zig
 
-.PHONY: help all host run linux-amd64 linux-arm64 linux-armv7 linux-armv6 seed-export seed-conjugations seed-noun-plurals clean tidy deploy deploy-service service-status service-logs
+.PHONY: help all host run linux-amd64 linux-arm64 linux-armv7 linux-armv6 seed-export seed-conjugations seed-noun-plurals clean tidy deploy deploy-service seed-refresh service-status service-logs
 
 # ---- Deployment (override on the command line, e.g. make deploy REMOTE=me@host ARCH=linux-arm64) ----
 # NOTE: no inline comments on these — make keeps trailing spaces before '#' as
@@ -22,6 +22,20 @@ REMOTE_DIR  ?= /opt/recall
 SERVICE     ?= recall
 SVC_USER    ?= recall
 ARCH        ?= linux-amd64
+
+# ARCH -> zig cross target + Go GOARCH/GOARM, so seed-refresh can cross-build the
+# seed-export tool for whatever ARCH deploy targets (kept in sync with the
+# hardcoded triples in the linux-* server targets above).
+ZIG_TARGET_linux-amd64 := x86_64-linux-musl
+ZIG_TARGET_linux-arm64 := aarch64-linux-musl
+ZIG_TARGET_linux-armv7 := arm-linux-musleabihf
+ZIG_TARGET_linux-armv6 := arm-linux-musleabihf
+GOARCH_linux-amd64 := amd64
+GOARCH_linux-arm64 := arm64
+GOARCH_linux-armv7 := arm
+GOARCH_linux-armv6 := arm
+GOARM_linux-armv7  := 7
+GOARM_linux-armv6  := 6
 
 help:
 	@echo "Targets:"
@@ -40,6 +54,7 @@ help:
 	@echo "Deployment (override REMOTE/REMOTE_DIR/ARCH on the command line):"
 	@echo "  deploy-service One-time host setup: service user, dirs, systemd unit, config"
 	@echo "  deploy         Build (ARCH=$(ARCH)), rsync binary + seed, restart $(SERVICE)"
+	@echo "  seed-refresh   Run seed-export on $(REMOTE) and pull seed/*.enrichment.json back"
 	@echo "  service-status Show systemctl status of $(SERVICE) on $(REMOTE)"
 	@echo "  service-logs   Follow journald logs for $(SERVICE) on $(REMOTE)"
 	@echo ""
@@ -126,6 +141,23 @@ deploy: $(ARCH)
 	rsync -avz --delete seed/                  $(REMOTE):$(REMOTE_DIR)/seed/
 	ssh $(REMOTE) 'SUDO=$$(command -v sudo||true); $$SUDO systemctl restart $(SERVICE)'
 	@echo "==> deployed $(ARCH) build and restarted $(SERVICE) on $(REMOTE)"
+
+# Capture enrichment the live service has backfilled on the remote (DeepL
+# translations, DWDS audio, Tatoeba examples land in the remote's data/anki.db,
+# not in the seed corpus). Cross-build seed-export for ARCH, push it, run it
+# against the live DB from REMOTE_DIR, then pull the regenerated
+# seed/*.enrichment.json back into the local tree to review and commit.
+seed-refresh:
+	@mkdir -p $(TARGET_DIR)/$(ARCH)
+	CGO_ENABLED=1 GOOS=linux GOARCH=$(GOARCH_$(ARCH)) $(if $(GOARM_$(ARCH)),GOARM=$(GOARM_$(ARCH)),) \
+	  CC="$(ZIG) cc -target $(ZIG_TARGET_$(ARCH))" \
+	  CXX="$(ZIG) c++ -target $(ZIG_TARGET_$(ARCH))" \
+	  go build -tags "$(BUILD_TAGS)" -ldflags="$(LDFLAGS)" -o $(TARGET_DIR)/$(ARCH)/$(SEED_BIN) $(PKG_SEED)
+	rsync -avz $(TARGET_DIR)/$(ARCH)/$(SEED_BIN) $(REMOTE):$(REMOTE_DIR)/$(SEED_BIN)
+	ssh $(REMOTE) 'cd $(REMOTE_DIR) && ./$(SEED_BIN) -config config.yaml'
+	rsync -avz $(REMOTE):$(REMOTE_DIR)/seed/'*.enrichment.json' seed/
+	ssh $(REMOTE) 'rm -f $(REMOTE_DIR)/$(SEED_BIN)'
+	@echo "==> pulled refreshed seed/*.enrichment.json from $(REMOTE); review 'git diff seed/' and commit"
 
 service-status:
 	ssh $(REMOTE) 'systemctl status $(SERVICE) --no-pager'
